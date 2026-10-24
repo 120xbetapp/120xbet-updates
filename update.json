@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1792808330516,
-  "versionName": "1.1.1",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792808330516/index.html",
+  "releaseCode": 1792808386509,
+  "versionName": "1.1.2",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792808386509/index.html",
   "sha256": "9635e0eb4eb4462abe218fa303bebef1b46944b9126091588f4ddc1b0232717f",
   "size": 17591142,
-  "notes": "Update test successful — version 1.1.1."
+  "notes": "10-character generated passwords and account access controls."
 }
