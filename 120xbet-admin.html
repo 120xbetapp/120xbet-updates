@@ -4,7 +4,7 @@
 import{initializeApp}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-app.js';
 import{getAuth,initializeAuth,browserSessionPersistence,signInWithEmailAndPassword,signOut,onAuthStateChanged}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-auth.js';
 import{getDatabase,ref,get,onValue,update,increment,serverTimestamp,query,orderByChild,limitToLast}from'https://www.gstatic.com/firebasejs/12.18.0/firebase-database.js';
-const app=initializeApp({apiKey:'AIzaSyAsKOo6nJPZWT-DwdmnBR35J0U_feLiYGM',authDomain:'betapp-c96eb.firebaseapp.com',databaseURL:'https://betapp-c96eb-default-rtdb.firebaseio.com',projectId:'betapp-c96eb'},'120xbet-user-admin');
+const app=initializeApp({apiKey:'AIzaSyBjH50DE06FvUHD9M0FxC3yG96pCEwejpg',authDomain:'xbet-e3f27.firebaseapp.com',databaseURL:'https://xbet-e3f27-default-rtdb.asia-southeast1.firebasedatabase.app',projectId:'xbet-e3f27'},'120xbet-e3f27-admin');
 const auth=initializeAuth(app,{persistence:browserSessionPersistence}),db=getDatabase(app),$=id=>document.getElementById(id);let profiles={},users={},presence={},accounts={},devices={},stops=[],userStops={},page=0,epoch=0;
 function error(e){$('message').textContent=/permission|denied/i.test(e.message)?'Admin permission or database rules are missing. Follow SETUP-BN.txt.':e.message||'Connection failed.'}
 function clean(){Object.values(visitStops).forEach(f=>f());visitStops={};visits={};$('visits').replaceChildren();stops.forEach(f=>f());stops=[];Object.values(userStops).forEach(f=>f());userStops={};profiles={};users={};presence={};accounts={};devices={};$('list').replaceChildren()}
