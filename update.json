@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "appId": "com.zibongorun.bet120x",
+  "releaseCode": 1792805330033,
+  "versionName": "1.1.0",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792805330033/index.html",
+  "sha256": "e030adf2e8104e8227f40bb9fa1b645263d1472d6ef0ffbe17ddd066c29a3b6a",
+  "size": 17586208,
+  "notes": "Updated design, improved football verification and performance improvements."
+}
