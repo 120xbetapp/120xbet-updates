@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1792805904440,
+  "releaseCode": 1792808330516,
   "versionName": "1.1.1",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792805904440/index.html",
-  "sha256": "e030adf2e8104e8227f40bb9fa1b645263d1472d6ef0ffbe17ddd066c29a3b6a",
-  "size": 17586208,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792808330516/index.html",
+  "sha256": "9635e0eb4eb4462abe218fa303bebef1b46944b9126091588f4ddc1b0232717f",
+  "size": 17591142,
   "notes": "Update test successful — version 1.1.1."
 }
