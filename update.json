@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1792922449912,
+  "releaseCode": 1792923095985,
   "versionName": "1.1.11",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792922449912/index.html",
-  "sha256": "9fbe3e4b177852845800add8b39332d30d59d5554766a0e14e9f3052ca43668f",
-  "size": 18252747,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792923095985/index.html",
+  "sha256": "89d40d19e9fb6fa3e509879b1cd307cf316e0f05e361bf30a0930044f8c333c3",
+  "size": 18252954,
   "notes": "Plane trail aligned beneath the aircraft; simplified game labels; information available from the menu."
 }
