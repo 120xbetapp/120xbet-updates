@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1792920812008,
-  "versionName": "1.1.8",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792920812008/index.html",
+  "releaseCode": 1792920846572,
+  "versionName": "1.1.10",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792920846572/index.html",
   "sha256": "e3098e5c0359da28524da4c72f97e3ee8cae80b6b46dcd15725bd8be9e1439fd",
   "size": 18252994,
-  "notes": "New Aviator layout, slide-up Play menu, shared live rounds, auto play/collect and real masked player feed. Free coins only."
+  "notes": "Idle reconnect fix, smoother UI, separate live Aviator admin and disclosed round controls."
 }
