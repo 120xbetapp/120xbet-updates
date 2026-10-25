@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1792961910164,
-  "versionName": "1.1.16",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792961910164/index.html",
+  "releaseCode": 1792964134341,
+  "versionName": "1.1.17",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792964134341/index.html",
   "sha256": "ad8882a1489a66ee990392251888b16c0debe1cc88443ca67d5afba2f5cad4de",
   "size": 17603513,
-  "notes": "Money Coming: separate free-coin wheel and reel game with server verified spins."
+  "notes": "Super Ace separate card game, server verified coin spins and free spins."
 }
