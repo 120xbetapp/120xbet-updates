@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1792951185023,
+  "releaseCode": 1792953499886,
   "versionName": "1.1.13",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792951185023/index.html",
-  "sha256": "824bee928efec99befec7f56be8eff37c51b8d611021fc8045de9c2667a150fe",
-  "size": 18272581,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792953499886/index.html",
+  "sha256": "61455df21d099096a3281000455a6307c30a77970b086bce7d64092745b6f4fa",
+  "size": 17600663,
   "notes": "Chicken Road free-coin game with server checked plays, crossings and payouts."
 }
