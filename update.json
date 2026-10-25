@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1792965959018,
-  "versionName": "1.1.17",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792965959018/index.html",
+  "releaseCode": 1792965992977,
+  "versionName": "1.1.18",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792965992977/index.html",
   "sha256": "96d04faf64da16190d62334f86231b9eacd363ba431ada60be1c2fd745524435",
   "size": 17628656,
-  "notes": "Super Ace separate card game, server verified coin spins and free spins."
+  "notes": "Top LIVE, pre-match, live tournaments, sports details, free-coin bet slip and Sports Admin."
 }
