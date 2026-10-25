@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1792923095985,
-  "versionName": "1.1.11",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792923095985/index.html",
+  "releaseCode": 1792923124250,
+  "versionName": "1.1.12",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792923124250/index.html",
   "sha256": "89d40d19e9fb6fa3e509879b1cd307cf316e0f05e361bf30a0930044f8c333c3",
   "size": 18252954,
-  "notes": "Plane trail aligned beneath the aircraft; simplified game labels; information available from the menu."
+  "notes": "Fix Aviator Back returning to a blank screen; restore the page the game was opened from."
 }
