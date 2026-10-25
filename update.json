@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1792951130974,
-  "versionName": "1.1.12",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792951130974/index.html",
+  "releaseCode": 1792951185023,
+  "versionName": "1.1.13",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792951185023/index.html",
   "sha256": "824bee928efec99befec7f56be8eff37c51b8d611021fc8045de9c2667a150fe",
   "size": 18272581,
-  "notes": "Fix Aviator Back returning to a blank screen; restore the page the game was opened from."
+  "notes": "Chicken Road free-coin game with server checked plays, crossings and payouts."
 }
