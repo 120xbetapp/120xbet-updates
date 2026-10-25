@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1792969053417,
+  "releaseCode": 1792969125256,
   "versionName": "1.1.20",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792969053417/index.html",
-  "sha256": "96d04faf64da16190d62334f86231b9eacd363ba431ada60be1c2fd745524435",
-  "size": 17628656,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1792969125256/index.html",
+  "sha256": "c6d470cdfbe3b4a4b5a20bf6241656065241f790768ceab09d9576ee2c074748",
+  "size": 17641025,
   "notes": "Reference sports card templates, independent horizontal carousels, editable team logos/scores/odds and tournament columns."
 }
