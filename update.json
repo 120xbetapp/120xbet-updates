@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793012581112,
+  "releaseCode": 1793044717363,
   "versionName": "1.1.21",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793012581112/index.html",
-  "sha256": "2f0f5a4225e4a8d3b0cdf294e6d9b3bb4f89af741b5cf1b599c1c7092426649e",
-  "size": 17643762,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793044717363/index.html",
+  "sha256": "73ad1327158188d0313287741038bcb8ca3fec0ea4b8087d1f1c896ee3cc32c5",
+  "size": 17645176,
   "notes": "Sportmonks cricket live score feed, shared refresh cache, delivery chips and admin fixture import."
 }
