@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793049216719,
+  "releaseCode": 1793049422969,
   "versionName": "1.1.25",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793049216719/index.html",
-  "sha256": "73ad1327158188d0313287741038bcb8ca3fec0ea4b8087d1f1c896ee3cc32c5",
-  "size": 17645176,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793049422969/index.html",
+  "sha256": "3264a81629fe70f0be44090b28c565deba82bcabe98387f5404581df255eee25",
+  "size": 17647241,
   "notes": "Automatic provider match cards, cricket schedules, countdown timers and administrator-controlled free-coin markets."
 }
