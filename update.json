@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793133559118,
+  "releaseCode": 1793133622500,
   "versionName": "1.1.33",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793133559118/index.html",
-  "sha256": "dd7cfd751519d6fde15cdb1ed7d7516d53e20b46b1de15ca424a6f0c9265d4b4",
-  "size": 17662794,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793133622500/index.html",
+  "sha256": "3d2f8ca82a2482877c68cf6cf77c8d7f7b33f07c8e8c11e569e6555951e20f72",
+  "size": 17663965,
   "notes": "Automatic estimated free-coin markets with per-selection manual rates and cleaner match information."
 }
