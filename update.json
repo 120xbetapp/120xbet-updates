@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793131007836,
-  "versionName": "1.1.30",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793131007836/index.html",
+  "releaseCode": 1793131070676,
+  "versionName": "1.1.31",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793131070676/index.html",
   "sha256": "af6eb6fc5f083b10d1566f7cbf381e631788c78dd2e802ce83533f4379f1aec8",
   "size": 17660685,
-  "notes": "Disclosed virtual football simulation with server clock, halftime, automatic matches and admin goals."
+  "notes": "Smaller home logo, removed Virtual header link and simplified match card labels."
 }
