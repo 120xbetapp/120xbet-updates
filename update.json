@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793050451031,
+  "releaseCode": 1793076642433,
   "versionName": "1.1.27",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793050451031/index.html",
-  "sha256": "0607a55e3dc5e8486f59ece2fa1cefe71f8b77821d3dab53d41f4d0403743ba0",
-  "size": 17651672,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793076642433/index.html",
+  "sha256": "334ae85b287096c5d485338f80f46d97af03219c0fc1df21895dbc1c731ed999",
+  "size": 17660424,
   "notes": "Fix blank match pages: independent page navigation, missing-market handling, stadium matchup countdown and expandable markets."
 }
