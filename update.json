@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793131997597,
+  "releaseCode": 1793132272852,
   "versionName": "1.1.32",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793131997597/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793132272852/index.html",
   "sha256": "dd7cfd751519d6fde15cdb1ed7d7516d53e20b46b1de15ca424a6f0c9265d4b4",
   "size": 17662794,
   "notes": "Football and cricket match card layouts, refreshed match details, removed Top Events section."
