@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793076722235,
+  "releaseCode": 1793081798384,
   "versionName": "1.1.29",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793076722235/index.html",
-  "sha256": "334ae85b287096c5d485338f80f46d97af03219c0fc1df21895dbc1c731ed999",
-  "size": 17660424,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793081798384/index.html",
+  "sha256": "0c651d4523cc116c1e6271203ea5a36e751265b09aa8582dfb7ce960103dc5b1",
+  "size": 17660845,
   "notes": "Video reference navigation: Live/Pre-match lists, match search, competition time filters, country groups and persistent market pins."
 }
