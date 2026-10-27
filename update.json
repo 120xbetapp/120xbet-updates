@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793136380526,
-  "versionName": "1.1.35",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793136380526/index.html",
+  "releaseCode": 1793137274381,
+  "versionName": "1.1.36",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793137274381/index.html",
   "sha256": "a466c2601862d404d170d19a0e89aca2f42b26ebe0ceccb5df537fbfea349f4f",
   "size": 17670354,
-  "notes": "Fixed stadium background cascade, white header icons and compact match scoreboard."
+  "notes": "Pinned match stadium and scoreboard; only markets scroll, restored scroll position and full-bleed top background."
 }
