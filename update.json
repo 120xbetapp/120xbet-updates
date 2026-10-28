@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793137418821,
-  "versionName": "1.1.36",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793137418821/index.html",
+  "releaseCode": 1793213086948,
+  "versionName": "1.1.37",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793213086948/index.html",
   "sha256": "fda0cc36a2d6f6acf632322c693e6ecf4e1db49332db172c723064cc7eb0e364",
   "size": 17672509,
-  "notes": "Pinned match stadium and scoreboard; only markets scroll, restored scroll position and full-bleed top background."
+  "notes": "Reference-style match screen: edge-to-edge cyan top, separate minute and second clock, and no coin-rate text on the match card."
 }
