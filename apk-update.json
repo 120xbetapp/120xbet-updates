@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "versionCode": 6,
-  "versionName": "1.2.3",
-  "size": 52769820,
-  "sha256": "acc326dcc39205aae1d98e2734fce3d4ce18fd5540b6ac63cb53221747a54c61",
-  "apkUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/120xbet-6-acc326dcc392.apk"
+  "versionCode": 7,
+  "versionName": "1.2.4",
+  "size": 52770479,
+  "sha256": "dbddedca1f62810112f68e9c17dc4ed91c2dd2b7f78ba10f3f33d7f5f5f486df",
+  "apkUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/120xbet-7-dbddedca1f62.apk"
 }
