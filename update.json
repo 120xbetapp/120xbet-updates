@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793268450281,
-  "versionName": "1.1.39",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793268450281/index.html",
+  "releaseCode": 1793305951846,
+  "versionName": "1.1.40",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793305951846/index.html",
   "sha256": "fa0c1a5197ba289ac678bab59b193bdbb90707ab6104fe4d76dd5e4254415b3a",
   "size": 17707666,
-  "notes": "Separate Top/Sports/Esports/Casino/120xGames views, lower home collections, real tournament navigation and existing game/auth routing."
+  "notes": "Video-order esports tournament banners, separate live/upcoming carousels, clickable league pages and favorites."
 }
