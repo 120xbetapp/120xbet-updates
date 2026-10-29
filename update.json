@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793306591410,
-  "versionName": "1.1.42",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793306591410/index.html",
+  "releaseCode": 1793309780658,
+  "versionName": "1.1.43",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793309780658/index.html",
   "sha256": "53eeed1c6a5581ae726f00fbba105e730b31acad3aaacca525343cd4205a2450",
   "size": 17155722,
-  "notes": "Optimized embedded artwork for GitHub browser upload."
+  "notes": "My casino artwork and ordered carousels with separate All grids."
 }
