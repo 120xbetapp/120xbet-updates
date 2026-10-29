@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793213438050,
-  "versionName": "1.1.37",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793213438050/index.html",
+  "releaseCode": 1793268106262,
+  "versionName": "1.1.39",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793268106262/index.html",
   "sha256": "b5fb7bf8d392228053c6c3ded2c52e85c2fa0ee972026f3fd899002807b55790",
   "size": 17673793,
-  "notes": "Reference-style match screen: edge-to-edge cyan top, separate minute and second clock, and no coin-rate text on the match card."
+  "notes": "Separate Top/Sports/Esports/Casino/120xGames views, lower home collections, real tournament navigation and existing game/auth routing."
 }
