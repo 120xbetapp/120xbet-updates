@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793309780658,
+  "releaseCode": 1793309852192,
   "versionName": "1.1.43",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793309780658/index.html",
-  "sha256": "53eeed1c6a5581ae726f00fbba105e730b31acad3aaacca525343cd4205a2450",
-  "size": 17155722,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793309852192/index.html",
+  "sha256": "97e53df7a9f9c4d7e65ac8ca993976017f6f4e802dca1601ae2e1018ec0f44d5",
+  "size": 18319103,
   "notes": "My casino artwork and ordered carousels with separate All grids."
 }
