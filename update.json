@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793363577354,
+  "releaseCode": 1793363800083,
   "versionName": "1.1.45",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793363577354/index.html",
-  "sha256": "97e53df7a9f9c4d7e65ac8ca993976017f6f4e802dca1601ae2e1018ec0f44d5",
-  "size": 18319103,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793363800083/index.html",
+  "sha256": "f0a5b8e5732b75d384a4e02365889a64d70544e8740d27a4547b41e4fde792bf",
+  "size": 25364854,
   "notes": "Cricket scores, first-innings free-coin markets and match scoreboard."
 }
