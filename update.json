@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793388007609,
-  "versionName": "1.1.49",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793388007609/index.html",
+  "releaseCode": 1793388494624,
+  "versionName": "1.1.50",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793388494624/index.html",
   "sha256": "ad09df84a93e2a8c17545af1bb90413ed67cd851456dcd9c29e9a7dfa5a36daf",
   "size": 25375266,
-  "notes": "Separate free balance request pages with admin approval and configurable page links."
+  "notes": "Route existing Deposit and Withdraw buttons to configured free balance pages; remove added menu row."
 }
