@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793388698589,
-  "versionName": "1.1.50",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793388698589/index.html",
+  "releaseCode": 1793394626188,
+  "versionName": "1.1.53",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793394626188/index.html",
   "sha256": "92d96eccb97ef6a18fa9e595e053c0b38b430982bad5cf10a901b1ea9a25b64f",
   "size": 25375551,
-  "notes": "Route existing Deposit and Withdraw buttons to configured free balance pages; remove added menu row."
+  "notes": "Shared game toolbar with account balance, currency and request shortcut; attached Aviator tail trail."
 }
