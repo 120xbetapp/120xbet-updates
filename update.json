@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793387072794,
+  "releaseCode": 1793387922650,
   "versionName": "1.1.48",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793387072794/index.html",
-  "sha256": "a1e1aec1f844beb4855a7729c02f651f9968ba6f8326a159fcb778911fdb81e2",
-  "size": 25371185,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793387922650/index.html",
+  "sha256": "ad09df84a93e2a8c17545af1bb90413ed67cd851456dcd9c29e9a7dfa5a36daf",
+  "size": 25375266,
   "notes": "Disable funding pages and remove coin wording; retain country/currency account metadata and practice balances."
 }
