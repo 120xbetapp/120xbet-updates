@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793396184075,
+  "releaseCode": 1793396222470,
   "versionName": "1.1.54",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793396184075/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793396222470/index.html",
   "sha256": "936113c329221ed1daad19a1f0f5ae08b85d3f0d1f01d18c8df18443490acdfb",
   "size": 25379260,
   "notes": "Shared game toolbar with account balance, currency and request shortcut; attached Aviator tail trail."
