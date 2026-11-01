@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793559680293,
+  "releaseCode": 1793559891360,
   "versionName": "1.1.70",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793559680293/index.html",
-  "sha256": "1c3ac7b7150aaeec2be28ab2e88184c3e3c6d8900f7af15e774bb676b26322cf",
-  "size": 26097067,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793559891360/index.html",
+  "sha256": "b02dd9646b2cf6b393a22e5166b3b259151ff11d2b8299ef24b81dc763742ee1",
+  "size": 26097274,
   "notes": "Allow a fresh single-bet popup on each card tap, including repeated W1/W2 selections; verify pending receipt before opening a new bet."
 }
