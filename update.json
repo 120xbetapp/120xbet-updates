@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793557453336,
-  "versionName": "1.1.67",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793557453336/index.html",
+  "releaseCode": 1793557496071,
+  "versionName": "1.1.68",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793557496071/index.html",
   "sha256": "f2fcbfdc23b5a83380b90ef298b2eacf563e4655bf01337f595585023bf2300c",
   "size": 26094346,
-  "notes": "Keep admin manual market lock; unlock active virtual-coin markets despite delayed score updates; preserve accepted odds."
+  "notes": "Blue quick bet bottom sheet redesign; drag handle to dismiss; retain existing odds and worker logic."
 }
