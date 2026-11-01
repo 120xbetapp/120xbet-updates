@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793558691354,
+  "releaseCode": 1793558736345,
   "versionName": "1.1.68",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793558691354/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793558736345/index.html",
   "sha256": "1c3ac7b7150aaeec2be28ab2e88184c3e3c6d8900f7af15e774bb676b26322cf",
   "size": 26097067,
   "notes": "Blue quick bet bottom sheet redesign; drag handle to dismiss; retain existing odds and worker logic."
