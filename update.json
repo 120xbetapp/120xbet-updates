@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793556380882,
-  "versionName": "1.1.66",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793556380882/index.html",
+  "releaseCode": 1793556497463,
+  "versionName": "1.1.67",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793556497463/index.html",
   "sha256": "90b4d874526caa0d0e2c001e3c8fac9cb429a5604763a4b191e586f144eff9d1",
   "size": 26087760,
-  "notes": "Admin-controlled sports odds and manual match lock; automatic betting break disabled."
+  "notes": "Keep admin manual market lock; unlock active virtual-coin markets despite delayed score updates; preserve accepted odds."
 }
