@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793553806868,
+  "releaseCode": 1793554139683,
   "versionName": "1.1.66",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793553806868/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793554139683/index.html",
   "sha256": "387b4e7c53905e25f42733f88e51608729c4f388ef4675d9fa6829bd4c4dd832",
   "size": 26087913,
   "notes": "Admin-controlled sports odds and manual match lock; automatic betting break disabled."
