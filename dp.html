@@ -327,6 +327,12 @@ body{background:#fff;padding-bottom:24px;color:#444}
 
 /* Accurate screenshot card proportions and cleaned full-combination artwork */
 body{background:#fff} .payment-grid{gap:12px 12px;padding:12px 12px 18px;background:#dce7eb}.payment-card{height:136px;border-radius:4px}.payment-card .logo-box{height:62px}.payment-card .logo-box img{max-height:52px;max-width:128px;width:auto;height:auto;object-fit:contain}.payment-card .paired-logo img{max-height:49px;max-width:132px}.payment-card span{font-size:14px}.header .icon-btn{min-width:30px}.section-title{background:#dce7eb}
+/* Screenshot-matched header only; all other page styles remain unchanged */
+.header{height:66px!important;padding:0 19px!important;background:#fff!important;display:flex!important;align-items:center!important;justify-content:space-between!important;border-bottom:1px solid #e7eeee!important;position:sticky;top:0;z-index:100}
+.header h2{flex:1!important;text-align:center!important;color:#548987!important;font-size:22px!important;font-weight:600!important;letter-spacing:0!important;line-height:1.2!important;margin:0!important}
+.header .icon-btn{width:36px!important;height:42px!important;min-width:36px!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer}
+.header .icon-btn svg{width:33px!important;height:33px!important;fill:none!important;stroke:#548987!important;stroke-width:2.25!important;stroke-linecap:round!important;stroke-linejoin:round!important}
+.header .refresh-btn svg{width:34px!important;height:34px!important;stroke:#65c98c!important;stroke-width:2.5!important}
 </style>
 </head>
 <body>
@@ -337,8 +343,8 @@ body{background:#fff} .payment-grid{gap:12px 12px;padding:12px 12px 18px;backgro
 <svg viewbox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>
 </div>
 <h2>Account deposits</h2>
-<div class="icon-btn" onclick="location.reload()" style="cursor: pointer;">
-<svg viewbox="0 0 24 24"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"></path></svg>
+<div class="icon-btn refresh-btn" onclick="location.reload()" style="cursor: pointer;">
+<svg viewBox="0 0 24 24" aria-label="Refresh"><path d="M20.5 11a8.5 8.5 0 1 0-2.5 6.1"/><path d="M20.5 4.5V11H14"/></svg>
 </div>
 </div>
 <div class="account-info">
@@ -354,7 +360,7 @@ body{background:#fff} .payment-grid{gap:12px 12px;padding:12px 12px 18px;backgro
 </div>
 <button class="btn-types">Types of payment systems</button>
 </div>
-<div class="banner-container"><div class="info-box">Join 22Bet Payment Agent &amp; Affiliate Programs – contact us via email at<br/><strong>asia@22betaffiliate.com</strong></div><div class="bonus-box"><h4>Get your bonus in 3 steps:</h4><ol><li>Fill in your profile</li><li>Verify your phone number and email</li><li>Make a deposit that meets the bonus requirements</li></ol></div></div><div class="section-title">RECOMMENDED</div><div class="payment-grid"><div class="payment-card" onclick="showUnavailable('Bkash P2P')"><div class="logo-box"><img alt="bKash" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/BKash_Logo.png"/><b class="logo-fallback" style="display:none">bKash</b></div><span>Bkash P2P</span></div><div class="payment-card" onclick="showUnavailable('Nagad p2c')"><div class="logo-box"><img alt="Nagad p2c" src="assets/logos/clean_logo_38.png"/></div><span>Nagad p2c</span></div><div class="payment-card" onclick="showUnavailable('bKash')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="bKash" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/BKash_Logo.png"/><b class="logo-fallback" style="display:none">bKash</b></div><span>bKash</span></div><div class="payment-card" onclick="showUnavailable('Nagad')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad" src="assets/logos/clean_logo_38.png"/></div><span>Nagad</span></div><div class="payment-card" onclick="showUnavailable('Bkash Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Bkash Free" src="assets/logos/clean_logo_08.png"/></div><span>Bkash Free</span></div><div class="payment-card" onclick="showUnavailable('Nagad Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad Free" src="assets/logos/clean_logo_15.png"/></div><span>Nagad Free</span></div><div class="payment-card" onclick="showUnavailable('Neteller')"><div class="logo-box"><img alt="Neteller" src="assets/logos/clean_logo_23.png"/></div><span>Neteller</span></div></div><div class="section-title">E-WALLETS</div><div class="payment-grid"><div class="payment-card" onclick="showUnavailable('bKash')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="bKash" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/BKash_Logo.png"/><b class="logo-fallback" style="display:none">bKash</b></div><span>bKash</span></div><div class="payment-card" onclick="showUnavailable('Nagad')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad" src="assets/logos/clean_logo_38.png"/></div><span>Nagad</span></div><div class="payment-card" onclick="showUnavailable('Bkash Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Bkash Free" src="assets/logos/clean_logo_08.png"/></div><span>Bkash Free</span></div><div class="payment-card" onclick="showUnavailable('Nagad Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad Free" src="assets/logos/clean_logo_15.png"/></div><span>Nagad Free</span></div><div class="payment-card" onclick="showUnavailable('AstroPay')"><div class="logo-box"><img alt="AstroPay" src="assets/logos/clean_logo_25.png"/></div><span>AstroPay</span></div><div class="payment-card" onclick="showUnavailable('Skrill')"><div class="logo-box"><img alt="Skrill" src="assets/logos/clean_logo_24.png"/></div><span>Skrill</span></div><div class="payment-card" onclick="showUnavailable('Neteller')"><div class="logo-box"><img alt="Neteller" src="assets/logos/clean_logo_23.png"/></div><span>Neteller</span></div><div class="payment-card" onclick="showUnavailable('Skrill 1-Tap')"><div class="logo-box"><img alt="Skrill 1-Tap" src="assets/logos/clean_logo_37.png"/></div><span>Skrill 1-Tap</span></div><div class="payment-card" onclick="showUnavailable('iCash.One')"><div class="logo-box"><img alt="iCash.One" src="assets/logos/clean_logo_14.png"/></div><span>iCash.One</span></div></div><div class="section-title">BANK TRANSFER</div><div class="payment-grid"><div class="payment-card" onclick="showUnavailable('Bkash P2P')"><div class="logo-box"><img alt="bKash" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/BKash_Logo.png"/><b class="logo-fallback" style="display:none">bKash</b></div><span>Bkash P2P</span></div><div class="payment-card" onclick="showUnavailable('Nagad p2c')"><div class="logo-box"><img alt="Nagad p2c" src="assets/logos/clean_logo_38.png"/></div><span>Nagad p2c</span></div></div><div class="section-title">CRYPTOCURRENCY</div><div class="payment-grid"><div class="payment-card" onclick="openBtcModal()">
+<div class="banner-container"><div class="info-box">Join 120xbetBet Payment Agent &amp; Affiliate Programs – contact us via email at<br/><strong>Mail: 120xbetapp@gmail.com</strong><br/><strong>Telegram: mobcash_new_ @Manager_120xBet</strong></div><div class="bonus-box"><h4>Get your bonus in 3 steps:</h4><ol><li>Fill in your profile</li><li>Verify your phone number and email</li><li>Make a deposit that meets the bonus requirements</li></ol></div></div><div class="section-title">RECOMMENDED</div><div class="payment-grid"><div class="payment-card" onclick="openLocalDeposit('Bkash P2P')"><div class="logo-box"><img alt="bKash" src="assets/logos/bkash.png" style="width:115px;height:62px;object-fit:contain;max-width:100%;"/></div><span>Bkash P2P</span></div><div class="payment-card" onclick="openLocalDeposit('Nagad p2c')"><div class="logo-box"><img alt="Nagad p2c" src="assets/logos/clean_logo_38.png"/></div><span>Nagad p2c</span></div><div class="payment-card" onclick="openLocalDeposit('bKash')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="bKash" src="assets/logos/bkash.png" style="width:115px;height:62px;object-fit:contain;max-width:100%;"/></div><span>bKash</span></div><div class="payment-card" onclick="openLocalDeposit('Nagad')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad" src="assets/logos/clean_logo_38.png"/></div><span>Nagad</span></div><div class="payment-card" onclick="openLocalDeposit('Bkash Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Bkash Free" src="assets/logos/clean_logo_08.png"/></div><span>Bkash Free</span></div><div class="payment-card" onclick="openLocalDeposit('Nagad Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad Free" src="assets/logos/clean_logo_15.png"/></div><span>Nagad Free</span></div><div class="payment-card" onclick="showUnavailable('Neteller')"><div class="logo-box"><img alt="Neteller" src="assets/logos/clean_logo_23.png"/></div><span>Neteller</span></div></div><div class="section-title">E-WALLETS</div><div class="payment-grid"><div class="payment-card" onclick="openLocalDeposit('bKash')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="bKash" src="assets/logos/bkash.png" style="width:115px;height:62px;object-fit:contain;max-width:100%;"/></div><span>bKash</span></div><div class="payment-card" onclick="openLocalDeposit('Nagad')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad" src="assets/logos/clean_logo_38.png"/></div><span>Nagad</span></div><div class="payment-card" onclick="openLocalDeposit('Bkash Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Bkash Free" src="assets/logos/clean_logo_08.png"/></div><span>Bkash Free</span></div><div class="payment-card" onclick="openLocalDeposit('Nagad Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad Free" src="assets/logos/clean_logo_15.png"/></div><span>Nagad Free</span></div><div class="payment-card" onclick="showUnavailable('AstroPay')"><div class="logo-box"><img alt="AstroPay" src="assets/logos/clean_logo_25.png"/></div><span>AstroPay</span></div><div class="payment-card" onclick="showUnavailable('Skrill')"><div class="logo-box"><img alt="Skrill" src="assets/logos/clean_logo_24.png"/></div><span>Skrill</span></div><div class="payment-card" onclick="showUnavailable('Neteller')"><div class="logo-box"><img alt="Neteller" src="assets/logos/clean_logo_23.png"/></div><span>Neteller</span></div><div class="payment-card" onclick="showUnavailable('Skrill 1-Tap')"><div class="logo-box"><img alt="Skrill 1-Tap" src="assets/logos/clean_logo_37.png"/></div><span>Skrill 1-Tap</span></div><div class="payment-card" onclick="showUnavailable('iCash.One')"><div class="logo-box"><img alt="iCash.One" src="assets/logos/clean_logo_14.png"/></div><span>iCash.One</span></div></div><div class="section-title">BANK TRANSFER</div><div class="payment-grid"><div class="payment-card" onclick="openLocalDeposit('Bkash P2P')"><div class="logo-box"><img alt="bKash" src="assets/logos/bkash.png" style="width:115px;height:62px;object-fit:contain;max-width:100%;"/></div><span>Bkash P2P</span></div><div class="payment-card" onclick="openLocalDeposit('Nagad p2c')"><div class="logo-box"><img alt="Nagad p2c" src="assets/logos/clean_logo_38.png"/></div><span>Nagad p2c</span></div></div><div class="section-title">CRYPTOCURRENCY</div><div class="payment-grid"><div class="payment-card" onclick="openBtcModal()">
 <div class="logo-box"><img alt="Bitcoin" src="assets/logos/clean_logo_06.png"/></div>
 <span>Bitcoin</span>
 </div><div class="payment-card" onclick="openEthModal()">
@@ -964,5 +970,138 @@ function copyAccount() {
 }
 
   </script>
-<script>function showUnavailable(name){if(window.Swal){Swal.fire({text:name+" — This payment method is not configured yet.",confirmButtonText:"OK",confirmButtonColor:"#008f98"});}else{alert(name+" is not configured yet.");}}</script></body>
+<script>function showUnavailable(name){if(window.Swal){Swal.fire({text:name+" — This payment method is not configured yet.",confirmButtonText:"OK",confirmButtonColor:"#008f98"});}else{alert(name+" is not configured yet.");}}</script>
+<style>
+/* Screenshot-style payment form; isolated from existing page styles */
+#localDepositOverlay{position:fixed;inset:0;z-index:10050;background:rgba(40,68,96,.62);display:none;align-items:center;justify-content:center;padding:16px}
+#localDepositOverlay.active{display:flex}
+#localDepositPanel{width:100%;max-width:560px;background:#fff;border-radius:3px;box-shadow:0 3px 12px #0002;max-height:calc(100dvh - 32px);overflow-y:auto;transform:translateX(-75px);opacity:0;transition:transform .24s ease,opacity .24s ease}
+#localDepositOverlay.active.open #localDepositPanel{transform:translateX(0);opacity:1}
+#localDepositPanel.closing{transform:translateX(-75px)!important;opacity:0!important}
+.ld-head{height:136px;display:flex;align-items:center;justify-content:center;position:relative;background:white}
+.ld-head img{width:170px;height:90px;object-fit:contain}
+.ld-x{position:absolute;right:14px;top:12px;border:0;background:none;color:#c7c7c7;font-size:31px;line-height:1;cursor:pointer}
+.ld-content{background:#f5f7f8;padding:15px 18px 17px;color:#4d5962;font-size:15px}
+.ld-row{display:grid;grid-template-columns:48% 52%;align-items:center;gap:5px;margin-bottom:11px}
+.ld-row label{line-height:1.45}
+.ld-row input{width:100%;height:39px;border:0;border-top:1px solid #9eafb6;background:#fff;color:#168f93;font-size:16px;font-weight:600;text-align:center;border-radius:0;padding:5px}
+.ld-presets{display:flex;gap:12px;margin:10px 0 13px}
+.ld-presets button{flex:1;background:#0c949d;color:white;border:0;border-radius:24px;padding:10px 0;font-weight:600;font-size:16px}
+.ld-confirm{width:100%;background:#087b86;color:white;border:0;height:44px;font-size:17px;cursor:pointer}
+#ldFreeFields{display:none}
+.ld-notice{background:#0c949d;color:white;padding:11px 12px;border-radius:16px;line-height:1.45;margin-bottom:15px}
+.ld-payee{margin:10px 0;line-height:1.6;overflow-wrap:anywhere}
+.ld-payee strong{color:#273f49}
+.ld-copy{border:0;background:transparent;color:#82a943;font-size:21px;cursor:pointer;margin-left:10px}
+.ld-upload{display:inline-flex;width:65px;height:65px;background:#bbb;color:white;align-items:center;justify-content:center;font-size:45px;cursor:pointer;border:4px solid white;outline:1px solid #ddd}
+.ld-help{color:#9b9b9b;font-size:12px}
+.ld-free-note{font-size:14px;line-height:1.5;margin:15px 0 22px}
+.ld-message{font-size:12px;color:#8a3434;margin-top:9px;line-height:1.5;display:none}
+@media(max-width:390px){.ld-content{padding:12px}.ld-row{grid-template-columns:48% 52%}.ld-presets{gap:7px}}
+@media(prefers-reduced-motion:reduce){#localDepositPanel{transition:none}}
+</style>
+<div id="localDepositOverlay" role="presentation" onclick="if(event.target===this)closeLocalDeposit()">
+ <div id="localDepositPanel" role="dialog" aria-modal="true" aria-label="Deposit amount">
+  <div class="ld-head"><img id="ldLogo" alt="Payment method"/><button class="ld-x" aria-label="Close" onclick="closeLocalDeposit()">×</button></div>
+  <form class="ld-content" id="ldForm" onsubmit="return localDepositSubmit(event)">
+   <div id="ldFreeFields">
+    <div class="ld-notice">Before creating a request, transfer funds within 10 minutes using the payment details provided below.</div>
+    <div class="ld-payee"><strong>বিকাশ ওয়ালেট নম্বর:</strong> <span id="ldReceiver">Not configured</span><button type="button" class="ld-copy" onclick="copyFreeValue('ldReceiver')" aria-label="Copy wallet number">▢</button></div>
+    <div class="ld-payee"><strong>বিকাশ ওয়ালেটের নাম:</strong> <span id="ldReceiverName">Not configured</span><button type="button" class="ld-copy" onclick="copyFreeValue('ldReceiverName')" aria-label="Copy wallet name">▢</button></div>
+   </div>
+   <div class="ld-row"><label id="ldAmountLabel" for="ldAmount">Amount:</label><input id="ldAmount" type="number" inputmode="decimal" required/></div>
+   <div id="ldBkashFields" style="display:none">
+    <div class="ld-presets"><button type="button" onclick="setLocalAmount(400)">400</button><button type="button" onclick="setLocalAmount(600)">600</button><button type="button" onclick="setLocalAmount(800)">800</button></div>
+    <div class="ld-row"><label for="ldFirst">First name:</label><input id="ldFirst" autocomplete="given-name"/></div>
+    <div class="ld-row"><label for="ldLast">Surname:</label><input id="ldLast" autocomplete="family-name"/></div>
+    <div class="ld-row"><label for="ldPhone">Phone number:</label><input id="ldPhone" type="tel" autocomplete="tel"/></div>
+    <div class="ld-row"><label for="ldAddress">Address:</label><input id="ldAddress" autocomplete="street-address"/></div>
+    <div class="ld-row"><label for="ldEmail">Email:</label><input id="ldEmail" type="email" autocomplete="email"/></div>
+   </div>
+   <div id="ldFreeExtra" style="display:none">
+    <div class="ld-row"><label for="ldSenderPhone">আপনার বিকাশ ওয়ালেট নম্বর:</label><input id="ldSenderPhone" type="tel" placeholder="Your Bkash Wallet Number" autocomplete="tel"/></div>
+    <div class="ld-row"><label for="ldSenderName">আপনার বিকাশ ওয়ালেটের নাম:</label><input id="ldSenderName" placeholder="Your Bkash Wallet Name"/></div>
+    <div class="ld-row"><label for="ldReceipt">পেমেন্টের রসিদ:<br/><span class="ld-help">(.jpg, .jpeg, .png, .pdf; max 20 MB)</span></label><div><label class="ld-upload" for="ldReceipt">+</label><input id="ldReceipt" type="file" accept=".jpg,.jpeg,.png,.pdf" style="display:none" onchange="document.getElementById('ldReceiptName').textContent=this.files[0]?.name||''"/><div id="ldReceiptName" class="ld-help"></div></div></div>
+    <div class="ld-row"><label for="ldTrx">Transaction ID (UTR, Reference No):</label><input id="ldTrx"/></div>
+    <div class="ld-payee"><strong>*Code:</strong> <span id="ldCode"></span><button type="button" class="ld-copy" onclick="copyFreeValue('ldCode')" aria-label="Copy code">▢</button></div>
+    <p class="ld-free-note">Enter this code in the Comments field when transferring funds. If you do not enter the code, your payment may fail to be identified and credited to your account.</p>
+   </div>
+   <button class="ld-confirm" type="submit">CONFIRM</button>
+   <div class="ld-message" id="ldMessage" role="status">This is a form preview. No payment request has been submitted; a verified payment backend is required.</div>
+  </form>
+ </div>
+</div>
+<style>
+#freeSuccessOverlay{position:fixed;inset:0;z-index:10060;background:rgba(40,68,96,.62);display:none;align-items:center;justify-content:center;padding:16px}
+#freeSuccessOverlay.active{display:flex}
+#freeSuccessPanel{width:100%;max-width:560px;background:#fff;border-radius:3px;overflow:hidden;transform:translateX(-75px);opacity:0;transition:transform .24s ease,opacity .24s ease}
+#freeSuccessOverlay.active.open #freeSuccessPanel{transform:translateX(0);opacity:1}
+#freeSuccessPanel.closing{transform:translateX(-75px)!important;opacity:0!important}
+.free-success-head{height:155px;display:flex;align-items:center;justify-content:center;position:relative}
+.free-success-head img{width:145px;height:92px;object-fit:contain}
+.free-success-close{position:absolute;top:13px;right:17px;border:0;background:transparent;font-size:32px;color:#c7c7c7;cursor:pointer}
+.free-success-message{padding:22px 18px 18px;background:#f6f7f8;color:#929292;font-size:16px}
+.free-success-disclaimer{font-size:11px;color:#8a8a8a;padding:0 18px 14px;background:#f6f7f8}
+@media(prefers-reduced-motion:reduce){#freeSuccessPanel{transition:none}}
+</style>
+<div id="freeSuccessOverlay" onclick="if(event.target===this)closeFreeDepositConfirmation()">
+ <div id="freeSuccessPanel" role="dialog" aria-modal="true" aria-label="Deposit form confirmation">
+  <div class="free-success-head"><img src="assets/logos/clean_logo_08.png" alt="bKash Free"><button type="button" class="free-success-close" aria-label="Close" onclick="closeFreeDepositConfirmation()">×</button></div>
+  <div class="free-success-message">Deposit request created successfully.</div>
+  <div class="free-success-disclaimer">Demo confirmation only — no request has been sent to a payment server.</div>
+ </div>
+</div>
+<script>
+let localDepositType='';
+function openLocalDeposit(name){
+ const bk=/bkash/i.test(name),free=/bkash free/i.test(name);localDepositType=name;
+ const overlay=document.getElementById('localDepositOverlay'),panel=document.getElementById('localDepositPanel');
+ document.getElementById('ldLogo').src=bk?(name.toLowerCase().includes('free')?'assets/logos/clean_logo_08.png':'assets/logos/bkash.png'):(name.toLowerCase().includes('free')?'assets/logos/clean_logo_15.png':'assets/logos/clean_logo_38.png');
+ document.getElementById('ldLogo').alt=name;
+ document.getElementById('ldBkashFields').style.display=bk&&!free?'block':'none';
+ document.getElementById('ldFreeFields').style.display=free?'block':'none';
+ document.getElementById('ldFreeExtra').style.display=free?'block':'none';
+ if(free){document.getElementById('ldCode').textContent=Math.random().toString(36).slice(2,8);document.getElementById('ldReceiver').textContent='Not configured';document.getElementById('ldReceiverName').textContent='Not configured';}
+ document.getElementById('ldAmountLabel').textContent=free?'Amount (Min 100.00 BDT / Max 30 000.00 BDT):':bk?'Amount (Min 300.00 BDT / Max 30 000.00 BDT):':'Amount (Min 200 BDT / Max 25 000 BDT):';
+ const amt=document.getElementById('ldAmount');amt.min=free?'100':bk?'300':'200';amt.max=(bk||free)?'30000':'25000';amt.value=free?'100':bk?'300':'200';
+ document.getElementById('ldMessage').style.display='none';
+ panel.classList.remove('closing');overlay.classList.add('active');document.body.style.overflow='hidden';
+ requestAnimationFrame(()=>requestAnimationFrame(()=>overlay.classList.add('open')));
+}
+function copyFreeValue(id){const val=document.getElementById(id).textContent;if(val!=='Not configured')navigator.clipboard?.writeText(val)}
+function setLocalAmount(n){document.getElementById('ldAmount').value=n}
+function closeLocalDeposit(){
+ const overlay=document.getElementById('localDepositOverlay'),panel=document.getElementById('localDepositPanel');
+ panel.classList.add('closing');overlay.classList.remove('open');document.body.style.overflow='';
+ setTimeout(()=>{overlay.classList.remove('active');panel.classList.remove('closing')},240);
+}
+function localDepositSubmit(e){
+ e.preventDefault();
+ if(/bkash free/i.test(localDepositType)){
+   const required=['ldSenderPhone','ldSenderName','ldTrx'];
+   for(const id of required){const field=document.getElementById(id);if(!field.value.trim()){field.setCustomValidity('Please fill in this field');field.reportValidity();field.setCustomValidity('');return false;}}
+   const receipt=document.getElementById('ldReceipt');
+   if(!receipt.files.length){document.getElementById('ldMessage').textContent='Please attach a payment receipt.';document.getElementById('ldMessage').style.display='block';return false;}
+   if(receipt.files[0].size>20*1024*1024){document.getElementById('ldMessage').textContent='Receipt must be 20 MB or smaller.';document.getElementById('ldMessage').style.display='block';return false;}
+   showFreeDepositConfirmation();return false;
+ }
+ document.getElementById('ldMessage').textContent='This is a form preview. No payment request has been submitted; a verified payment backend is required.';
+ document.getElementById('ldMessage').style.display='block';return false;
+}
+function showFreeDepositConfirmation(){
+ closeLocalDeposit();
+ setTimeout(()=>{
+  const overlay=document.getElementById('freeSuccessOverlay');
+  overlay.classList.add('active');document.body.style.overflow='hidden';
+  requestAnimationFrame(()=>requestAnimationFrame(()=>overlay.classList.add('open')));
+ },260);
+}
+function closeFreeDepositConfirmation(){
+ const overlay=document.getElementById('freeSuccessOverlay'),panel=document.getElementById('freeSuccessPanel');
+ panel.classList.add('closing');overlay.classList.remove('open');document.body.style.overflow='';
+ setTimeout(()=>{overlay.classList.remove('active');panel.classList.remove('closing')},240);
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('localDepositOverlay').classList.contains('active'))closeLocalDeposit();else if(e.key==='Escape'&&document.getElementById('freeSuccessOverlay').classList.contains('active'))closeFreeDepositConfirmation()});
+</script>
+</body>
 </html>
