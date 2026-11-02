@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Account Deposits UI</title>
+<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-minimal/minimal.css" rel="stylesheet"/>
+<style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
+        body { background-color: #f4f7f6; padding-bottom: 50px; }
+
+        /* Header */
+        .header {
+            background-color: #fff; padding: 10px 15px; display: flex; align-items: center;
+            border-bottom: 1px solid #e0e0e0; height: 55px; position: sticky; top: 0; z-index: 100;
+        }
+        .header h2 { flex-grow: 1; text-align: center; color: #4d8281; font-size: 19px; font-weight: 700; }
+        .icon-btn svg { width: 24px; height: 24px; fill: none; stroke: #4d8281; stroke-width: 2.5; }
+
+        /* Account Info Section */
+        .account-info { padding: 15px; background: #fff; }
+        .account-display { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-weight: bold; font-size: 18px; color: #333; }
+        .copy-btn { background: none; border: none; cursor: pointer; display: flex; align-items: center; }
+        .copy-btn svg { width: 18px; height: 18px; color: #4d8281; }
+        .btn-types { background-color: #00897b; color: white; border: none; padding: 10px 14px; border-radius: 2px; font-size: 14px; font-weight: 500; }
+
+        /* Banner Text Styles from Screenshot */
+        .banner-container { padding: 0 15px; margin-top: 10px; }
+        .info-box { background: #e0e0e0; padding: 12px; margin-bottom: 10px; font-size: 14px; color: #555; line-height: 1.4; border-radius: 2px; }
+        .info-box a { color: #333; text-decoration: none; font-weight: bold; }
+        
+        .bonus-box { background: #e0e0e0; padding: 12px; margin-bottom: 10px; border-radius: 2px; }
+        .bonus-box h4 { font-size: 14px; color: #444; margin-bottom: 8px; font-weight: 600; }
+        .bonus-box ol { padding-left: 20px; font-size: 13px; color: #666; }
+        .bonus-box li { margin-bottom: 4px; }
+
+        .section-title {
+            text-align: center; color: #777; font-size: 12px; text-transform: uppercase;
+            background-color: #e8eded; padding: 10px 0; letter-spacing: 1px; margin-top: 15px;
+        }
+
+        /* Grid System */
+        .payment-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: #e0e0e0; padding: 1px; }
+        .payment-card {
+            background: white; padding: 25px 10px; display: flex; flex-direction: column;
+            align-items: center; justify-content: center; cursor: pointer; height: 130px;
+        }
+        .payment-card span { font-size: 13px; color: #666; margin-top: 15px; text-align: center; line-height: 1.2; }
+
+        /* Logos */
+        .logo-box img { height: 40px; width: auto; max-width: 80px; object-fit: contain; }
+        .combo-logo { display: flex; align-items: center; gap: 4px; background: #f5f5f5; padding: 5px 12px; border-radius: 20px; }
+        .combo-logo img { height: 22px; width: 22px; }
+
+        /* Loader */
+        .loader-overlay {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.3); display: none; align-items: center; justify-content: center; z-index: 9999;
+        }
+
+ .logo-box img { height: 35px; width: auto; object-fit: contain; }
+
+        /* BTC Modal Custom Styles */
+        .btc-modal-content { text-align: center; }
+        .btc-warning { color: #d32f2f; font-weight: bold; margin: 15px 0; font-size: 14px; }
+        .btc-rates { font-size: 13px; color: #555; margin-bottom: 10px; }
+        .btc-address { 
+            background: #f1f1f1; padding: 10px; border-radius: 5px; 
+            font-size: 11px; word-break: break-all; margin: 10px 0;
+            border: 1px solid #ccc; display: flex; align-items: center; justify-content: space-between;
+        }
+        .btc-footer-info { background: #00897b; color: white; padding: 10px; font-size: 12px; text-align: left; border-radius: 4px; }
+
+        /* Gol Gol Bol Loading Animation (Original App Look) */
+        .loader-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            display: none; 
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+        }
+
+        .dot-loader {
+            display: flex;
+            gap: 8px;
+        }
+
+        .dot-loader div {
+            width: 12px;
+            height: 12px;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: dot-bounce 1.2s infinite ease-in-out;
+        }
+
+        .dot-loader div:nth-child(1) { animation-delay: 0s; }
+        .dot-loader div:nth-child(2) { animation-delay: 0.1s; }
+        .dot-loader div:nth-child(3) { animation-delay: 0.2s; }
+        .dot-loader div:nth-child(4) { animation-delay: 0.3s; }
+        .dot-loader div:nth-child(5) { animation-delay: 0.4s; }
+
+        @keyframes dot-bounce {
+            0%, 80%, 100% { transform: scale(0.6); opacity: 0.5; }
+            40% { transform: scale(1.2); opacity: 1; }
+        }
+
+        /* Bam pashe theke slide animation */
+        .swal2-show {
+            animation: slide-left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+        }
+
+        @keyframes slide-left {
+            from { transform: translateX(-100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+
+//* পপআপের স্টাইল - ডিফল্ট প্যাডিং রিমুভ করা হয়েছে */
+/* 22Bet Style SweetAlert */
+
+.swal2-popup{
+    width:90% !important;
+    max-width:420px !important;
+    padding:0 !important;
+    border-radius:4px !important;
+}
+
+.swal2-html-container{
+    margin:0 !important;
+    padding:25px 20px 10px !important;
+}
+
+.swal2-actions{
+    display:block !important;
+    width:100% !important;
+    margin:0 !important;
+    padding:20px !important;
+    box-sizing:border-box !important;
+}
+
+.swal2-confirm{
+    display:block !important;
+    width:100% !important;
+    min-width:100% !important;
+    margin:0 !important;
+    height:40px !important;
+    border:none !important;
+    border-radius:2px !important;
+    background:#00897b !important;
+    color:#fff !important;
+    font-size:15px !important;
+    font-weight:600 !important;
+    box-shadow:none !important;
+}
+
+.swal2-close{
+    font-size:42px !important;
+    color:#bdbdbd !important;
+}
+
+.swal2-popup {
+    animation: slide-left 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.eth-popup{
+    padding:0 !important;
+    border-radius:4px !important;
+}
+
+.eth-popup .swal2-html-container{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.eth-popup .swal2-actions{
+    display:none !important;
+    margin:0 !important;
+    padding:0 !important;
+    height:0 !important;
+}
+
+.eth-popup .swal2-close{
+    color:#bdbdbd !important;
+    font-size:48px !important;
+    font-weight:300 !important;
+    box-shadow:none !important;
+    outline:none !important;
+    right:14px !important;
+    top:8px !important;
+}
+
+.doge-popup{
+    padding:0 !important;
+    border-radius:4px !important;
+}
+
+.doge-popup .swal2-html-container{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.doge-popup .swal2-actions{
+    display:none !important;
+    height:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.doge-popup .swal2-close{
+    color:#bdbdbd !important;
+    font-size:48px !important;
+    font-weight:300 !important;
+    right:14px !important;
+    top:8px !important;
+    box-shadow:none !important;
+}
+
+.tron-popup{
+    padding:0 !important;
+    border-radius:4px !important;
+}
+
+.tron-popup .swal2-html-container{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.tron-popup .swal2-actions{
+    display:none !important;
+    height:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.tron-popup .swal2-close{
+    color:#bdbdbd !important;
+    font-size:48px !important;
+    font-weight:300 !important;
+    right:14px !important;
+    top:8px !important;
+    box-shadow:none !important;
+    outline:none !important;
+}
+
+.btc-popup{
+    padding:0 !important;
+    border-radius:4px !important;
+}
+
+.btc-popup .swal2-html-container{
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.btc-popup .swal2-actions{
+    display:none !important;
+    height:0 !important;
+    margin:0 !important;
+    padding:0 !important;
+}
+
+.btc-popup .swal2-close{
+    color:#bdbdbd !important;
+    font-size:48px !important;
+    font-weight:300 !important;
+    right:14px !important;
+    top:8px !important;
+    box-shadow:none !important;
+    outline:none !important;
+}
+
+/* USDT Popup Style */
+.usdt-popup {
+    padding: 0 !important;
+    border-radius: 4px !important;
+}
+
+.usdt-popup .swal2-html-container {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.usdt-popup .swal2-actions {
+    display: none !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.usdt-popup .swal2-close {
+    color: #bdbdbd !important;
+    font-size: 48px !important;
+    font-weight: 300 !important;
+    right: 14px !important;
+    top: 8px !important;
+    box-shadow: none !important;
+    outline: none !important;
+}
+
+    
+/* Screenshot-matched deposit layout */
+body{background:#fff;padding-bottom:24px;color:#444}
+.header{height:65px;border-bottom:1px solid #e7eeee;padding:0 18px}
+.header h2{font-size:21px;font-weight:600;color:#548987}
+.account-info{padding:20px 12px 65px}
+.account-display{font-size:18px;margin-bottom:18px}
+.btn-types{background:#098f98;border-radius:0;font-size:15px}
+.banner-container{margin-top:0;padding:0 12px 0}
+.info-box,.bonus-box{background:#e1e1e1;padding:13px;margin-bottom:12px;border-radius:0;font-size:15px;line-height:1.4}
+.bonus-box{padding-bottom:19px}.bonus-box h4{font-size:16px}.bonus-box ol{font-size:14px;padding-left:38px}
+.section-title{margin-top:14px;background:#dce7eb;color:#777;padding:17px 0 12px;font-size:15px;letter-spacing:0;font-weight:400}
+.payment-grid{background:#dce7eb;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 12px;padding:12px 12px 18px}
+.payment-card{height:136px;border-radius:3px;padding:14px 6px;position:relative;overflow:hidden;justify-content:space-between;box-shadow:0 0 1px #d8dfe0}
+.payment-card .logo-box{height:57px;display:flex;align-items:center;justify-content:center;width:100%}
+.logo-box img{max-width:115px;max-height:47px;width:auto;height:auto;object-fit:contain}
+.payment-card span{margin:0;min-height:32px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#888;line-height:1.25}
+.combo-logo{height:45px;gap:4px;background:#f7f7f7;border-radius:40px;padding:5px 12px}
+.combo-logo img{height:31px;width:31px;object-fit:contain}
+.p2p-badge{position:absolute;right:0;top:0;background:#f20a13;color:#fff;font-size:12px;font-weight:500;padding:3px 7px 3px 13px;clip-path:polygon(20% 0,100% 0,100% 100%,20% 100%,0 50%);font-style:normal}
+.brand-text,.logo-fallback{font-size:22px;font-weight:800;white-space:nowrap}.brand-astropay{color:#050505}.brand-skrill,.brand-skrill-1-tap{color:#8a1b73}.brand-neteller{color:#80b33b;font-style:italic}.brand-icash\.one{color:#111;font-size:19px}
+@media(min-width:680px){.payment-grid,.banner-container,.account-info{max-width:720px;margin-left:auto;margin-right:auto}.section-title{max-width:720px;margin-left:auto;margin-right:auto}.payment-card{height:155px}}
+
+/* Accurate screenshot card proportions and cleaned full-combination artwork */
+body{background:#fff} .payment-grid{gap:12px 12px;padding:12px 12px 18px;background:#dce7eb}.payment-card{height:136px;border-radius:4px}.payment-card .logo-box{height:62px}.payment-card .logo-box img{max-height:52px;max-width:128px;width:auto;height:auto;object-fit:contain}.payment-card .paired-logo img{max-height:49px;max-width:132px}.payment-card span{font-size:14px}.header .icon-btn{min-width:30px}.section-title{background:#dce7eb}
+</style>
+</head>
+<body>
+<div class="loader-overlay" id="loader"><div class="dot-loader"><div></div><div></div><div></div><div></div></div></div>
+<div class="header">
+<!-- নতুন goBackToHome ফাংশনটি কল করা হচ্ছে -->
+<div class="icon-btn" onclick="goBackToHome()" style="cursor: pointer;">
+<svg viewbox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>
+</div>
+<h2>Account deposits</h2>
+<div class="icon-btn" onclick="location.reload()" style="cursor: pointer;">
+<svg viewbox="0 0 24 24"><path d="M23 4v6h-6M1 20v-6h6M3.51 9a9 9 0 0114.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0020.49 15"></path></svg>
+</div>
+</div>
+<div class="account-info">
+<div class="account-display">
+        ACCOUNT <span id="display-id">Loading...</span>
+<button class="copy-btn" onclick="copyAccount()">
+<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
+<rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect>
+<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+</svg>
+<span id="copy-text" style="margin-left:6px;font-size:12px;color:#4d8281;"></span>
+</button>
+</div>
+<button class="btn-types">Types of payment systems</button>
+</div>
+<div class="banner-container"><div class="info-box">Join 22Bet Payment Agent &amp; Affiliate Programs – contact us via email at<br/><strong>asia@22betaffiliate.com</strong></div><div class="bonus-box"><h4>Get your bonus in 3 steps:</h4><ol><li>Fill in your profile</li><li>Verify your phone number and email</li><li>Make a deposit that meets the bonus requirements</li></ol></div></div><div class="section-title">RECOMMENDED</div><div class="payment-grid"><div class="payment-card" onclick="showUnavailable('Bkash P2P')"><div class="logo-box"><img alt="bKash" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/BKash_Logo.png"/><b class="logo-fallback" style="display:none">bKash</b></div><span>Bkash P2P</span></div><div class="payment-card" onclick="showUnavailable('Nagad p2c')"><div class="logo-box"><img alt="Nagad p2c" src="assets/logos/clean_logo_38.png"/></div><span>Nagad p2c</span></div><div class="payment-card" onclick="showUnavailable('bKash')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="bKash" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/BKash_Logo.png"/><b class="logo-fallback" style="display:none">bKash</b></div><span>bKash</span></div><div class="payment-card" onclick="showUnavailable('Nagad')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad" src="assets/logos/clean_logo_38.png"/></div><span>Nagad</span></div><div class="payment-card" onclick="showUnavailable('Bkash Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Bkash Free" src="assets/logos/clean_logo_08.png"/></div><span>Bkash Free</span></div><div class="payment-card" onclick="showUnavailable('Nagad Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad Free" src="assets/logos/clean_logo_15.png"/></div><span>Nagad Free</span></div><div class="payment-card" onclick="showUnavailable('Neteller')"><div class="logo-box"><img alt="Neteller" src="assets/logos/clean_logo_23.png"/></div><span>Neteller</span></div></div><div class="section-title">E-WALLETS</div><div class="payment-grid"><div class="payment-card" onclick="showUnavailable('bKash')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="bKash" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/BKash_Logo.png"/><b class="logo-fallback" style="display:none">bKash</b></div><span>bKash</span></div><div class="payment-card" onclick="showUnavailable('Nagad')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad" src="assets/logos/clean_logo_38.png"/></div><span>Nagad</span></div><div class="payment-card" onclick="showUnavailable('Bkash Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Bkash Free" src="assets/logos/clean_logo_08.png"/></div><span>Bkash Free</span></div><div class="payment-card" onclick="showUnavailable('Nagad Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad Free" src="assets/logos/clean_logo_15.png"/></div><span>Nagad Free</span></div><div class="payment-card" onclick="showUnavailable('AstroPay')"><div class="logo-box"><img alt="AstroPay" src="assets/logos/clean_logo_25.png"/></div><span>AstroPay</span></div><div class="payment-card" onclick="showUnavailable('Skrill')"><div class="logo-box"><img alt="Skrill" src="assets/logos/clean_logo_24.png"/></div><span>Skrill</span></div><div class="payment-card" onclick="showUnavailable('Neteller')"><div class="logo-box"><img alt="Neteller" src="assets/logos/clean_logo_23.png"/></div><span>Neteller</span></div><div class="payment-card" onclick="showUnavailable('Skrill 1-Tap')"><div class="logo-box"><img alt="Skrill 1-Tap" src="assets/logos/clean_logo_37.png"/></div><span>Skrill 1-Tap</span></div><div class="payment-card" onclick="showUnavailable('iCash.One')"><div class="logo-box"><img alt="iCash.One" src="assets/logos/clean_logo_14.png"/></div><span>iCash.One</span></div></div><div class="section-title">BANK TRANSFER</div><div class="payment-grid"><div class="payment-card" onclick="showUnavailable('Bkash P2P')"><div class="logo-box"><img alt="bKash" onerror="this.style.display='none';this.nextElementSibling.style.display='block'" src="https://upload.wikimedia.org/wikipedia/commons/8/8c/BKash_Logo.png"/><b class="logo-fallback" style="display:none">bKash</b></div><span>Bkash P2P</span></div><div class="payment-card" onclick="showUnavailable('Nagad p2c')"><div class="logo-box"><img alt="Nagad p2c" src="assets/logos/clean_logo_38.png"/></div><span>Nagad p2c</span></div></div><div class="section-title">CRYPTOCURRENCY</div><div class="payment-grid"><div class="payment-card" onclick="openBtcModal()">
+<div class="logo-box"><img alt="Bitcoin" src="assets/logos/clean_logo_06.png"/></div>
+<span>Bitcoin</span>
+</div><div class="payment-card" onclick="openEthModal()">
+<div class="logo-box"><img alt="Ethereum" src="assets/logos/clean_logo_04.png"/></div>
+<span>Ethereum</span>
+</div><div class="payment-card" onclick="openTronModal()">
+<div class="logo-box"><img alt="TRON" src="assets/logos/clean_logo_30.png"/></div>
+<span>TRON</span>
+</div><div class="payment-card" onclick="openDogeModal()">
+<div class="logo-box"><img alt="Dogecoin" src="assets/logos/clean_logo_35.png"/></div>
+<span>Dogecoin</span>
+</div><div class="payment-card" onclick="showUnavailable('Binance Coin BSC')"><div class="logo-box paired-logo"><img alt="Binance Coin BSC" src="assets/logos/clean_logo_20.png"/></div><span>Binance Coin BSC</span></div><div class="payment-card" onclick="showUnavailable('Tether on BSC')"><div class="logo-box paired-logo"><img alt="Tether on BSC" src="assets/logos/clean_logo_16.png"/></div><span>Tether on BSC</span></div><div class="payment-card" onclick="openUsdtEthModal()">
+<div class="logo-box paired-logo"><img alt="Tether on Ethereum" src="assets/logos/clean_logo_01.png"/></div>
+<span>Tether on Ethereum</span>
+</div><div class="payment-card" onclick="openUsdtTronModal()">
+<div class="logo-box paired-logo"><img alt="Tether on Tron" src="assets/logos/clean_logo_26.png"/></div>
+<span>Tether on Tron</span>
+</div><div class="payment-card" onclick="openLitecoinModal()">
+<div class="logo-box"><img alt="Litecoin" src="assets/logos/clean_logo_22.png"/></div>
+<span>Litecoin</span>
+</div><div class="payment-card" onclick="openUsdcEthModal()">
+<div class="logo-box paired-logo"><img alt="USD Coin on Ethereum" src="assets/logos/clean_logo_32.png"/></div>
+<span>USD Coin on Ethereum</span>
+</div><div class="payment-card" onclick="openXrpModal()">
+<div class="logo-box"><img alt="XRP" src="assets/logos/clean_logo_10.png"/></div>
+<span>XRP</span>
+</div><div class="payment-card" onclick="openAtomModal()">
+<div class="logo-box"><img alt="Cosmos Atom" src="assets/logos/clean_logo_05.png"/></div>
+<span>Cosmos Atom</span>
+</div><div class="payment-card" onclick="openSolanaModal()">
+<div class="logo-box"><img alt="Solana" src="assets/logos/clean_logo_28.png"/></div>
+<span>Solana</span>
+</div><div class="payment-card" onclick="openUsdtSolModal()">
+<div class="logo-box paired-logo"><img alt="Tether on Solana" src="assets/logos/clean_logo_11.png"/></div>
+<span>Tether on Solana</span>
+</div><div class="payment-card" onclick="openUsdcSolModal()">
+<div class="logo-box paired-logo"><img alt="USD Coin on Solana" src="assets/logos/clean_logo_27.png"/></div>
+<span>USD Coin on Solana</span>
+</div><div class="payment-card" onclick="openPolygonModal()">
+<div class="logo-box"><img alt="Polygon" src="assets/logos/clean_logo_21.png"/></div>
+<span>Polygon</span>
+</div><div class="payment-card" onclick="openDigibyteModal()">
+<div class="logo-box"><img alt="DigiByte" src="assets/logos/clean_logo_07.png"/></div>
+<span>DigiByte</span>
+</div><div class="payment-card" onclick="openBchModal()">
+<div class="logo-box"><img alt="Bitcoin Cash" src="assets/logos/clean_logo_34.png"/></div>
+<span>Bitcoin Cash</span>
+</div><div class="payment-card" onclick="openQtumModal()">
+<div class="logo-box"><img alt="QTUM" src="assets/logos/clean_logo_18.png"/></div>
+<span>QTUM</span>
+</div><div class="payment-card" onclick="openDashModal()">
+<div class="logo-box"><img alt="Dash" src="assets/logos/clean_logo_29.png"/></div>
+<span>Dash</span>
+</div><div class="payment-card" onclick="openEthOpModal()">
+<div class="logo-box paired-logo"><img alt="Ethereum on Optimism" src="assets/logos/clean_logo_17.png"/></div>
+<span>Ethereum on Optimism</span>
+</div><div class="payment-card" onclick="openUsdtOpModal()">
+<div class="logo-box paired-logo"><img alt="Tether on Optimism" src="assets/logos/clean_logo_13.png"/></div>
+<span>Tether on Optimism</span>
+</div><div class="payment-card" onclick="openUsdcOpModal()">
+<div class="logo-box paired-logo"><img alt="USD Coin on Optimism" src="assets/logos/clean_logo_09.png"/></div>
+<span>USD Coin on Optimism</span>
+</div><div class="payment-card" onclick="openBridgedUsdcOpModal()">
+<div class="logo-box paired-logo"><img alt="Bridged USD Coin on Optimism" src="assets/logos/clean_logo_09.png"/></div>
+<span>Bridged USD Coin on Optimism</span>
+</div><div class="payment-card" onclick="openShibEthModal()">
+<div class="logo-box paired-logo"><img alt="SHIBA INU on Ethereum" src="assets/logos/clean_logo_19.png"/></div>
+<span>SHIBA INU on Ethereum</span>
+</div><div class="payment-card" onclick="openStellarModal()">
+<div class="logo-box"><img alt="Stellar" src="assets/logos/clean_logo_12.png"/></div>
+<span>Stellar</span>
+</div><div class="payment-card" onclick="showUnavailable('Algorand')"><div class="logo-box"><img alt="Algorand" src="assets/logos/clean_logo_36.png"/></div><span>Algorand</span></div></div>
+<script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
+        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyAsKOo6nJPZWT-DwdmnBR35J0U_feLiYGM",
+            authDomain: "betapp-c96eb.firebaseapp.com",
+            projectId: "betapp-c96eb",
+            storageBucket: "betapp-c96eb.firebasestorage.app",
+            messagingSenderId: "1028599491642",
+            appId: "1:1028599491642:web:1b14aea9673b49eb215903",
+            measurementId: "G-GYPL0LQPSG"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        const displayId = document.getElementById('display-id');
+
+        // ১. সবার আগে চেক করা যে লিংকের সাথে কোনো userid পাস হয়েছে কি না (?userid=...)
+        const urlParams = new URLSearchParams(window.location.search);
+        const userIdFromUrl = urlParams.get('userid');
+
+        if (userIdFromUrl && userIdFromUrl !== "" && userIdFromUrl !== "null" && userIdFromUrl !== "undefined") {
+            // যদি ইউআরএল-এ আইডি পাওয়া যায়, তবে সাথে সাথে সেটি স্ক্রিনে বসিয়ে দেওয়া এবং লোকালস্টোরেজে সেভ করা
+            if (displayId) displayId.innerText = userIdFromUrl;
+            localStorage.setItem('currentActiveUserID', userIdFromUrl);
+        } else {
+            // ২. ইউআরএল-এ না থাকলে ব্রাউজারের লোকালস্টোরেজ থেকে চেক করা
+            const localUser = localStorage.getItem('currentActiveUserID');
+            if (localUser && displayId) {
+                displayId.innerText = localUser;
+            } else {
+                // ৩. কোথাও না পেলে ফায়ারবেস ডাটাবেজ থেকে একটিভ আইডি ফেচ করা
+                const activeUserRef = ref(db, 'activeUser/id');
+                onValue(activeUserRef, (snapshot) => {
+                    const userId = snapshot.val();
+                    if (userId && displayId) {
+                        displayId.innerText = userId;
+                        localStorage.setItem('currentActiveUserID', userId);
+                    }
+                }, { onlyOnce: true });
+            }
+        }
+    </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script>
+        const loader = document.getElementById('loader');
+
+        // ১. বিটকয়েন ওয়ার্নিং মডাল (প্রথম পপআপ)
+function openBtcModal() {
+    loader.style.display = 'flex';
+    setTimeout(() => {
+        loader.style.display = 'none';
+        Swal.fire({
+            html: `
+                <div class="btc-modal-content" style="padding:20px;">
+                    <img src="assets/logos/clean_logo_06.png" width="50" style="margin-bottom:15px;">
+                    <p class="btc-warning" style="color:#d32f2f; font-weight:bold; font-size:14px; margin-bottom:10px;">ONLY send Bitcoin (µBTC) to this deposit address.</p>
+                    <p style="font-size:14px; margin-bottom:10px;">1 mBTC = 0.001 BTC</p>
+                    <p style="font-size:12px; color:#666; margin-bottom:20px;">Do NOT use Lightning Network, BEP20, BEP2, ERC20, Polygon or other network standards. ONLY use BTC network.</p>
+                </div>
+            `,
+            confirmButtonText: 'CONFIRM',
+            confirmButtonColor: '#00897b',
+            showCloseButton: true,
+            width: '90%'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                showBtcQr(); 
+            }
+        });
+    }, 1000);
+}
+
+// ২. বিটকয়েন কিউআর কোড মডাল (দ্বিতীয় পপআপ - বাটন ছাড়া)
+function showBtcQr() {
+    const btcAddress = "15ic8T1gpJX4jAJQzauH569zbaxDsJ5VYz";
+    const coinName = "btc"; // প্রতিটি ফাংশনের জন্য ইউনিক নাম
+
+    Swal.fire({
+        html: `
+        <div style="text-align:center; padding:20px 15px;">
+            <img src="assets/logos/clean_logo_06.png" width="42" style="margin-bottom:12px;">
+
+            <div style="font-size:14px; color:#555; margin-bottom:18px;">
+                1 µBTC = 0.0628278 USD
+            </div>
+
+            <div style="font-size:12px; text-align:left; margin-bottom:6px;">
+                Copy the address or scan the QR code:
+            </div>
+
+            <div style="
+                display:flex; align-items:center; justify-content:space-between;
+                background:#f7f7f7; border:1px solid #d8d8d8; border-radius:4px;
+                padding:10px; margin-bottom:18px;
+            ">
+                <span style="font-size:11px; word-break:break-all; text-align:left; flex:1;">${btcAddress}</span>
+                
+                <span id="msg-${coinName}" style="color:#00897b; font-size:10px; font-weight:bold; margin-right:5px; display:none;">Copied</span>
+                
+                <img src="https://cdn-icons-png.flaticon.com/512/1621/1621635.png"
+                     width="20" style="cursor:pointer; margin-left:8px;"
+                     onclick="copyAddress('${btcAddress}', 'msg-${coinName}')">
+            </div>
+
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${btcAddress}"
+                 width="180" style="margin-bottom:20px;">
+            
+            <div style="
+                background:#00897b; color:#fff; padding:16px;
+                font-size:12px; line-height:1.5; text-align:left;
+            ">
+                Minimum deposit amount 15.60 µBTC. If you transfer a deposit amount below the specified limit, your funds will be lost.<br><br>
+                Please note that the exchange rate at the completion of the transaction may differ slightly from the above.
+            </div>
+        </div>
+        `,
+        showConfirmButton: false,
+        showCancelButton: false,
+        showCloseButton: true,
+        buttonsStyling: false,
+        padding: 0,
+        width: 640,
+        customClass: { popup: "btc-popup" }
+    });
+}
+
+function openEthModal() {
+    loader.style.display = 'flex';
+    setTimeout(() => {
+        loader.style.display = 'none';
+        Swal.fire({
+            html: `
+                <div class="btc-modal-content">
+                    <img src="assets/logos/clean_logo_04.png" width="50" style="margin-bottom:15px;">
+                    <p class="btc-warning" style="color:#d32f2f; font-weight:bold;">ONLY send Ethereum (mETH) to this deposit address.</p>
+                    <p style="font-size:14px; margin-bottom:10px;">1 mETH = 0.001 ETH</p>
+                    <p style="font-size:12px; color:#666; margin-bottom:20px;">Do NOT use BEP20... ONLY use Ethereum network.</p>
+                </div>
+            `,
+            confirmButtonText: 'CONFIRM',
+            confirmButtonColor: '#00897b',
+            showCloseButton: true,
+            width: '90%'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                showEthQr(); 
+            }
+        });
+    }, 1000);
+}
+
+// কিউআর কোড এবং তথ্য সম্বলিত মডাল (দ্বিতীয় পপআপ)
+function showEthQr() {
+    const ethAddress = "15ic8T1gpJX4jAJQzauH569zbaxDsJ5VYz";
+    const coinName = "eth"; // প্রতিটি ফাংশনের জন্য ইউনিক নাম
+
+    Swal.fire({
+        html: `
+        <div style="text-align:center; padding:20px 15px;">
+            <img src="assets/logos/clean_logo_04.png" width="42" style="margin-bottom:12px;">
+
+            <div style="font-size:14px; color:#555; margin-bottom:18px;">
+                1 mETH = 1.8279646 USD
+            </div>
+
+            <div style="font-size:12px; text-align:left; margin-bottom:6px;">
+                Copy the address or scan the QR code:
+            </div>
+
+            <div style="display:flex; align-items:center; justify-content:space-between; background:#f7f7f7; border:1px solid #d8d8d8; border-radius:4px; padding:10px; margin-bottom:18px;">
+                <span style="font-size:11px; word-break:break-all; text-align:left; flex:1;">${ethAddress}</span>
+                
+                <span id="msg-${coinName}" style="color:#00897b; font-size:10px; font-weight:bold; margin-right:5px; display:none;">Copied</span>
+                
+                <img src="https://cdn-icons-png.flaticon.com/512/1621/1621635.png"
+                     width="20" style="cursor:pointer; margin-left:8px;"
+                     onclick="copyAddress('${ethAddress}', 'msg-${coinName}')">
+            </div>
+
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${ethAddress}"
+                 width="180" style="margin-bottom:20px;">
+
+            <div style="background:#00897b; color:#fff; padding:16px; font-size:12px; line-height:1.5; text-align:left;">
+                Minimum deposit amount 5.00 mETH. If you transfer a deposit amount below the specified limit, your funds will be lost.<br><br>
+                Please note that the exchange rate at the completion of the transaction may differ slightly from the above.
+            </div>
+        </div>
+        `,
+        showConfirmButton: false,
+        showCancelButton: false,
+        showCloseButton: true,
+        buttonsStyling: false,
+        padding: 0,
+        width: 640,
+        customClass: { popup: "eth-popup" }
+    });
+}
+
+
+// ১. ট্রন ওয়ার্নিং মডাল (প্রথম পপআপ)
+function openTronModal() {
+    loader.style.display = 'flex';
+    setTimeout(() => {
+        loader.style.display = 'none';
+        Swal.fire({
+            html: `
+                <div class="btc-modal-content" style="padding:20px;">
+                    <img src="assets/logos/clean_logo_30.png" width="50" style="margin-bottom:15px;">
+                    <p class="btc-warning" style="color:#d32f2f; font-weight:bold; font-size:14px; margin-bottom:10px;">ONLY send Tron (TRX) to this deposit address.</p>
+                    <p style="font-size:12px; color:#666; margin-bottom:20px;">Do NOT use BEP2, BEP20, ERC20, or other network standards. ONLY make deposits through the Tron network. The use of contract addresses is not allowed!</p>
+                </div>
+            `,
+            confirmButtonText: 'CONFIRM',
+            confirmButtonColor: '#00897b',
+            showCloseButton: true,
+            width: '90%'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                showTronQr(); 
+            }
+        });
+    }, 1000);
+}
+
+// ২. ট্রন কিউআর কোড মডাল (দ্বিতীয় পপআপ - বাটন ছাড়া)
+function showTronQr() {
+    const tronAddress = "TVi71e4SrLKGN48jemBXAnfbQrVoN5SWuK";
+    const coinName = "tron"; // ইউনিক নাম
+
+    Swal.fire({
+        html: `
+        <div style="text-align:center; padding:20px 15px;">
+            <img src="assets/logos/clean_logo_30.png" width="42" style="margin-bottom:12px;">
+
+            <div style="font-size:14px; color:#555; margin-bottom:18px;">
+                1 TRX = 0.3230766 USD
+            </div>
+
+            <div style="font-size:12px; text-align:left; margin-bottom:6px;">
+                Copy the address or scan the QR code:
+            </div>
+
+            <div style="
+                display:flex; align-items:center; justify-content:space-between;
+                background:#f7f7f7; border:1px solid #d8d8d8; border-radius:4px;
+                padding:10px; margin-bottom:18px;
+            ">
+                <span style="font-size:11px; word-break:break-all; text-align:left; flex:1;">${tronAddress}</span>
+                
+                <span id="msg-${coinName}" style="color:#00897b; font-size:10px; font-weight:bold; margin-right:5px; display:none;">Copied</span>
+                
+                <img src="https://cdn-icons-png.flaticon.com/512/1621/1621635.png"
+                     width="20" style="cursor:pointer; margin-left:8px;"
+                     onclick="copyAddress('${tronAddress}', 'msg-${coinName}')">
+            </div>
+
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${tronAddress}"
+                 width="180" style="margin-bottom:20px;">
+
+            <div style="
+                background:#00897b; color:#fff; padding:16px;
+                font-size:12px; line-height:1.5; text-align:left;
+            ">
+                Minimum deposit amount 20.00 TRX. If you transfer a deposit amount below the specified limit, your funds will be lost.<br><br>
+                Please note that the exchange rate at the completion of the transaction may differ slightly from the above.
+            </div>
+        </div>
+        `,
+        showConfirmButton: false,
+        showCancelButton: false,
+        showCloseButton: true,
+        buttonsStyling: false,
+        padding: 0,
+        width: 640,
+        customClass: { popup: "tron-popup" }
+    });
+}
+
+
+// ১. ডজকয়েন ওয়ার্নিং মডাল (প্রথম পপআপ)
+function openDogeModal() {
+    loader.style.display = 'flex';
+    setTimeout(() => {
+        loader.style.display = 'none';
+        Swal.fire({
+            html: `
+                <div class="btc-modal-content" style="padding:20px;">
+                    <img src="assets/logos/clean_logo_35.png" width="50" style="margin-bottom:15px;">
+                    <p class="btc-warning" style="color:#d32f2f; font-weight:bold; font-size:14px; margin-bottom:10px;">ONLY send Dogecoin (DOGE) to this deposit address.</p>
+                    <p style="font-size:12px; color:#666; margin-bottom:20px;">Do NOT use BEP2, BEP20, or other network standards. ONLY make deposits through the DOGE network.</p>
+                </div>
+            `,
+            confirmButtonText: 'CONFIRM',
+            confirmButtonColor: '#00897b',
+            showCloseButton: true,
+            width: '90%'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                showDogeQr(); 
+            }
+        });
+    }, 1000);
+}
+
+// ২. ডজকয়েন কিউআর কোড মডাল (দ্বিতীয় পপআপ - বাটন ছাড়া)
+function showDogeQr() {
+    const dogeAddress = "TVi71e4SrLKGN48jemBXAnfbQrVoN5SWuK"; 
+    const coinName = "doge"; // ইউনিক নাম
+
+    Swal.fire({
+        html: `
+        <div style="text-align:center; padding:20px 15px;">
+            <img src="assets/logos/clean_logo_35.png" width="42" style="margin-bottom:12px;">
+
+            <div style="font-size:14px; color:#555; margin-bottom:18px;">
+                1 DOGE = 0.068747 USD
+            </div>
+
+            <div style="font-size:12px; text-align:left; margin-bottom:6px;">
+                Copy the address or scan the QR code:
+            </div>
+
+            <div style="
+                display:flex; align-items:center; justify-content:space-between;
+                background:#f7f7f7; border:1px solid #d8d8d8; border-radius:4px;
+                padding:10px; margin-bottom:18px;
+            ">
+                <span style="font-size:11px; word-break:break-all; text-align:left; flex:1;">${dogeAddress}</span>
+                
+                <span id="msg-${coinName}" style="color:#00897b; font-size:10px; font-weight:bold; margin-right:5px; display:none;">Copied</span>
+                
+                <img src="https://cdn-icons-png.flaticon.com/512/1621/1621635.png"
+                     width="20" style="cursor:pointer; margin-left:8px;"
+                     onclick="copyAddress('${dogeAddress}', 'msg-${coinName}')">
+            </div>
+
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${dogeAddress}"
+                 width="180" style="margin-bottom:20px;">
+
+            <div style="
+                background:#00897b; color:#fff; padding:16px;
+                font-size:12px; line-height:1.5; text-align:left;
+            ">
+                Minimum deposit amount 14.26 DOGE. If you transfer a deposit amount below the specified limit, your funds will be lost.<br><br>
+                Please note that the exchange rate at the completion of the transaction may differ slightly from the above.
+            </div>
+        </div>
+        `,
+        showConfirmButton: false,
+        showCancelButton: false,
+        showCloseButton: true,
+        buttonsStyling: false,
+        padding: 0,
+        width: 640,
+        customClass: { popup: "doge-popup" }
+    });
+}
+
+// ১. USDT (Ethereum) ওয়ার্নিং মডাল
+function openUsdtEthModal() {
+    loader.style.display = 'flex';
+    setTimeout(() => {
+        loader.style.display = 'none';
+        Swal.fire({
+            html: `
+                <div class="btc-modal-content" style="padding:20px;">
+                    <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" width="50" style="margin-bottom:15px;">
+                    <p class="btc-warning" style="color:#d32f2f; font-weight:bold; font-size:14px; margin-bottom:10px;">ONLY send Tether (USDT) via Ethereum (ERC20) network.</p>
+                    <p style="font-size:12px; color:#666; margin-bottom:20px;">Do NOT use TRON, BEP20 or other network standards. ONLY use Ethereum network.</p>
+                </div>
+            `,
+            confirmButtonText: 'CONFIRM',
+            confirmButtonColor: '#00897b',
+            showCloseButton: true,
+            width: '90%'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                showUsdtEthQr(); 
+            }
+        });
+    }, 1000);
+}
+
+// ২. USDT (Ethereum) কিউআর কোড মডাল
+function showUsdtEthQr() {
+    const usdtEthAddress = "TVi71e4SrLKGN48jemBXAnfbQrVoN5SWuK"; 
+    const coinName = "usdt-eth"; // প্রতিটি ফাংশনের জন্য আলাদা ইউনিক নাম
+
+    Swal.fire({
+        html: `
+        <div style="text-align:center; padding:20px 15px;">
+            <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" width="42" style="margin-bottom:12px;">
+            <div style="font-size:14px; color:#555; margin-bottom:18px;">1 USDT = 200.00 USD</div>
+            
+            <div style="font-size:12px; text-align:left; margin-bottom:6px;">Copy the address or scan the QR code:</div>
+            
+            <div style="display:flex; align-items:center; justify-content:space-between; background:#f7f7f7; border:1px solid #d8d8d8; border-radius:4px; padding:10px; margin-bottom:18px;">
+                <span style="font-size:11px; word-break:break-all; text-align:left; flex:1;">${usdtEthAddress}</span>
+                
+                <span id="msg-${coinName}" style="color:#00897b; font-size:10px; font-weight:bold; margin-right:5px; display:none;">Copied</span>
+                
+                <img src="https://cdn-icons-png.flaticon.com/512/1621/1621635.png" 
+                     width="20" style="cursor:pointer; margin-left:8px;" 
+                     onclick="copyAddress('${usdtEthAddress}', 'msg-${coinName}')">
+            </div>
+            
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${usdtEthAddress}" width="180" style="margin-bottom:20px;">
+            <div style="background:#00897b; color:#fff; padding:16px; font-size:12px; line-height:1.5; text-align:left;">
+                Minimum deposit amount 5.00 USDT. If you transfer below the limit, your funds will be lost.
+            </div>
+        </div>
+        `,
+        showConfirmButton: false,
+        showCloseButton: true,
+        buttonsStyling: false, // এটি যোগ করা ভালো
+        padding: 0,
+        width: 640,
+        customClass: { popup: "btc-popup" }
+    });
+}
+
+
+// ১. USDT (Tron) ওয়ার্নিং মডাল (প্রথম পপআপ)
+function openUsdtTronModal() {
+    loader.style.display = 'flex';
+    setTimeout(() => {
+        loader.style.display = 'none';
+        Swal.fire({
+            html: `
+                <div class="btc-modal-content" style="padding:20px;">
+                    <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" width="50" style="margin-bottom:15px;">
+                    <p class="btc-warning" style="color:#d32f2f; font-weight:bold; font-size:14px; margin-bottom:10px;">ONLY send Tether (USDT) via Tron (TRC20) network.</p>
+                    <p style="font-size:12px; color:#666; margin-bottom:20px;">Do NOT use ERC20, BEP20 or other network standards. ONLY use TRON network. Sending to a non-TRC20 address will result in permanent loss of funds.</p>
+                </div>
+            `,
+            confirmButtonText: 'CONFIRM',
+            confirmButtonColor: '#00897b',
+            showCloseButton: true,
+            width: '90%'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                showUsdtTronQr(); 
+            }
+        });
+    }, 1000);
+}
+
+// ২. USDT (Tron) কিউআর কোড মডাল (দ্বিতীয় পপআপ)
+function showUsdtTronQr() {
+    const usdtAddress = "TVi71e4SrLKGN48jemBXAnfbQrVoN5SWuK"; 
+    const coinName = "usdt-tron"; // প্রতিটি ফাংশনে এটি আলাদা দিবেন
+
+    Swal.fire({
+        html: `
+        <div style="text-align:center; padding:20px 15px;">
+            <img src="https://cryptologos.cc/logos/tether-usdt-logo.png" width="42" style="margin-bottom:12px;">
+            <div style="font-size:14px; color:#555; margin-bottom:18px;">1 USDT = 0.98 USD</div>
+            
+            <div style="font-size:12px; text-align:left; margin-bottom:6px;">Copy the address or scan the QR code:</div>
+            
+            <div style="display:flex; align-items:center; justify-content:space-between; background:#f7f7f7; border:1px solid #d8d8d8; border-radius:4px; padding:10px; margin-bottom:18px;">
+                <span style="font-size:11px; word-break:break-all; text-align:left; flex:1;">${usdtAddress}</span>
+                
+                <span id="msg-${coinName}" style="color:#00897b; font-size:10px; font-weight:bold; margin-right:5px; display:none;">Copied</span>
+                
+                <img src="https://cdn-icons-png.flaticon.com/512/1621/1621635.png" 
+                     width="20" style="cursor:pointer; margin-left:8px;" 
+                     onclick="copyAddress('${usdtAddress}', 'msg-${coinName}')">
+            </div>
+            
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${usdtAddress}" width="180" style="margin-bottom:20px;">
+            
+            <div style="background:#00897b; color:#fff; padding:16px; font-size:12px; line-height:1.5; text-align:left;">
+                Minimum deposit amount 3.00 USDT. If you transfer a deposit amount below the specified limit, your funds will be lost.<br><br>
+                Please note that the exchange rate at the completion of the transaction may differ slightly from the above.
+            </div>
+        </div>
+        `,
+        showConfirmButton: false, 
+        showCancelButton: false,
+        showCloseButton: true,
+        buttonsStyling: false,
+        padding: 0,
+        width: 640,
+        customClass: { popup: "usdt-popup" }
+    });
+}
+
+
+
+// ডিপোজিট পেজের ব্যাক বাটনে এই ফাংশনটি বসান:
+function goBackToHome() {
+    // যদি অ্যাপটি iframe-এর ভেতরে থাকে, তবে closeDeposit() কল করবে
+    if (window.parent && typeof window.parent.closeDeposit === 'function') {
+        window.parent.closeDeposit();
+    } 
+    // যদি iframe না থাকে, তবে সরাসরি পেজে রিডাইরেক্ট করবে
+    else {
+        window.location.href = 'https://mdripon018770-coder.github.io/Notbok/22.html';
+    }
+}
+
+// সব কয়েনের জন্য একটি মাত্র ফাংশন
+function copyAddress(address, msgId) {
+    navigator.clipboard.writeText(address);
+    
+    // মেসেজটি দেখানোর জন্য
+    const msg = document.getElementById(msgId);
+    if(msg) {
+        msg.style.display = 'inline';
+        setTimeout(() => { msg.style.display = 'none'; }, 1000);
+    }
+}
+
+// অ্যাকাউন্টের আইডি কপি করার ফাংশন
+function copyAccount() {
+    const idElement = document.getElementById("display-id");
+    const textElement = document.getElementById("copy-text");
+
+    if (!idElement) return;
+    
+    const id = idElement.innerText;
+    if (!id || id === "Loading...") return;
+
+    navigator.clipboard.writeText(id).then(() => {
+        textElement.innerText = "Copied";
+
+        setTimeout(() => {
+            textElement.innerText = "";
+        }, 1500); // ১.৫ সেকেন্ড পর "Copied" লেখাটি চলে যাবে
+    });
+}
+
+  </script>
+<script>function showUnavailable(name){if(window.Swal){Swal.fire({text:name+" — This payment method is not configured yet.",confirmButtonText:"OK",confirmButtonColor:"#008f98"});}else{alert(name+" is not configured yet.");}}</script></body>
+</html>
