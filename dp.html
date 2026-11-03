@@ -1,28 +1,17 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Account Deposits UI</title>
-<link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-minimal/minimal.css" rel="stylesheet"/>
-<style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Deposits UI</title>
+    <link href="https://cdn.jsdelivr.net/npm/@sweetalert2/theme-minimal/minimal.css" rel="stylesheet">
+    <style>
         * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Arial, sans-serif; }
         body { background-color: #f4f7f6; padding-bottom: 50px; }
 
-        /* Header */
-        .header {
-            background-color: #fff; padding: 10px 15px; display: flex; align-items: center;
-            border-bottom: 1px solid #e0e0e0; height: 55px; position: sticky; top: 0; z-index: 100;
-        }
-        .header h2 { flex-grow: 1; text-align: center; color: #4d8281; font-size: 19px; font-weight: 700; }
-        .icon-btn svg { width: 24px; height: 24px; fill: none; stroke: #4d8281; stroke-width: 2.5; }
 
         /* Account Info Section */
         .account-info { padding: 15px; background: #fff; }
-        .account-display { display: flex; align-items: center; gap: 8px; margin-bottom: 12px; font-weight: bold; font-size: 18px; color: #333; }
-        .copy-btn { background: none; border: none; cursor: pointer; display: flex; align-items: center; }
-        .copy-btn svg { width: 18px; height: 18px; color: #4d8281; }
         .btn-types { background-color: #00897b; color: white; border: none; padding: 10px 14px; border-radius: 2px; font-size: 14px; font-weight: 500; }
 
         /* Banner Text Styles from Screenshot */
@@ -302,185 +291,277 @@
     outline: none !important;
 }
 
-    
-/* Screenshot-matched deposit layout */
-body{background:#fff;padding-bottom:24px;color:#444}
-.header{height:65px;border-bottom:1px solid #e7eeee;padding:0 18px}
-.header h2{font-size:21px;font-weight:600;color:#548987}
-.account-info{padding:20px 12px 65px}
-.account-display{font-size:18px;margin-bottom:18px}
-.btn-types{background:#098f98;border-radius:0;font-size:15px}
-.banner-container{margin-top:0;padding:0 12px 0}
-.info-box,.bonus-box{background:#e1e1e1;padding:13px;margin-bottom:12px;border-radius:0;font-size:15px;line-height:1.4}
-.bonus-box{padding-bottom:19px}.bonus-box h4{font-size:16px}.bonus-box ol{font-size:14px;padding-left:38px}
-.section-title{margin-top:14px;background:#dce7eb;color:#777;padding:17px 0 12px;font-size:15px;letter-spacing:0;font-weight:400}
-.payment-grid{background:#dce7eb;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px 12px;padding:12px 12px 18px}
-.payment-card{height:136px;border-radius:3px;padding:14px 6px;position:relative;overflow:hidden;justify-content:space-between;box-shadow:0 0 1px #d8dfe0}
-.payment-card .logo-box{height:57px;display:flex;align-items:center;justify-content:center;width:100%}
-.logo-box img{max-width:115px;max-height:47px;width:auto;height:auto;object-fit:contain}
-.payment-card span{margin:0;min-height:32px;display:flex;align-items:center;justify-content:center;font-size:14px;color:#888;line-height:1.25}
-.combo-logo{height:45px;gap:4px;background:#f7f7f7;border-radius:40px;padding:5px 12px}
-.combo-logo img{height:31px;width:31px;object-fit:contain}
-.p2p-badge{position:absolute;right:0;top:0;background:#f20a13;color:#fff;font-size:12px;font-weight:500;padding:3px 7px 3px 13px;clip-path:polygon(20% 0,100% 0,100% 100%,20% 100%,0 50%);font-style:normal}
-.brand-text,.logo-fallback{font-size:22px;font-weight:800;white-space:nowrap}.brand-astropay{color:#050505}.brand-skrill,.brand-skrill-1-tap{color:#8a1b73}.brand-neteller{color:#80b33b;font-style:italic}.brand-icash\.one{color:#111;font-size:19px}
-@media(min-width:680px){.payment-grid,.banner-container,.account-info{max-width:720px;margin-left:auto;margin-right:auto}.section-title{max-width:720px;margin-left:auto;margin-right:auto}.payment-card{height:155px}}
-
-/* Accurate screenshot card proportions and cleaned full-combination artwork */
-body{background:#fff} .payment-grid{gap:12px 12px;padding:12px 12px 18px;background:#dce7eb}.payment-card{height:136px;border-radius:4px}.payment-card .logo-box{height:62px}.payment-card .logo-box img{max-height:52px;max-width:128px;width:auto;height:auto;object-fit:contain}.payment-card .paired-logo img{max-height:49px;max-width:132px}.payment-card span{font-size:14px}.header .icon-btn{min-width:30px}.section-title{background:#dce7eb}
-/* Screenshot-matched header only; all other page styles remain unchanged */
-.header{height:66px!important;padding:0 19px!important;background:#fff!important;display:flex!important;align-items:center!important;justify-content:space-between!important;border-bottom:1px solid #e7eeee!important;position:sticky;top:0;z-index:100}
-.header h2{flex:1!important;text-align:center!important;color:#548987!important;font-size:22px!important;font-weight:600!important;letter-spacing:0!important;line-height:1.2!important;margin:0!important}
-.header .icon-btn{width:36px!important;height:42px!important;min-width:36px!important;display:flex!important;align-items:center!important;justify-content:center!important;cursor:pointer}
-.header .icon-btn svg{width:33px!important;height:33px!important;fill:none!important;stroke:#548987!important;stroke-width:2.25!important;stroke-linecap:round!important;stroke-linejoin:round!important}
-.header .refresh-btn svg{width:34px!important;height:34px!important;stroke:#65c98c!important;stroke-width:2.5!important}
-</style>
+      /* Integrated under index.html header: no second header, no blank top strip. */
+      html,body{margin:0;min-height:100%;background:#fff}
+      .account-info{padding:14px 16px 16px;background:#fff}
+      .account-display{display:flex;align-items:center;gap:7px;margin:0 0 16px;font-size:17px;font-weight:700;color:#30383d;flex-wrap:wrap}
+      #display-id{font-weight:700;overflow-wrap:anywhere}
+      .copy-btn{padding:2px;border:0;background:transparent;color:#4d8281;cursor:pointer}
+      .copy-btn svg{width:22px;height:22px;stroke:#4d8281}
+      #copy-text{font-size:12px;color:#00897b;font-weight:600}
+      .btn-types{font-size:14px;padding:12px 14px}
+    </style>
 </head>
 <body>
-<div class="loader-overlay" id="loader"><div class="dot-loader"><div></div><div></div><div></div><div></div></div></div>
-<div class="header">
-<!-- নতুন goBackToHome ফাংশনটি কল করা হচ্ছে -->
-<div class="icon-btn" onclick="goBackToHome()" style="cursor: pointer;">
-<svg viewbox="0 0 24 24"><path d="M19 12H5M12 19l-7-7 7-7"></path></svg>
-</div>
-<h2>Account deposits</h2>
-<div class="icon-btn refresh-btn" onclick="location.reload()" style="cursor: pointer;">
-<svg viewBox="0 0 24 24" aria-label="Refresh"><path d="M20.5 11a8.5 8.5 0 1 0-2.5 6.1"/><path d="M20.5 4.5V11H14"/></svg>
-</div>
-</div>
-<div class="account-info">
-<div class="account-display">
-        ACCOUNT <span id="display-id">Loading...</span>
-<button class="copy-btn" onclick="copyAccount()">
-<svg fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24">
-<rect height="13" rx="2" ry="2" width="13" x="9" y="9"></rect>
-<path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
-</svg>
-<span id="copy-text" style="margin-left:6px;font-size:12px;color:#4d8281;"></span>
-</button>
-</div>
-<button class="btn-types">Types of payment systems</button>
-</div>
-<div class="banner-container"><div class="info-box">Join 120xbetBet Payment Agent &amp; Affiliate Programs – contact us via email at<br/><strong>Mail: 120xbetapp@gmail.com</strong><br/><strong>Telegram: mobcash_new_ @Manager_120xBet</strong></div><div class="bonus-box"><h4>Get your bonus in 3 steps:</h4><ol><li>Fill in your profile</li><li>Verify your phone number and email</li><li>Make a deposit that meets the bonus requirements</li></ol></div></div><div class="section-title">RECOMMENDED</div><div class="payment-grid"><div class="payment-card" onclick="openLocalDeposit('Bkash P2P')"><div class="logo-box"><img alt="bKash" src="assets/logos/bkash.png" style="width:115px;height:62px;object-fit:contain;max-width:100%;"/></div><span>Bkash P2P</span></div><div class="payment-card" onclick="openLocalDeposit('Nagad p2c')"><div class="logo-box"><img alt="Nagad p2c" src="assets/logos/clean_logo_38.png"/></div><span>Nagad p2c</span></div><div class="payment-card" onclick="openLocalDeposit('bKash')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="bKash" src="assets/logos/bkash.png" style="width:115px;height:62px;object-fit:contain;max-width:100%;"/></div><span>bKash</span></div><div class="payment-card" onclick="openLocalDeposit('Nagad')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad" src="assets/logos/clean_logo_38.png"/></div><span>Nagad</span></div><div class="payment-card" onclick="openLocalDeposit('Bkash Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Bkash Free" src="assets/logos/clean_logo_08.png"/></div><span>Bkash Free</span></div><div class="payment-card" onclick="openLocalDeposit('Nagad Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad Free" src="assets/logos/clean_logo_15.png"/></div><span>Nagad Free</span></div><div class="payment-card" onclick="showUnavailable('Neteller')"><div class="logo-box"><img alt="Neteller" src="assets/logos/clean_logo_23.png"/></div><span>Neteller</span></div></div><div class="section-title">E-WALLETS</div><div class="payment-grid"><div class="payment-card" onclick="openLocalDeposit('bKash')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="bKash" src="assets/logos/bkash.png" style="width:115px;height:62px;object-fit:contain;max-width:100%;"/></div><span>bKash</span></div><div class="payment-card" onclick="openLocalDeposit('Nagad')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad" src="assets/logos/clean_logo_38.png"/></div><span>Nagad</span></div><div class="payment-card" onclick="openLocalDeposit('Bkash Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Bkash Free" src="assets/logos/clean_logo_08.png"/></div><span>Bkash Free</span></div><div class="payment-card" onclick="openLocalDeposit('Nagad Free')"><i class="p2p-badge">P2P</i><div class="logo-box"><img alt="Nagad Free" src="assets/logos/clean_logo_15.png"/></div><span>Nagad Free</span></div><div class="payment-card" onclick="showUnavailable('AstroPay')"><div class="logo-box"><img alt="AstroPay" src="assets/logos/clean_logo_25.png"/></div><span>AstroPay</span></div><div class="payment-card" onclick="showUnavailable('Skrill')"><div class="logo-box"><img alt="Skrill" src="assets/logos/clean_logo_24.png"/></div><span>Skrill</span></div><div class="payment-card" onclick="showUnavailable('Neteller')"><div class="logo-box"><img alt="Neteller" src="assets/logos/clean_logo_23.png"/></div><span>Neteller</span></div><div class="payment-card" onclick="showUnavailable('Skrill 1-Tap')"><div class="logo-box"><img alt="Skrill 1-Tap" src="assets/logos/clean_logo_37.png"/></div><span>Skrill 1-Tap</span></div><div class="payment-card" onclick="showUnavailable('iCash.One')"><div class="logo-box"><img alt="iCash.One" src="assets/logos/clean_logo_14.png"/></div><span>iCash.One</span></div></div><div class="section-title">BANK TRANSFER</div><div class="payment-grid"><div class="payment-card" onclick="openLocalDeposit('Bkash P2P')"><div class="logo-box"><img alt="bKash" src="assets/logos/bkash.png" style="width:115px;height:62px;object-fit:contain;max-width:100%;"/></div><span>Bkash P2P</span></div><div class="payment-card" onclick="openLocalDeposit('Nagad p2c')"><div class="logo-box"><img alt="Nagad p2c" src="assets/logos/clean_logo_38.png"/></div><span>Nagad p2c</span></div></div><div class="section-title">CRYPTOCURRENCY</div><div class="payment-grid"><div class="payment-card" onclick="openBtcModal()">
-<div class="logo-box"><img alt="Bitcoin" src="assets/logos/clean_logo_06.png"/></div>
-<span>Bitcoin</span>
-</div><div class="payment-card" onclick="openEthModal()">
-<div class="logo-box"><img alt="Ethereum" src="assets/logos/clean_logo_04.png"/></div>
-<span>Ethereum</span>
-</div><div class="payment-card" onclick="openTronModal()">
-<div class="logo-box"><img alt="TRON" src="assets/logos/clean_logo_30.png"/></div>
-<span>TRON</span>
-</div><div class="payment-card" onclick="openDogeModal()">
-<div class="logo-box"><img alt="Dogecoin" src="assets/logos/clean_logo_35.png"/></div>
-<span>Dogecoin</span>
-</div><div class="payment-card" onclick="showUnavailable('Binance Coin BSC')"><div class="logo-box paired-logo"><img alt="Binance Coin BSC" src="assets/logos/clean_logo_20.png"/></div><span>Binance Coin BSC</span></div><div class="payment-card" onclick="showUnavailable('Tether on BSC')"><div class="logo-box paired-logo"><img alt="Tether on BSC" src="assets/logos/clean_logo_16.png"/></div><span>Tether on BSC</span></div><div class="payment-card" onclick="openUsdtEthModal()">
-<div class="logo-box paired-logo"><img alt="Tether on Ethereum" src="assets/logos/clean_logo_01.png"/></div>
-<span>Tether on Ethereum</span>
-</div><div class="payment-card" onclick="openUsdtTronModal()">
-<div class="logo-box paired-logo"><img alt="Tether on Tron" src="assets/logos/clean_logo_26.png"/></div>
-<span>Tether on Tron</span>
-</div><div class="payment-card" onclick="openLitecoinModal()">
-<div class="logo-box"><img alt="Litecoin" src="assets/logos/clean_logo_22.png"/></div>
-<span>Litecoin</span>
-</div><div class="payment-card" onclick="openUsdcEthModal()">
-<div class="logo-box paired-logo"><img alt="USD Coin on Ethereum" src="assets/logos/clean_logo_32.png"/></div>
-<span>USD Coin on Ethereum</span>
-</div><div class="payment-card" onclick="openXrpModal()">
-<div class="logo-box"><img alt="XRP" src="assets/logos/clean_logo_10.png"/></div>
-<span>XRP</span>
-</div><div class="payment-card" onclick="openAtomModal()">
-<div class="logo-box"><img alt="Cosmos Atom" src="assets/logos/clean_logo_05.png"/></div>
-<span>Cosmos Atom</span>
-</div><div class="payment-card" onclick="openSolanaModal()">
-<div class="logo-box"><img alt="Solana" src="assets/logos/clean_logo_28.png"/></div>
-<span>Solana</span>
-</div><div class="payment-card" onclick="openUsdtSolModal()">
-<div class="logo-box paired-logo"><img alt="Tether on Solana" src="assets/logos/clean_logo_11.png"/></div>
-<span>Tether on Solana</span>
-</div><div class="payment-card" onclick="openUsdcSolModal()">
-<div class="logo-box paired-logo"><img alt="USD Coin on Solana" src="assets/logos/clean_logo_27.png"/></div>
-<span>USD Coin on Solana</span>
-</div><div class="payment-card" onclick="openPolygonModal()">
-<div class="logo-box"><img alt="Polygon" src="assets/logos/clean_logo_21.png"/></div>
-<span>Polygon</span>
-</div><div class="payment-card" onclick="openDigibyteModal()">
-<div class="logo-box"><img alt="DigiByte" src="assets/logos/clean_logo_07.png"/></div>
-<span>DigiByte</span>
-</div><div class="payment-card" onclick="openBchModal()">
-<div class="logo-box"><img alt="Bitcoin Cash" src="assets/logos/clean_logo_34.png"/></div>
-<span>Bitcoin Cash</span>
-</div><div class="payment-card" onclick="openQtumModal()">
-<div class="logo-box"><img alt="QTUM" src="assets/logos/clean_logo_18.png"/></div>
-<span>QTUM</span>
-</div><div class="payment-card" onclick="openDashModal()">
-<div class="logo-box"><img alt="Dash" src="assets/logos/clean_logo_29.png"/></div>
-<span>Dash</span>
-</div><div class="payment-card" onclick="openEthOpModal()">
-<div class="logo-box paired-logo"><img alt="Ethereum on Optimism" src="assets/logos/clean_logo_17.png"/></div>
-<span>Ethereum on Optimism</span>
-</div><div class="payment-card" onclick="openUsdtOpModal()">
-<div class="logo-box paired-logo"><img alt="Tether on Optimism" src="assets/logos/clean_logo_13.png"/></div>
-<span>Tether on Optimism</span>
-</div><div class="payment-card" onclick="openUsdcOpModal()">
-<div class="logo-box paired-logo"><img alt="USD Coin on Optimism" src="assets/logos/clean_logo_09.png"/></div>
-<span>USD Coin on Optimism</span>
-</div><div class="payment-card" onclick="openBridgedUsdcOpModal()">
-<div class="logo-box paired-logo"><img alt="Bridged USD Coin on Optimism" src="assets/logos/clean_logo_09.png"/></div>
-<span>Bridged USD Coin on Optimism</span>
-</div><div class="payment-card" onclick="openShibEthModal()">
-<div class="logo-box paired-logo"><img alt="SHIBA INU on Ethereum" src="assets/logos/clean_logo_19.png"/></div>
-<span>SHIBA INU on Ethereum</span>
-</div><div class="payment-card" onclick="openStellarModal()">
-<div class="logo-box"><img alt="Stellar" src="assets/logos/clean_logo_12.png"/></div>
-<span>Stellar</span>
-</div><div class="payment-card" onclick="showUnavailable('Algorand')"><div class="logo-box"><img alt="Algorand" src="assets/logos/clean_logo_36.png"/></div><span>Algorand</span></div></div>
-<script type="module">
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-app.js";
-        import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/9.6.1/firebase-database.js";
 
-        const firebaseConfig = {
-            apiKey: "AIzaSyBjH50DE06FvUHD9M0FxC3yG96pCEwejpg",
-            authDomain: "xbet-e3f27.firebaseapp.com",
-            databaseURL: "https://xbet-e3f27-default-rtdb.asia-southeast1.firebasedatabase.app",
-            projectId: "xbet-e3f27",
-            storageBucket: "xbet-e3f27.firebasestorage.app",
-            messagingSenderId: "263831306909",
-            appId: "1:263831306909:web:6dd6ae7a08c31d0870ca74",
-            measurementId: "G-3QYP5RYD34"
-        };
+    <div id="loader" class="loader-overlay"><div class="dot-loader"><div></div><div></div><div></div><div></div></div></div>
 
-        const app = initializeApp(firebaseConfig);
-        const db = getDatabase(app);
+    <!-- The parent index.html owns the page header. Only the current user's account is shown here. -->
+    <section class="account-info">
+      <div class="account-display" aria-live="polite">
+        <span>ACCOUNT</span> <strong id="display-id">—</strong>
+        <button class="copy-btn" type="button" onclick="copyAccount()" aria-label="Copy account ID" title="Copy account ID">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+        </button>
+        <span id="copy-text" role="status" aria-live="polite"></span>
+      </div>
+      <button class="btn-types" type="button">Types of payment systems</button>
+    </section>
 
-        const displayId = document.getElementById('display-id');
+   <div class="section-title">Cryptocurrency</div>
+    <div class="payment-grid">
+        <div class="payment-card" onclick="openBtcModal()">
+            <div class="logo-box"><img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" alt="BTC"></div>
+            <span>Bitcoin</span>
+        </div>
+        <div class="payment-card" onclick="openEthModal()">
+            <div class="logo-box"><img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" alt="ETH"></div>
+            <span>Ethereum</span>
+        </div>
 
-        // ১. সবার আগে চেক করা যে লিংকের সাথে কোনো userid পাস হয়েছে কি না (?userid=...)
-        const urlParams = new URLSearchParams(window.location.search);
-        const userIdFromUrl = urlParams.get('userid');
+        <div class="payment-card" onclick="openTronModal()">
+    <div class="logo-box">
+        <img src="https://cryptologos.cc/logos/tron-trx-logo.png">
+    </div>
+    <span>TRON</span>
+</div>
 
-        if (userIdFromUrl && userIdFromUrl !== "" && userIdFromUrl !== "null" && userIdFromUrl !== "undefined") {
-            // যদি ইউআরএল-এ আইডি পাওয়া যায়, তবে সাথে সাথে সেটি স্ক্রিনে বসিয়ে দেওয়া এবং লোকালস্টোরেজে সেভ করা
-            if (displayId) displayId.innerText = userIdFromUrl;
-            localStorage.setItem('currentActiveUserID', userIdFromUrl);
-        } else {
-            // ২. ইউআরএল-এ না থাকলে ব্রাউজারের লোকালস্টোরেজ থেকে চেক করা
-            const localUser = localStorage.getItem('currentActiveUserID');
-            if (localUser && displayId) {
-                displayId.innerText = localUser;
-            } else {
-                // ৩. কোথাও না পেলে ফায়ারবেস ডাটাবেজ থেকে একটিভ আইডি ফেচ করা
-                const activeUserRef = ref(db, 'activeUser/id');
-                onValue(activeUserRef, (snapshot) => {
-                    const userId = snapshot.val();
-                    if (userId && displayId) {
-                        displayId.innerText = userId;
-                        localStorage.setItem('currentActiveUserID', userId);
-                    }
-                }, { onlyOnce: true });
-            }
-        }
-    </script>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<div class="payment-card" onclick="openDogeModal()">
+    <div class="logo-box">
+        <img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png">
+    </div>
+    <span>Dogecoin</span>
+</div>
+
+<div class="payment-card" onclick="openUsdtEthModal()">
+    <div class="combo-logo">
+        <img src="https://cryptologos.cc/logos/tether-usdt-logo.png">
+        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png">
+    </div>
+    <span>Tether on Ethereum</span>
+</div>
+
+<div class="payment-card" onclick="openUsdtTronModal()">
+    <div class="combo-logo">
+        <img src="https://cryptologos.cc/logos/tether-usdt-logo.png">
+        <img src="https://cryptologos.cc/logos/tron-trx-logo.png">
+    </div>
+    <span>Tether on Tron</span>
+</div>
+
+<div class="payment-card" onclick="openLitecoinModal()">
+    <div class="logo-box">
+        <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.png">
+    </div>
+    <span>Litecoin</span>
+</div>
+        <div class="payment-card" onclick="openUsdcEthModal()">
+    <div class="combo-logo">
+        <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png">
+        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png">
+    </div>
+    <span>USD Coin on Ethereum</span>
+</div>
+
+<div class="payment-card" onclick="openXrpModal()">
+    <div class="logo-box">
+        <img src="https://cryptologos.cc/logos/xrp-xrp-logo.png">
+    </div>
+    <span>XRP</span>
+</div>
+
+<div class="payment-card" onclick="openAtomModal()">
+    <div class="logo-box">
+        <img src="https://cryptologos.cc/logos/cosmos-atom-logo.png">
+    </div>
+    <span>Cosmos Atom</span>
+</div>
+
+<div class="payment-card" onclick="openSolanaModal()">
+    <div class="logo-box">
+        <img src="https://cryptologos.cc/logos/solana-sol-logo.png">
+    </div>
+    <span>Solana</span>
+</div>
+
+<div class="payment-card" onclick="openUsdtSolModal()">
+    <div class="combo-logo">
+        <img src="https://cryptologos.cc/logos/tether-usdt-logo.png">
+        <img src="https://cryptologos.cc/logos/solana-sol-logo.png">
+    </div>
+    <span>Tether on Solana</span>
+</div>
+
+<div class="payment-card" onclick="openUsdcSolModal()">
+    <div class="combo-logo">
+        <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png">
+        <img src="https://cryptologos.cc/logos/solana-sol-logo.png">
+    </div>
+    <span>USD Coin on Solana</span>
+</div>
+
+<div class="payment-card" onclick="openPolygonModal()">
+    <div class="logo-box">
+        <img src="https://cryptologos.cc/logos/polygon-matic-logo.png">
+    </div>
+    <span>Polygon</span>
+</div>
+
+<div class="payment-card" onclick="openDigibyteModal()">
+    <div class="logo-box">
+        <img src="https://cryptologos.cc/logos/digibyte-dgb-logo.png">
+    </div>
+    <span>DigiByte</span>
+</div>
+
+<div class="payment-card" onclick="openBchModal()">
+    <div class="logo-box">
+        <img src="https://cryptologos.cc/logos/bitcoin-cash-bch-logo.png">
+    </div>
+    <span>Bitcoin Cash</span>
+</div>
+
+       <div class="payment-card" onclick="openQtumModal()">
+    <div class="logo-box"><img src="https://cryptologos.cc/logos/qtum-qtum-logo.png"></div>
+    <span>QTUM</span>
+</div>
+
+<div class="payment-card" onclick="openDashModal()">
+    <div class="logo-box"><img src="https://cryptologos.cc/logos/dash-dash-logo.png"></div>
+    <span>Dash</span>
+</div>
+
+<div class="payment-card" onclick="openEthOpModal()">
+    <div class="combo-logo">
+        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png">
+        <img src="https://cryptologos.cc/logos/optimism-ethereum-op-logo.png">
+    </div>
+    <span>Ethereum on Optimism</span>
+</div>
+
+<div class="payment-card" onclick="openUsdtOpModal()">
+    <div class="combo-logo">
+        <img src="https://cryptologos.cc/logos/tether-usdt-logo.png">
+        <img src="https://cryptologos.cc/logos/optimism-ethereum-op-logo.png">
+    </div>
+    <span>Tether on Optimism</span>
+</div>
+
+<div class="payment-card" onclick="openUsdcOpModal()">
+    <div class="combo-logo">
+        <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png">
+        <img src="https://cryptologos.cc/logos/optimism-ethereum-op-logo.png">
+    </div>
+    <span>USD Coin on Optimism</span>
+</div>
+
+<div class="payment-card" onclick="openBridgedUsdcOpModal()">
+    <div class="combo-logo">
+        <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png">
+        <img src="https://cryptologos.cc/logos/optimism-ethereum-op-logo.png">
+    </div>
+    <span>Bridged USD Coin on Optimism</span>
+</div>
+
+<div class="payment-card" onclick="openDaiEthModal()">
+    <div class="combo-logo">
+        <img src="https://cryptologos.cc/logos/dai-dai-logo.png">
+        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png">
+    </div>
+    <span>Dai on Ethereum</span>
+</div>
+
+<div class="payment-card" onclick="openShibEthModal()">
+    <div class="combo-logo">
+        <img src="https://cryptologos.cc/logos/shiba-inu-shib-logo.png">
+        <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png">
+    </div>
+    <span>SHIBA INU on Ethereum</span>
+</div>
+
+<div class="payment-card" onclick="openZcashModal()">
+    <div class="logo-box"><img src="https://cryptologos.cc/logos/zcash-zec-logo.png"></div>
+    <span>ZCash</span>
+</div>
+
+<div class="payment-card" onclick="openMoneroModal()">
+    <div class="logo-box"><img src="https://cryptologos.cc/logos/monero-xmr-logo.png"></div>
+    <span>Monero</span>
+</div>
+
+<div class="payment-card" onclick="openTrueUsdModal()">
+    <div class="logo-box"><img src="https://cryptologos.cc/logos/trueusd-tusd-logo.png"></div>
+    <span>TrueUSD</span>
+</div>
+
+<div class="payment-card" onclick="openPaxosModal()">
+    <div class="logo-box"><img src="https://cryptologos.cc/logos/paxos-standard-pax-logo.png"></div>
+    <span>Standard Paxos</span>
+</div>
+
+<div class="payment-card" onclick="openCardanoModal()">
+    <div class="logo-box"><img src="https://cryptologos.cc/logos/cardano-ada-logo.png"></div>
+    <span>Cardano</span>
+</div>
+
+<div class="payment-card" onclick="openStellarModal()">
+    <div class="logo-box"><img src="https://cryptologos.cc/logos/stellar-xlm-logo.png"></div>
+    <span>Stellar</span>
+
+    </div>
+  </div>
+
+
+
+
 <script>
+// The parent app must pass the CURRENT signed-in user's ID, never a shared Firebase activeUser/id.
+(function () {
+  const idNode = document.getElementById('display-id');
+  const params = new URLSearchParams(location.search);
+  function setAccount(value) {
+    const id = String(value ?? '').trim();
+    if (!id || id.length > 100 || !/^[a-zA-Z0-9_.@-]+$/.test(id)) return;
+    idNode.textContent = id;
+  }
+  setAccount(params.get('userid') || params.get('userId') || params.get('uid'));
+  const allowed = new Set([location.origin, 'https://120xbetapp.github.io', 'https://appassets.androidplatform.net']);
+  window.addEventListener('message', (event) => {
+    if (!allowed.has(event.origin)) return;
+    if (event.data && event.data.type === '120XBET_CURRENT_USER') setAccount(event.data.userId);
+  });
+  if (window.parent !== window) window.parent.postMessage({type:'120XBET_REQUEST_CURRENT_USER'}, '*');
+  window.copyAccount = async function () {
+    const id = idNode.textContent.trim();
+    if (!id || id === '—') return;
+    try {
+      if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(id);
+      else {
+        const input = document.createElement('textarea'); input.value = id;
+        input.style.position = 'fixed'; input.style.opacity = '0'; document.body.appendChild(input);
+        input.select(); const ok = document.execCommand('copy'); input.remove();
+        if (!ok) throw new Error('Copy unavailable');
+      }
+      const status = document.getElementById('copy-text');
+      status.textContent = 'Copied';
+      clearTimeout(window.__dpCopyTimeout);
+      window.__dpCopyTimeout = setTimeout(() => status.textContent = '', 1500);
+    } catch (e) { document.getElementById('copy-text').textContent = 'Copy failed'; }
+  };
+})();
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
         const loader = document.getElementById('loader');
 
         // ১. বিটকয়েন ওয়ার্নিং মডাল (প্রথম পপআপ)
@@ -491,7 +572,7 @@ function openBtcModal() {
         Swal.fire({
             html: `
                 <div class="btc-modal-content" style="padding:20px;">
-                    <img src="assets/logos/clean_logo_06.png" width="50" style="margin-bottom:15px;">
+                    <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" width="50" style="margin-bottom:15px;">
                     <p class="btc-warning" style="color:#d32f2f; font-weight:bold; font-size:14px; margin-bottom:10px;">ONLY send Bitcoin (µBTC) to this deposit address.</p>
                     <p style="font-size:14px; margin-bottom:10px;">1 mBTC = 0.001 BTC</p>
                     <p style="font-size:12px; color:#666; margin-bottom:20px;">Do NOT use Lightning Network, BEP20, BEP2, ERC20, Polygon or other network standards. ONLY use BTC network.</p>
@@ -517,7 +598,7 @@ function showBtcQr() {
     Swal.fire({
         html: `
         <div style="text-align:center; padding:20px 15px;">
-            <img src="assets/logos/clean_logo_06.png" width="42" style="margin-bottom:12px;">
+            <img src="https://cryptologos.cc/logos/bitcoin-btc-logo.png" width="42" style="margin-bottom:12px;">
 
             <div style="font-size:14px; color:#555; margin-bottom:18px;">
                 1 µBTC = 0.0628278 USD
@@ -570,7 +651,7 @@ function openEthModal() {
         Swal.fire({
             html: `
                 <div class="btc-modal-content">
-                    <img src="assets/logos/clean_logo_04.png" width="50" style="margin-bottom:15px;">
+                    <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" width="50" style="margin-bottom:15px;">
                     <p class="btc-warning" style="color:#d32f2f; font-weight:bold;">ONLY send Ethereum (mETH) to this deposit address.</p>
                     <p style="font-size:14px; margin-bottom:10px;">1 mETH = 0.001 ETH</p>
                     <p style="font-size:12px; color:#666; margin-bottom:20px;">Do NOT use BEP20... ONLY use Ethereum network.</p>
@@ -596,7 +677,7 @@ function showEthQr() {
     Swal.fire({
         html: `
         <div style="text-align:center; padding:20px 15px;">
-            <img src="assets/logos/clean_logo_04.png" width="42" style="margin-bottom:12px;">
+            <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png" width="42" style="margin-bottom:12px;">
 
             <div style="font-size:14px; color:#555; margin-bottom:18px;">
                 1 mETH = 1.8279646 USD
@@ -644,7 +725,7 @@ function openTronModal() {
         Swal.fire({
             html: `
                 <div class="btc-modal-content" style="padding:20px;">
-                    <img src="assets/logos/clean_logo_30.png" width="50" style="margin-bottom:15px;">
+                    <img src="https://cryptologos.cc/logos/tron-trx-logo.png" width="50" style="margin-bottom:15px;">
                     <p class="btc-warning" style="color:#d32f2f; font-weight:bold; font-size:14px; margin-bottom:10px;">ONLY send Tron (TRX) to this deposit address.</p>
                     <p style="font-size:12px; color:#666; margin-bottom:20px;">Do NOT use BEP2, BEP20, ERC20, or other network standards. ONLY make deposits through the Tron network. The use of contract addresses is not allowed!</p>
                 </div>
@@ -669,7 +750,7 @@ function showTronQr() {
     Swal.fire({
         html: `
         <div style="text-align:center; padding:20px 15px;">
-            <img src="assets/logos/clean_logo_30.png" width="42" style="margin-bottom:12px;">
+            <img src="https://cryptologos.cc/logos/tron-trx-logo.png" width="42" style="margin-bottom:12px;">
 
             <div style="font-size:14px; color:#555; margin-bottom:18px;">
                 1 TRX = 0.3230766 USD
@@ -724,7 +805,7 @@ function openDogeModal() {
         Swal.fire({
             html: `
                 <div class="btc-modal-content" style="padding:20px;">
-                    <img src="assets/logos/clean_logo_35.png" width="50" style="margin-bottom:15px;">
+                    <img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png" width="50" style="margin-bottom:15px;">
                     <p class="btc-warning" style="color:#d32f2f; font-weight:bold; font-size:14px; margin-bottom:10px;">ONLY send Dogecoin (DOGE) to this deposit address.</p>
                     <p style="font-size:12px; color:#666; margin-bottom:20px;">Do NOT use BEP2, BEP20, or other network standards. ONLY make deposits through the DOGE network.</p>
                 </div>
@@ -749,7 +830,7 @@ function showDogeQr() {
     Swal.fire({
         html: `
         <div style="text-align:center; padding:20px 15px;">
-            <img src="assets/logos/clean_logo_35.png" width="42" style="margin-bottom:12px;">
+            <img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png" width="42" style="margin-bottom:12px;">
 
             <div style="font-size:14px; color:#555; margin-bottom:18px;">
                 1 DOGE = 0.068747 USD
@@ -926,19 +1007,6 @@ function showUsdtTronQr() {
 }
 
 
-
-// ডিপোজিট পেজের ব্যাক বাটনে এই ফাংশনটি বসান:
-function goBackToHome() {
-    // যদি অ্যাপটি iframe-এর ভেতরে থাকে, তবে closeDeposit() কল করবে
-    if (window.parent && typeof window.parent.closeDeposit === 'function') {
-        window.parent.closeDeposit();
-    } 
-    // যদি iframe না থাকে, তবে সরাসরি পেজে রিডাইরেক্ট করবে
-    else {
-        window.location.href = 'https://mdripon018770-coder.github.io/Notbok/22.html';
-    }
-}
-
 // সব কয়েনের জন্য একটি মাত্র ফাংশন
 function copyAddress(address, msgId) {
     navigator.clipboard.writeText(address);
@@ -951,176 +1019,7 @@ function copyAddress(address, msgId) {
     }
 }
 
-// অ্যাকাউন্টের আইডি কপি করার ফাংশন
-function copyAccount() {
-    const idElement = document.getElementById("display-id");
-    const textElement = document.getElementById("copy-text");
-
-    if (!idElement) return;
-    
-    const id = idElement.innerText;
-    if (!id || id === "Loading...") return;
-
-    navigator.clipboard.writeText(id).then(() => {
-        textElement.innerText = "Copied";
-
-        setTimeout(() => {
-            textElement.innerText = "";
-        }, 1500); // ১.৫ সেকেন্ড পর "Copied" লেখাটি চলে যাবে
-    });
-}
 
   </script>
-<script>function showUnavailable(name){if(window.Swal){Swal.fire({text:name+" — This payment method is not configured yet.",confirmButtonText:"OK",confirmButtonColor:"#008f98"});}else{alert(name+" is not configured yet.");}}</script>
-<style>
-/* Screenshot-style payment form; isolated from existing page styles */
-#localDepositOverlay{position:fixed;inset:0;z-index:10050;background:rgba(40,68,96,.62);display:none;align-items:center;justify-content:center;padding:16px}
-#localDepositOverlay.active{display:flex}
-#localDepositPanel{width:100%;max-width:560px;background:#fff;border-radius:3px;box-shadow:0 3px 12px #0002;max-height:calc(100dvh - 32px);overflow-y:auto;transform:translateX(-75px);opacity:0;transition:transform .24s ease,opacity .24s ease}
-#localDepositOverlay.active.open #localDepositPanel{transform:translateX(0);opacity:1}
-#localDepositPanel.closing{transform:translateX(-75px)!important;opacity:0!important}
-.ld-head{height:136px;display:flex;align-items:center;justify-content:center;position:relative;background:white}
-.ld-head img{width:170px;height:90px;object-fit:contain}
-.ld-x{position:absolute;right:14px;top:12px;border:0;background:none;color:#c7c7c7;font-size:31px;line-height:1;cursor:pointer}
-.ld-content{background:#f5f7f8;padding:15px 18px 17px;color:#4d5962;font-size:15px}
-.ld-row{display:grid;grid-template-columns:48% 52%;align-items:center;gap:5px;margin-bottom:11px}
-.ld-row label{line-height:1.45}
-.ld-row input{width:100%;height:39px;border:0;border-top:1px solid #9eafb6;background:#fff;color:#168f93;font-size:16px;font-weight:600;text-align:center;border-radius:0;padding:5px}
-.ld-presets{display:flex;gap:12px;margin:10px 0 13px}
-.ld-presets button{flex:1;background:#0c949d;color:white;border:0;border-radius:24px;padding:10px 0;font-weight:600;font-size:16px}
-.ld-confirm{width:100%;background:#087b86;color:white;border:0;height:44px;font-size:17px;cursor:pointer}
-#ldFreeFields{display:none}
-.ld-notice{background:#0c949d;color:white;padding:11px 12px;border-radius:16px;line-height:1.45;margin-bottom:15px}
-.ld-payee{margin:10px 0;line-height:1.6;overflow-wrap:anywhere}
-.ld-payee strong{color:#273f49}
-.ld-copy{border:0;background:transparent;color:#82a943;font-size:21px;cursor:pointer;margin-left:10px}
-.ld-upload{display:inline-flex;width:65px;height:65px;background:#bbb;color:white;align-items:center;justify-content:center;font-size:45px;cursor:pointer;border:4px solid white;outline:1px solid #ddd}
-.ld-help{color:#9b9b9b;font-size:12px}
-.ld-free-note{font-size:14px;line-height:1.5;margin:15px 0 22px}
-.ld-message{font-size:12px;color:#8a3434;margin-top:9px;line-height:1.5;display:none}
-@media(max-width:390px){.ld-content{padding:12px}.ld-row{grid-template-columns:48% 52%}.ld-presets{gap:7px}}
-@media(prefers-reduced-motion:reduce){#localDepositPanel{transition:none}}
-</style>
-<div id="localDepositOverlay" role="presentation" onclick="if(event.target===this)closeLocalDeposit()">
- <div id="localDepositPanel" role="dialog" aria-modal="true" aria-label="Deposit amount">
-  <div class="ld-head"><img id="ldLogo" alt="Payment method"/><button class="ld-x" aria-label="Close" onclick="closeLocalDeposit()">×</button></div>
-  <form class="ld-content" id="ldForm" onsubmit="return localDepositSubmit(event)">
-   <div id="ldFreeFields">
-    <div class="ld-notice">Before creating a request, transfer funds within 10 minutes using the payment details provided below.</div>
-    <div class="ld-payee"><strong>বিকাশ ওয়ালেট নম্বর:</strong> <span id="ldReceiver">Not configured</span><button type="button" class="ld-copy" onclick="copyFreeValue('ldReceiver')" aria-label="Copy wallet number">▢</button></div>
-    <div class="ld-payee"><strong>বিকাশ ওয়ালেটের নাম:</strong> <span id="ldReceiverName">Not configured</span><button type="button" class="ld-copy" onclick="copyFreeValue('ldReceiverName')" aria-label="Copy wallet name">▢</button></div>
-   </div>
-   <div class="ld-row"><label id="ldAmountLabel" for="ldAmount">Amount:</label><input id="ldAmount" type="number" inputmode="decimal" required/></div>
-   <div id="ldBkashFields" style="display:none">
-    <div class="ld-presets"><button type="button" onclick="setLocalAmount(400)">400</button><button type="button" onclick="setLocalAmount(600)">600</button><button type="button" onclick="setLocalAmount(800)">800</button></div>
-    <div class="ld-row"><label for="ldFirst">First name:</label><input id="ldFirst" autocomplete="given-name"/></div>
-    <div class="ld-row"><label for="ldLast">Surname:</label><input id="ldLast" autocomplete="family-name"/></div>
-    <div class="ld-row"><label for="ldPhone">Phone number:</label><input id="ldPhone" type="tel" autocomplete="tel"/></div>
-    <div class="ld-row"><label for="ldAddress">Address:</label><input id="ldAddress" autocomplete="street-address"/></div>
-    <div class="ld-row"><label for="ldEmail">Email:</label><input id="ldEmail" type="email" autocomplete="email"/></div>
-   </div>
-   <div id="ldFreeExtra" style="display:none">
-    <div class="ld-row"><label for="ldSenderPhone">আপনার বিকাশ ওয়ালেট নম্বর:</label><input id="ldSenderPhone" type="tel" placeholder="Your Bkash Wallet Number" autocomplete="tel"/></div>
-    <div class="ld-row"><label for="ldSenderName">আপনার বিকাশ ওয়ালেটের নাম:</label><input id="ldSenderName" placeholder="Your Bkash Wallet Name"/></div>
-    <div class="ld-row"><label for="ldReceipt">পেমেন্টের রসিদ:<br/><span class="ld-help">(.jpg, .jpeg, .png, .pdf; max 20 MB)</span></label><div><label class="ld-upload" for="ldReceipt">+</label><input id="ldReceipt" type="file" accept=".jpg,.jpeg,.png,.pdf" style="display:none" onchange="document.getElementById('ldReceiptName').textContent=this.files[0]?.name||''"/><div id="ldReceiptName" class="ld-help"></div></div></div>
-    <div class="ld-row"><label for="ldTrx">Transaction ID (UTR, Reference No):</label><input id="ldTrx"/></div>
-    <div class="ld-payee"><strong>*Code:</strong> <span id="ldCode"></span><button type="button" class="ld-copy" onclick="copyFreeValue('ldCode')" aria-label="Copy code">▢</button></div>
-    <p class="ld-free-note">Enter this code in the Comments field when transferring funds. If you do not enter the code, your payment may fail to be identified and credited to your account.</p>
-   </div>
-   <button class="ld-confirm" type="submit">CONFIRM</button>
-   <div class="ld-message" id="ldMessage" role="status">This is a form preview. No payment request has been submitted; a verified payment backend is required.</div>
-  </form>
- </div>
-</div>
-<style>
-#freeSuccessOverlay{position:fixed;inset:0;z-index:10060;background:rgba(40,68,96,.62);display:none;align-items:center;justify-content:center;padding:16px}
-#freeSuccessOverlay.active{display:flex}
-#freeSuccessPanel{width:100%;max-width:560px;background:#fff;border-radius:3px;overflow:hidden;transform:translateX(-75px);opacity:0;transition:transform .24s ease,opacity .24s ease}
-#freeSuccessOverlay.active.open #freeSuccessPanel{transform:translateX(0);opacity:1}
-#freeSuccessPanel.closing{transform:translateX(-75px)!important;opacity:0!important}
-.free-success-head{height:155px;display:flex;align-items:center;justify-content:center;position:relative}
-.free-success-head img{width:145px;height:92px;object-fit:contain}
-.free-success-close{position:absolute;top:13px;right:17px;border:0;background:transparent;font-size:32px;color:#c7c7c7;cursor:pointer}
-.free-success-message{padding:22px 18px 18px;background:#f6f7f8;color:#929292;font-size:16px}
-.free-success-disclaimer{font-size:11px;color:#8a8a8a;padding:0 18px 14px;background:#f6f7f8}
-@media(prefers-reduced-motion:reduce){#freeSuccessPanel{transition:none}}
-</style>
-<div id="freeSuccessOverlay" onclick="if(event.target===this)closeFreeDepositConfirmation()">
- <div id="freeSuccessPanel" role="dialog" aria-modal="true" aria-label="Deposit form confirmation">
-  <div class="free-success-head"><img src="assets/logos/clean_logo_08.png" alt="bKash Free"><button type="button" class="free-success-close" aria-label="Close" onclick="closeFreeDepositConfirmation()">×</button></div>
-  <div class="free-success-message">Deposit request created successfully.</div>
-  <div class="free-success-disclaimer">Demo confirmation only — no request has been sent to a payment server.</div>
- </div>
-</div>
-<script>
-let localDepositType='';
-function openLocalDeposit(name){
- const bk=/bkash/i.test(name),free=/bkash free/i.test(name);localDepositType=name;
- const overlay=document.getElementById('localDepositOverlay'),panel=document.getElementById('localDepositPanel');
- document.getElementById('ldLogo').src=bk?(name.toLowerCase().includes('free')?'assets/logos/clean_logo_08.png':'assets/logos/bkash.png'):(name.toLowerCase().includes('free')?'assets/logos/clean_logo_15.png':'assets/logos/clean_logo_38.png');
- document.getElementById('ldLogo').alt=name;
- document.getElementById('ldBkashFields').style.display=bk&&!free?'block':'none';
- document.getElementById('ldFreeFields').style.display=free?'block':'none';
- document.getElementById('ldFreeExtra').style.display=free?'block':'none';
- if(free){document.getElementById('ldCode').textContent=Math.random().toString(36).slice(2,8);document.getElementById('ldReceiver').textContent='Not configured';document.getElementById('ldReceiverName').textContent='Not configured';}
- document.getElementById('ldAmountLabel').textContent=free?'Amount (Min 100.00 BDT / Max 30 000.00 BDT):':bk?'Amount (Min 300.00 BDT / Max 30 000.00 BDT):':'Amount (Min 200 BDT / Max 25 000 BDT):';
- const amt=document.getElementById('ldAmount');amt.min=free?'100':bk?'300':'200';amt.max=(bk||free)?'30000':'25000';amt.value=free?'100':bk?'300':'200';
- document.getElementById('ldMessage').style.display='none';
- panel.classList.remove('closing');overlay.classList.add('active');document.body.style.overflow='hidden';
- requestAnimationFrame(()=>requestAnimationFrame(()=>overlay.classList.add('open')));
-}
-function copyFreeValue(id){const val=document.getElementById(id).textContent;if(val!=='Not configured')navigator.clipboard?.writeText(val)}
-function setLocalAmount(n){document.getElementById('ldAmount').value=n}
-function closeLocalDeposit(){
- const overlay=document.getElementById('localDepositOverlay'),panel=document.getElementById('localDepositPanel');
- panel.classList.add('closing');overlay.classList.remove('open');document.body.style.overflow='';
- setTimeout(()=>{overlay.classList.remove('active');panel.classList.remove('closing')},240);
-}
-function localDepositSubmit(e){
- e.preventDefault();
- if(/bkash free/i.test(localDepositType)){
-   const required=['ldSenderPhone','ldSenderName','ldTrx'];
-   for(const id of required){const field=document.getElementById(id);if(!field.value.trim()){field.setCustomValidity('Please fill in this field');field.reportValidity();field.setCustomValidity('');return false;}}
-   const receipt=document.getElementById('ldReceipt');
-   if(!receipt.files.length){document.getElementById('ldMessage').textContent='Please attach a payment receipt.';document.getElementById('ldMessage').style.display='block';return false;}
-   if(receipt.files[0].size>20*1024*1024){document.getElementById('ldMessage').textContent='Receipt must be 20 MB or smaller.';document.getElementById('ldMessage').style.display='block';return false;}
-   showFreeDepositConfirmation();return false;
- }
- document.getElementById('ldMessage').textContent='This is a form preview. No payment request has been submitted; a verified payment backend is required.';
- document.getElementById('ldMessage').style.display='block';return false;
-}
-function showFreeDepositConfirmation(){
- closeLocalDeposit();
- setTimeout(()=>{
-  const overlay=document.getElementById('freeSuccessOverlay');
-  overlay.classList.add('active');document.body.style.overflow='hidden';
-  requestAnimationFrame(()=>requestAnimationFrame(()=>overlay.classList.add('open')));
- },260);
-}
-function closeFreeDepositConfirmation(){
- const overlay=document.getElementById('freeSuccessOverlay'),panel=document.getElementById('freeSuccessPanel');
- panel.classList.add('closing');overlay.classList.remove('open');document.body.style.overflow='';
- setTimeout(()=>{overlay.classList.remove('active');panel.classList.remove('closing')},240);
-}
-document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('localDepositOverlay').classList.contains('active'))closeLocalDeposit();else if(e.key==='Escape'&&document.getElementById('freeSuccessOverlay').classList.contains('active'))closeFreeDepositConfirmation()});
-</script>
-<style>.deposit-method-locked{opacity:.43!important;filter:grayscale(1);position:relative}.deposit-method-locked:after{content:'LOCKED';position:absolute;bottom:9px;right:8px;color:#b22131;font-size:11px;font-weight:700}.admin-crypto-box{max-width:100%;overflow-wrap:anywhere;text-align:left}.admin-crypto-box code{display:block;word-break:break-all;background:#f4f6f7;padding:12px;border:1px solid #ddd;border-radius:5px;margin:12px 0}</style>
-<script type="module">
-import{initializeApp as initLive}from'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js';
-import{getDatabase as getLiveDB,ref as liveRef,onValue as liveValue}from'https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js';
-const cfg={apiKey:"AIzaSyBjH50DE06FvUHD9M0FxC3yG96pCEwejpg",authDomain:"xbet-e3f27.firebaseapp.com",databaseURL:"https://xbet-e3f27-default-rtdb.asia-southeast1.firebasedatabase.app/",projectId:"xbet-e3f27",appId:"1:263831306909:web:6dd6ae7a08c31d0870ca74"};const methodKey=s=>encodeURIComponent(s).replaceAll('.','%2E');const cards=[...document.querySelectorAll('.payment-card')];
-let settings={},connected=false;const banner=document.querySelector('.banner-container .info-box');
-function configFor(n){return settings.methods?.[methodKey(n)]||{}};
-function apply(){if(typeof settings.banner==='string'&&banner){banner.textContent=settings.banner;banner.style.whiteSpace='pre-line'}cards.forEach(card=>{const name=card.querySelector('span')?.textContent.trim();if(!name)return;const locked=configFor(name).enabled===false;card.classList.toggle('deposit-method-locked',locked);card.setAttribute('aria-disabled',String(locked))})}
-try{if(cfg.databaseURL.includes('PASTE_'))throw Error('Database URL missing');const db=getLiveDB(initLive(cfg,'deposit-public'));liveValue(liveRef(db,'appConfig/depositAdmin'),s=>{settings=s.val()||{};connected=true;apply()},e=>console.warn('Deposit settings read failed:',e.message))}catch(e){console.warn('Deposit live settings unavailable:',e.message)}
-// Capture card taps so disabled methods cannot open their old dialogs.
-// For configured crypto wallets, use one consistent address popup instead of old hard-coded addresses.
-document.addEventListener('click',e=>{const card=e.target.closest('.payment-card');if(!card)return;const name=card.querySelector('span')?.textContent.trim();if(!name)return;const m=configFor(name);if(m.enabled===false){e.preventDefault();e.stopImmediatePropagation();if(window.Swal)Swal.fire({text:name+' is temporarily unavailable.',confirmButtonColor:'#008e96'});else alert('This method is unavailable.');return}
-const isCrypto=!!card.closest('.payment-grid')&&(()=>{let p=card.previousElementSibling;while(p){p=p.previousElementSibling}let s=card.parentElement?.previousElementSibling;return s?.textContent.trim()==='CRYPTOCURRENCY'})();
-if(isCrypto){e.preventDefault();e.stopImmediatePropagation();if(!m.address){if(window.Swal)Swal.fire({text:name+' is not configured yet.',confirmButtonColor:'#008e96'});return}const root=document.createElement('div');root.className='admin-crypto-box';const title=document.createElement('h3');title.textContent=name;const rate=document.createElement('p');rate.textContent=m.rate||'Rate not configured';const hint=document.createElement('p');hint.textContent='Wallet address (verify network before sending):';const code=document.createElement('code');code.textContent=m.address;const btn=document.createElement('button');btn.textContent='Copy address';btn.style.cssText='background:#078e98;color:white;border:0;padding:10px 18px';btn.onclick=()=>navigator.clipboard?.writeText(m.address);root.append(title,rate,hint,code,btn);if(window.Swal)Swal.fire({html:root,showCloseButton:true,showConfirmButton:false,width:'95%'});return}
-},true);
-// Update receiver info and limits whenever a local payment dialog opens.
-const oldOpen=window.openLocalDeposit;if(typeof oldOpen==='function'){window.openLocalDeposit=function(name){oldOpen(name);const m=configFor(name);if(m.address&&document.getElementById('ldReceiver'))document.getElementById('ldReceiver').textContent=m.address;if(m.receiver&&document.getElementById('ldReceiverName'))document.getElementById('ldReceiverName').textContent=m.receiver;const min=Number(m.min),max=Number(m.max),amount=document.getElementById('ldAmount');if(amount){if(m.min!=='undefined'&&m.min!=null&&m.min!==''&&Number.isFinite(min)){amount.min=min;amount.value=min}if(m.max!=null&&m.max!==''&&Number.isFinite(max))amount.max=max;const label=document.getElementById('ldAmountLabel');if(label&&(m.min!==''||m.max!==''))label.textContent=`Amount (Min ${amount.min} BDT / Max ${amount.max} BDT):`}}}
-</script>
 </body>
 </html>
