@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793737851569,
-  "versionName": "1.1.72",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793737851569/index.html",
+  "releaseCode": 1793738058695,
+  "versionName": "1.1.73",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793738058695/index.html",
   "sha256": "5d7b80e8c50f8a990ce1e164f649a33e898e11035769f3212fef90f642baaef0",
   "size": 9359117,
-  "notes": "Fix APK image loading by using absolute GitHub Pages URLs for casino game and extracted assets."
+  "notes": "Refresh embedded deposit page to headerless dp.html and pass the signed-in user account ID."
 }
