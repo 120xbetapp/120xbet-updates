@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793734414614,
+  "releaseCode": 1793737851569,
   "versionName": "1.1.72",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793734414614/index.html",
-  "sha256": "4e99165917ecbb66202f05ae4ee3a3019ff637c7b1f987f2361786b37e8e59da",
-  "size": 9358702,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793737851569/index.html",
+  "sha256": "5d7b80e8c50f8a990ce1e164f649a33e898e11035769f3212fef90f642baaef0",
+  "size": 9359117,
   "notes": "Fix APK image loading by using absolute GitHub Pages URLs for casino game and extracted assets."
 }
