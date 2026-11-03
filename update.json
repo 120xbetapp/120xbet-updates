@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793732281888,
+  "releaseCode": 1793733392331,
   "versionName": "1.1.71",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793732281888/index.html",
-  "sha256": "b02dd9646b2cf6b393a22e5166b3b259151ff11d2b8299ef24b81dc763742ee1",
-  "size": 26097274,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793733392331/index.html",
+  "sha256": "56eab3c8ae1d614803d107484aa7073462583558d37d86d73c3cc90eaca6a8a5",
+  "size": 9345922,
   "notes": "Update casino game images and Recommended game cards."
 }
