@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793795494960,
+  "releaseCode": 1793795597495,
   "versionName": "1.1.84",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793795494960/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793795597495/index.html",
   "sha256": "c56f928089463c83a2676b0bde82c8f26fe494c9ca4369d434993361c6cce0de",
   "size": 9361707,
   "notes": "Deposit Worker request bridge and method forms; account ID copy fallback; refresh in-app HTML assets."
