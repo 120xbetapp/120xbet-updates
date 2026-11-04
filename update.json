@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793780724489,
+  "releaseCode": 1793780797176,
   "versionName": "1.1.76",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793780724489/index.html",
-  "sha256": "ae42b00986a5d01c744abdca8e2e494bd6332c6c713347bcb9ee53f168b6c2be",
-  "size": 9359483,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793780797176/index.html",
+  "sha256": "c62e80d57fd8435cddaad4038535c7aafc77a34cebd0b5f57440ace8c61f70ab",
+  "size": 9359647,
   "notes": "Use signed-in profile account ID in Deposit and Withdraw iframe, including sandboxed message origins."
 }
