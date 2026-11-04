@@ -1016,7 +1016,7 @@ function copyAddress(address, msgId) {
  const SETTINGS_URL='https://xbet-e3f27-default-rtdb.asia-southeast1.firebasedatabase.app/depositAdmin/methods/';
  async function getMethodSettings(name){
    const key=encodeURIComponent(name).replaceAll('.','%2E');
-   const res=await fetch(SETTINGS_URL+encodeURIComponent(key)+'.json?ts='+Date.now(),{cache:'no-store'});
+   const res=await fetch(SETTINGS_URL+key+'.json?ts='+Date.now(),{cache:'no-store'});
    if(!res.ok)throw Error('Unable to load payment settings');
    return await res.json()||{};
  }
