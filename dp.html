@@ -1015,10 +1015,17 @@ function copyAddress(address, msgId) {
  let pending=null;
  const SETTINGS_URL='https://xbet-e3f27-default-rtdb.asia-southeast1.firebasedatabase.app/depositAdmin/methods/';
  async function getMethodSettings(name){
+   // Read the methods collection and resolve the exact Firebase SDK key.
+   // Firebase SDK saves "Bkash Free" as "Bkash%20Free" (literal % in key).
+   // Reading the collection avoids REST URL double-encoding mismatches.
+   const res=await fetch(SETTINGS_URL.replace(/\/methods\/$/,'/methods.json')+'?ts='+Date.now(),{cache:'no-store'});
+   if(!res.ok)throw Error('Unable to load payment settings (HTTP '+res.status+')');
+   const methods=await res.json()||{};
    const key=encodeURIComponent(name).replaceAll('.','%2E');
-   const res=await fetch(SETTINGS_URL+key+'.json?ts='+Date.now(),{cache:'no-store'});
-   if(!res.ok)throw Error('Unable to load payment settings');
-   return await res.json()||{};
+   const found=methods[key]||methods[name]||Object.entries(methods).find(([k])=>{
+     try{return decodeURIComponent(k).toLowerCase()===name.toLowerCase()}catch(_){return false}
+   })?.[1];
+   return found||{};
  }
  function copyValue(value,button){
    const fallback=()=>{const el=document.createElement('textarea');el.value=value;el.style.cssText='position:fixed;left:-9999px';document.body.append(el);el.select();let ok=false;try{ok=document.execCommand('copy')}catch(e){}el.remove();return ok};
