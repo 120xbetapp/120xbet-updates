@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793794662397,
+  "releaseCode": 1793794767687,
   "versionName": "1.1.77",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793794662397/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793794767687/index.html",
   "sha256": "c56f928089463c83a2676b0bde82c8f26fe494c9ca4369d434993361c6cce0de",
   "size": 9361707,
   "notes": "Copy account ID from parent app; iframe reports actual clipboard result."
