@@ -495,7 +495,7 @@ body{padding-bottom:14px!important}
   setAccount(params.get('userid') || params.get('userId') || params.get('uid'));
   const allowed = new Set([location.origin, 'https://120xbetapp.github.io', 'https://appassets.androidplatform.net']);
   window.addEventListener('message', (event) => {
-    if (!allowed.has(event.origin)) return;
+    if (event.source !== window.parent || !(allowed.has(event.origin) || event.origin === 'null')) return;
     if (event.data && event.data.type === '120XBET_CURRENT_USER') setAccount(event.data.userId);
   });
   if (window.parent !== window) window.parent.postMessage({type:'120XBET_REQUEST_CURRENT_USER'}, '*');

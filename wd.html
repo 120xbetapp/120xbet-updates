@@ -94,7 +94,7 @@ const idEl=document.getElementById('account-id'),status=document.getElementById(
 function setId(v){const id=String(v??'').trim();if(id.length>0&&id.length<=100&&/^[a-zA-Z0-9_.@-]+$/.test(id))idEl.textContent=id;}
 const p=new URLSearchParams(location.search);setId(p.get('userid')||p.get('userId')||p.get('uid'));
 const origins=new Set([location.origin,'https://120xbetapp.github.io','https://appassets.androidplatform.net']);
-window.addEventListener('message',e=>{if(origins.has(e.origin)&&e.data?.type==='120XBET_CURRENT_USER')setId(e.data.userId)});
+window.addEventListener('message',e=>{if(e.source===window.parent&&(origins.has(e.origin)||e.origin==='null')&&e.data?.type==='120XBET_CURRENT_USER')setId(e.data.userId)});
 if(window.parent!==window)window.parent.postMessage({type:'120XBET_REQUEST_CURRENT_USER'},'*');
 document.getElementById('copy-btn').onclick=async()=>{const v=idEl.textContent.trim();if(v==='—')return;try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(v);else{let t=document.createElement('textarea');t.value=v;document.body.appendChild(t);t.select();if(!document.execCommand('copy'))throw Error();t.remove()}status.textContent='Copied';setTimeout(()=>status.textContent='',1600)}catch{status.textContent='Copy failed'}};
 function note(t){document.getElementById('notice').textContent=t;}
