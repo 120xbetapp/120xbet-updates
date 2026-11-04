@@ -499,22 +499,29 @@ body{padding-bottom:14px!important}
     if (event.data && event.data.type === '120XBET_CURRENT_USER') setAccount(event.data.userId);
   });
   if (window.parent !== window) window.parent.postMessage({type:'120XBET_REQUEST_CURRENT_USER'}, '*');
+  let copyPending = false;
+  function copyStatus(ok) {
+    copyPending = false;
+    const status = document.getElementById('copy-text');
+    status.textContent = ok ? 'Copied' : 'Copy failed';
+    clearTimeout(window.__dpCopyTimeout);
+    window.__dpCopyTimeout = setTimeout(() => { status.textContent = ''; }, 1800);
+  }
+  window.addEventListener('message', event => {
+    if (event.source !== window.parent || !(allowed.has(event.origin) || event.origin === 'null')) return;
+    if (event.data?.channel === 'request-copy57-reply' && copyPending) copyStatus(event.data.ok === true);
+  });
   window.copyAccount = async function () {
     const id = idNode.textContent.trim();
-    if (!id || id === '—') return;
-    try {
-      if (navigator.clipboard && window.isSecureContext) await navigator.clipboard.writeText(id);
-      else {
-        const input = document.createElement('textarea'); input.value = id;
-        input.style.position = 'fixed'; input.style.opacity = '0'; document.body.appendChild(input);
-        input.select(); const ok = document.execCommand('copy'); input.remove();
-        if (!ok) throw new Error('Copy unavailable');
-      }
-      const status = document.getElementById('copy-text');
-      status.textContent = 'Copied';
-      clearTimeout(window.__dpCopyTimeout);
-      window.__dpCopyTimeout = setTimeout(() => status.textContent = '', 1500);
-    } catch (e) { document.getElementById('copy-text').textContent = 'Copy failed'; }
+    if (!/^\d{3,30}$/.test(id)) return;
+    if (window.parent !== window) {
+      copyPending = true;
+      window.parent.postMessage({channel:'request-copy57',id}, '*');
+      setTimeout(() => { if (copyPending) copyStatus(false); }, 2500);
+      return;
+    }
+    try { await navigator.clipboard.writeText(id); copyStatus(true); }
+    catch { copyStatus(false); }
   };
 })();
 </script>
