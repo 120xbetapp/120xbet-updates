@@ -1,104 +1,144 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Withdraw funds</title><style>
 *{box-sizing:border-box}html,body{margin:0;padding:0;width:100%;background:#fff;color:#41474b;font-family:Arial,"Segoe UI",sans-serif}body{padding-bottom:16px}button{font:inherit}.top{padding:16px 16px 10px;background:#fff}.account{font-weight:700;font-size:16px;line-height:1.55}.account-line{display:flex;align-items:center;gap:7px;flex-wrap:wrap}.copy{border:0;background:none;color:#528e90;padding:2px;cursor:pointer}.copy svg{width:23px;height:23px;vertical-align:middle}.copy-status{font-size:12px;color:#008f80}.types{background:#118f96;border:0;color:#fff;font-size:15px;padding:10px 12px;margin-top:12px}.requests-row{display:flex;justify-content:flex-end;margin-top:2px}.requests{background:#118f96;border:0;color:#fff;padding:9px 12px;font-size:14px;cursor:pointer}.confirm{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:17px 0 18px;color:#888;font-size:15px}.sms{border:0;background:#118f96;color:#fff;padding:9px 11px}.affiliate{margin:0 16px 12px;background:#dedede;color:#737373;padding:12px;font-size:14px;line-height:1.45}.group{background:#dce6ea;padding:0 16px 16px;margin-top:15px}.group-title{text-align:center;color:#7a7d80;font-size:13px;font-weight:400;padding:16px 0 14px}.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px 12px}.pay-card{position:relative;min-width:0;height:116px;background:#fff;border-radius:4px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;padding:16px 4px 12px;overflow:hidden}.pay-card .logo-box{height:55px;max-width:100%;display:flex;align-items:center;justify-content:center}.logo-box img{height:39px;width:auto;max-width:92px;object-fit:contain}.combo-logo{height:42px;display:flex;align-items:center;gap:3px;background:#f5f5f5;padding:4px 7px;border-radius:24px}.combo-logo img{height:23px;width:23px;object-fit:contain}.pay-card>span:last-child{color:#777;text-align:center;font-size:12px;line-height:1.35;overflow-wrap:anywhere}.brand{font-size:21px;letter-spacing:-1px;white-space:nowrap}.bkash{color:#df0059}.bkashfree{color:#ff9855}.nagad{color:#ed5a20}.astro{color:#111}.payz{color:#111;font-size:26px}.neteller{color:#76b638;font-style:italic;font-size:17px}.skrill{color:#70206b;font-size:25px}.icash{color:white;background:black;padding:6px;font-size:17px}.ribbon{position:absolute;right:0;top:0;background:#f00;color:white;font-size:10px;padding:3px 7px}.coin-fallback{font-size:13px;text-align:center;color:#777}.notice{padding:10px 16px;font-size:12px;color:#78848a}.hidden{display:none!important}@media(max-width:350px){.group{padding-left:9px;padding-right:9px}.cards{gap:7px}.pay-card{height:108px}.brand{font-size:17px}}
-</style><style>.logo-box img{display:block;max-width:95%;max-height:48px;width:auto;height:auto;object-fit:contain}.logo-box strong{max-width:100%}</style></head><body>
+
+.affiliate{font-size:16px;line-height:1.45;margin-top:0;padding:12px 14px}.top{padding-top:14px}.account{font-size:17px}.types{font-size:16px}.group{margin-top:15px}.group-title{font-size:14px}.pay-card{height:118px;cursor:pointer}.logo-box img{max-width:100px;height:42px}.pay-card>span:last-child{font-size:13px}
+.overlay{position:fixed;inset:0;background:#253d50a8;display:none;align-items:center;justify-content:center;z-index:100;padding:16px}.overlay.show{display:flex}.modal{width:min(100%,560px);background:#f8f8f8;border-radius:4px;overflow:hidden;box-shadow:0 5px 24px #0003}.modal-head{height:126px;background:#fff;display:flex;align-items:center;justify-content:center;position:relative}.modal-head img{max-height:62px;max-width:175px;object-fit:contain}.modal-head strong{font-size:28px}.modal-x{position:absolute;right:15px;top:10px;background:none;border:0;color:#ccc;font-size:30px;cursor:pointer}.modal-body{padding:18px 16px}.field{display:grid;grid-template-columns:1fr 1fr;align-items:center;gap:10px;margin-bottom:13px;font-size:14px}.field input{width:100%;height:38px;border:1px solid #c4cbd0;background:#fff;text-align:center;color:#17858a;font-size:16px;padding:5px}.submit{width:100%;height:45px;background:#087e86;border:0;color:#fff;font-size:17px;margin-top:8px}.form-error{font-size:13px;color:#a23c3c;min-height:18px}.history{display:none;border:4px solid #0e8b91;margin:0 16px 10px;background:#fff}.history.show{display:block}.history-bar{background:#0e8b91;color:white;padding:9px}.history-body{padding:14px;font-size:14px;line-height:1.8}.history-row{display:flex;justify-content:space-between;gap:15px}.history-row span:first-child{color:#67989b}
+</style></head><body>
 <!-- Header/back/refresh intentionally omitted: parent index.html owns them. -->
 <section class="top"><div class="account">WITHDRAWING FROM ACCOUNT<div class="account-line"><span id="account-id">—</span><button class="copy" type="button" id="copy-btn" aria-label="Copy account ID"><svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button><span class="copy-status" id="copy-status" aria-live="polite"></span></div></div><button class="types" type="button" id="types-btn">Types of payment systems</button><div class="requests-row"><button class="requests" id="requests-btn" type="button">Withdrawal requests ﹀</button></div><div class="confirm"><span>Confirm transactions via:</span><button class="sms" id="sms-btn" type="button">SMS</button></div></section>
-<div class="affiliate">Join 120xBet Payment Agent &amp; Affiliate Programs – contact us via email at<br>120xbetapp@gmail.com</div>
-<section class="group"><div class="group-title">RECOMMENDED</div><div class="cards" role="list"><div class="pay-card" role="listitem"><div class="logo-box"><img src="https://120xbetapp.github.io/120xbet-updates/assets/logos/bkash.png" alt="bKash" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"/><strong class="brand bkash" style="display:none">bKash</strong></div><span>bKash</span></div><div class="pay-card" role="listitem"><div class="logo-box"><img src="https://120xbetapp.github.io/120xbet-updates/assets/logos/nogod.png" alt="নগদ" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"/><strong class="brand nagad" style="display:none">নগদ</strong></div><span>Nagad</span></div><div class="pay-card" role="listitem"><div class="logo-box"><img src="https://120xbetapp.github.io/120xbet-updates/assets/logos/biksh-pement.png" alt="bKash" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"/><strong class="brand bkashfree" style="display:none">bKash</strong></div><span>Bkash Free</span></div></div></section><section class="group"><div class="group-title">E-WALLETS</div><div class="cards" role="list"><div class="pay-card" role="listitem"><div class="logo-box"><img src="https://120xbetapp.github.io/120xbet-updates/assets/logos/nogod.png" alt="নগদ" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"/><strong class="brand nagad" style="display:none">নগদ</strong></div><span>Nagad</span></div><div class="pay-card" role="listitem"><div class="logo-box"><img src="https://120xbetapp.github.io/120xbet-updates/assets/logos/astropay.png" alt="AstroPay" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"/><strong class="brand astro" style="display:none">AstroPay</strong></div><span>AstroPay</span></div><div class="pay-card" role="listitem"><div class="logo-box"><strong class="brand payz">payz●</strong></div><span>Payz</span></div><div class="pay-card" role="listitem"><div class="logo-box"><img src="https://120xbetapp.github.io/120xbet-updates/assets/logos/neteller.png" alt="NETELLER" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"/><strong class="brand neteller" style="display:none">NETELLER</strong></div><span>Neteller</span></div><div class="pay-card" role="listitem"><div class="logo-box"><img src="https://120xbetapp.github.io/120xbet-updates/assets/logos/skrill.png" alt="Skrill" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"/><strong class="brand skrill" style="display:none">Skrill</strong></div><span>Skrill</span></div><div class="pay-card" role="listitem"><div class="logo-box"><img src="https://120xbetapp.github.io/120xbet-updates/assets/logos/biksh-pement.png" alt="bKash" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"/><strong class="brand bkashfree" style="display:none">bKash</strong></div><span>Bkash Free</span></div><div class="pay-card" role="listitem"><div class="logo-box"><img src="https://120xbetapp.github.io/120xbet-updates/assets/logos/icash.png" alt="icash.one" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"/><strong class="brand icash" style="display:none">icash.one</strong></div><span>iCash.One</span></div></div></section><section class="group"><div class="group-title">BANK TRANSFER</div><div class="cards" role="list"><div class="pay-card" role="listitem"><div class="logo-box"><img src="https://120xbetapp.github.io/120xbet-updates/assets/logos/bkash.png" alt="bKash" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='inline'"/><strong class="brand bkash" style="display:none">bKash</strong></div><span>bKash</span></div></div></section><section class="group"><div class="group-title">CRYPTOCURRENCY</div><div class="cards" role="list"><div class="pay-card" onclick="openBtcModal()">
+<div class="affiliate" id="affiliate-banner">Join 120xBet Payment Agent &amp; Affiliate Programs – contact us via email at<br>120xbetapp@gmail.com</div>
+<section id="wd-auth-box" style="margin:12px 16px;padding:14px;border:1px solid #d4e4e5;border-radius:8px;background:#f6fbfb"><b>Secure withdrawal connection</b><p id="wd-auth-status" style="font-size:12px;color:#566">Checking sign-in…</p><div id="wd-login-controls" style="display:none"><input id="wd-login-email" type="text" placeholder="Account ID or email" autocomplete="username" style="width:100%;padding:10px;margin:4px 0;border:1px solid #cbd6de"><input id="wd-login-pass" type="password" placeholder="Account password" autocomplete="current-password" style="width:100%;padding:10px;margin:4px 0;border:1px solid #cbd6de"><button id="wd-login" type="button" style="background:#087e86;color:white;border:0;padding:10px 18px">Sign in</button></div></section><div class="history" id="history"><div class="history-bar">↻ REFRESH STATUS</div><div class="history-body" id="history-body">No withdrawal requests available.</div></div><section class="group"><div class="group-title">RECOMMENDED</div><div class="cards" role="list"><div class="pay-card" role="listitem"><div class="logo-box"><strong class="brand bkash">bKash</strong></div><span>bKash</span></div><div class="pay-card" role="listitem"><div class="logo-box"><strong class="brand nagad">নগদ</strong></div><span>Nagad</span></div><div class="pay-card" role="listitem"><div class="logo-box"><strong class="brand bkashfree">bKash</strong></div><span>Bkash Free</span></div></div></section><section class="group"><div class="group-title">E-WALLETS</div><div class="cards" role="list"><div class="pay-card" role="listitem"><div class="logo-box"><strong class="brand nagad">নগদ</strong></div><span>Nagad</span></div><div class="pay-card" role="listitem"><div class="logo-box"><strong class="brand astro">AstroPay</strong></div><span>AstroPay</span></div><div class="pay-card" role="listitem"><div class="logo-box"><strong class="brand payz">payz●</strong></div><span>Payz</span></div><div class="pay-card" role="listitem"><div class="logo-box"><strong class="brand neteller">NETELLER</strong></div><span>Neteller</span></div><div class="pay-card" role="listitem"><div class="logo-box"><strong class="brand skrill">Skrill</strong></div><span>Skrill</span></div><div class="pay-card" role="listitem"><div class="logo-box"><strong class="brand bkashfree">bKash</strong></div><span>Bkash Free</span></div><div class="pay-card" role="listitem"><div class="logo-box"><strong class="brand icash">icash.one</strong></div><span>iCash.One</span></div></div></section><section class="group"><div class="group-title">BANK TRANSFER</div><div class="cards" role="list"><div class="pay-card" role="listitem"><div class="logo-box"><strong class="brand bkash">bKash</strong></div><span>bKash</span></div></div></section><section class="group"><div class="group-title">CRYPTOCURRENCY</div><div class="cards" role="list"><div class="pay-card">
 <div class="logo-box"><img alt="BTC" src="https://cryptologos.cc/logos/bitcoin-btc-logo.png"/></div>
 <span>Bitcoin</span>
-</div><div class="pay-card" onclick="openEthModal()">
+</div><div class="pay-card">
 <div class="logo-box"><img alt="ETH" src="https://cryptologos.cc/logos/ethereum-eth-logo.png"/></div>
 <span>Ethereum</span>
-</div><div class="pay-card" onclick="openTronModal()">
+</div><div class="pay-card">
 <div class="logo-box">
 <img src="https://cryptologos.cc/logos/tron-trx-logo.png"/>
 </div>
 <span>TRON</span>
-</div><div class="pay-card" onclick="openDogeModal()">
+</div><div class="pay-card">
 <div class="logo-box">
 <img src="https://cryptologos.cc/logos/dogecoin-doge-logo.png"/>
 </div>
 <span>Dogecoin</span>
-</div><div class="pay-card"><div class="logo-box"><img alt="BNB" src="https://cryptologos.cc/logos/bnb-bnb-logo.png"/></div><span>Binance Coin BSC</span></div><div class="pay-card"><div class="logo-box"><img alt="USDT" src="https://cryptologos.cc/logos/tether-usdt-logo.png"/></div><span>Tether on BSC</span></div><div class="pay-card" onclick="openUsdtEthModal()">
+</div><div class="pay-card"><div class="logo-box"><img alt="BNB" src="https://cryptologos.cc/logos/bnb-bnb-logo.png"/></div><span>Binance Coin BSC</span></div><div class="pay-card"><div class="logo-box"><img alt="USDT" src="https://cryptologos.cc/logos/tether-usdt-logo.png"/></div><span>Tether on BSC</span></div><div class="pay-card">
 <div class="combo-logo">
 <img src="https://cryptologos.cc/logos/tether-usdt-logo.png"/>
 <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png"/>
 </div>
 <span>Tether on Ethereum</span>
-</div><div class="pay-card" onclick="openUsdtTronModal()">
+</div><div class="pay-card">
 <div class="combo-logo">
 <img src="https://cryptologos.cc/logos/tether-usdt-logo.png"/>
 <img src="https://cryptologos.cc/logos/tron-trx-logo.png"/>
 </div>
 <span>Tether on Tron</span>
-</div><div class="pay-card" onclick="openLitecoinModal()">
+</div><div class="pay-card">
 <div class="logo-box">
 <img src="https://cryptologos.cc/logos/litecoin-ltc-logo.png"/>
 </div>
 <span>Litecoin</span>
-</div><div class="pay-card" onclick="openUsdcEthModal()">
+</div><div class="pay-card">
 <div class="combo-logo">
 <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png"/>
 <img src="https://cryptologos.cc/logos/ethereum-eth-logo.png"/>
 </div>
 <span>USD Coin on Ethereum</span>
-</div><div class="pay-card" onclick="openXrpModal()">
+</div><div class="pay-card">
 <div class="logo-box">
 <img src="https://cryptologos.cc/logos/xrp-xrp-logo.png"/>
 </div>
 <span>XRP</span>
-</div><div class="pay-card" onclick="openSolanaModal()">
+</div><div class="pay-card">
 <div class="logo-box">
 <img src="https://cryptologos.cc/logos/solana-sol-logo.png"/>
 </div>
 <span>Solana</span>
-</div><div class="pay-card" onclick="openUsdtSolModal()">
+</div><div class="pay-card">
 <div class="combo-logo">
 <img src="https://cryptologos.cc/logos/tether-usdt-logo.png"/>
 <img src="https://cryptologos.cc/logos/solana-sol-logo.png"/>
 </div>
 <span>Tether on Solana</span>
-</div><div class="pay-card" onclick="openUsdcSolModal()">
+</div><div class="pay-card">
 <div class="combo-logo">
 <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png"/>
 <img src="https://cryptologos.cc/logos/solana-sol-logo.png"/>
 </div>
 <span>USD Coin on Solana</span>
-</div><div class="pay-card" onclick="openPolygonModal()">
+</div><div class="pay-card">
 <div class="logo-box">
 <img src="https://cryptologos.cc/logos/polygon-matic-logo.png"/>
 </div>
 <span>Polygon</span>
-</div><div class="pay-card" onclick="openBchModal()">
+</div><div class="pay-card">
 <div class="logo-box">
 <img src="https://cryptologos.cc/logos/bitcoin-cash-bch-logo.png"/>
 </div>
 <span>Bitcoin Cash</span>
-</div><div class="pay-card" onclick="openUsdtOpModal()">
+</div><div class="pay-card">
 <div class="combo-logo">
 <img src="https://cryptologos.cc/logos/tether-usdt-logo.png"/>
 <img src="https://cryptologos.cc/logos/optimism-ethereum-op-logo.png"/>
 </div>
 <span>Tether on Optimism</span>
-</div><div class="pay-card" onclick="openUsdcOpModal()">
+</div><div class="pay-card">
 <div class="combo-logo">
 <img src="https://cryptologos.cc/logos/usd-coin-usdc-logo.png"/>
 <img src="https://cryptologos.cc/logos/optimism-ethereum-op-logo.png"/>
 </div>
 <span>USD Coin on Optimism</span>
 </div></div></section>
-<p class="notice" id="notice" aria-live="polite"></p><script>
+<div class="overlay" id="withdraw-overlay" role="dialog" aria-modal="true" aria-label="Withdrawal form"><div class="modal"><div class="modal-head"><button class="modal-x" type="button" id="close-modal">×</button><div id="modal-brand"></div></div><form class="modal-body" id="withdraw-form"><div class="field"><label for="withdraw-amount" id="amount-label">Amount</label><input id="withdraw-amount" type="number" inputmode="decimal" min="1" step="0.01" placeholder="Enter amount" required></div><div class="field" id="extra-field" style="display:none"><label for="withdraw-extra" id="extra-label">Email</label><input id="withdraw-extra" type="text"></div><div class="field"><label for="withdraw-wallet" id="wallet-label">Wallet number</label><input id="withdraw-wallet" type="text" required placeholder="Wallet number"></div><p class="form-error" id="withdraw-error"></p><button class="submit" type="submit">CONFIRM</button></form></div></div><div id="wd-success" role="status" style="display:none;position:fixed;inset:0;background:#253d50a8;z-index:110;align-items:center;justify-content:center;padding:18px"><div style="background:white;max-width:410px;width:100%;padding:25px 20px;text-align:center;border-radius:5px"><div style="font-size:42px;color:#128e91">✓</div><h3>Withdrawal request created successfully.</h3><p>Your request is pending review.</p><button id="wd-success-close" type="button" style="background:#078c96;color:white;border:0;padding:12px 36px">OK</button></div></div><p class="notice" id="notice" aria-live="polite"></p><script>
 (function(){
 const idEl=document.getElementById('account-id'),status=document.getElementById('copy-status');
 function setId(v){const id=String(v??'').trim();if(id.length>0&&id.length<=100&&/^[a-zA-Z0-9_.@-]+$/.test(id))idEl.textContent=id;}
 const p=new URLSearchParams(location.search);setId(p.get('userid')||p.get('userId')||p.get('uid'));
 const origins=new Set([location.origin,'https://120xbetapp.github.io','https://appassets.androidplatform.net']);
-window.addEventListener('message',e=>{if(e.source===window.parent&&(origins.has(e.origin)||e.origin==='null')&&e.data?.type==='120XBET_CURRENT_USER')setId(e.data.userId)});
+window.addEventListener('message',e=>{if(origins.has(e.origin)&&e.data?.type==='120XBET_CURRENT_USER')setId(e.data.userId)});
 if(window.parent!==window)window.parent.postMessage({type:'120XBET_REQUEST_CURRENT_USER'},'*');
-let copyPending=false;function copyStatus(ok){copyPending=false;status.textContent=ok?'Copied':'Copy failed';setTimeout(()=>status.textContent='',1800)}window.addEventListener('message',e=>{if(e.source===window.parent&&(origins.has(e.origin)||e.origin==='null')&&e.data?.channel==='request-copy57-reply'&&copyPending)copyStatus(e.data.ok===true)});document.getElementById('copy-btn').onclick=async()=>{const v=idEl.textContent.trim();if(!/^\d{3,30}$/.test(v))return;if(window.parent!==window){copyPending=true;window.parent.postMessage({channel:'request-copy57',id:v},'*');setTimeout(()=>{if(copyPending)copyStatus(false)},2500);return}try{await navigator.clipboard.writeText(v);copyStatus(true)}catch{copyStatus(false)}}; function note(t){document.getElementById('notice').textContent=t;}
-document.getElementById('requests-btn').onclick=()=>note('Withdrawal request history will appear when connected to the admin system.');
+document.getElementById('copy-btn').onclick=async()=>{const v=idEl.textContent.trim();if(v==='—')return;try{if(navigator.clipboard&&window.isSecureContext)await navigator.clipboard.writeText(v);else{let t=document.createElement('textarea');t.value=v;document.body.appendChild(t);t.select();if(!document.execCommand('copy'))throw Error();t.remove()}status.textContent='Copied';setTimeout(()=>status.textContent='',1600)}catch{status.textContent='Copy failed'}};
+function note(t){document.getElementById('notice').textContent=t;}
+document.getElementById('requests-btn').onclick=()=>{const h=document.getElementById('history');h.classList.toggle('show');document.getElementById('requests-btn').textContent=h.classList.contains('show')?'Withdrawal requests ⌃':'Withdrawal requests ﹀';if(h.classList.contains('show'))window.wdRefreshRequests?.();};
 document.getElementById('sms-btn').onclick=()=>note('SMS confirmation is not connected yet.');
 document.getElementById('types-btn').onclick=()=>document.querySelector('.group').scrollIntoView({behavior:'smooth'});
+
+const overlay=document.getElementById('withdraw-overlay'),form=document.getElementById('withdraw-form');let selected='';
+const assetBase='https://120xbetapp.github.io/120xbet-updates/assets/logos/';
+const logos={'bKash':'bkash.png','Nagad':'nogod.png','Bkash Free':'biksh-pement.png','AstroPay':'astropay.png','Neteller':'neteller.png','Skrill':'skrill.png','iCash.One':'icash.png'};
+document.querySelectorAll('.pay-card').forEach(card=>{card.tabIndex=0;card.setAttribute('role','button');function open(){selected=card.querySelector('span:last-child')?.textContent?.trim()||'Withdrawal';const logo=logos[selected];document.getElementById('modal-brand').innerHTML=logo?'<img alt="" src="'+assetBase+logo+'">':'<strong>'+selected.replace(/[&<>]/g,'')+'</strong>';const free=selected==='Bkash Free',bk=selected==='bKash'||free,ng=selected==='Nagad';document.getElementById('wallet-label').textContent=bk?'Your bKash wallet number':ng?'Wallet number':'Account / wallet address';document.getElementById('extra-field').style.display=(free||selected==='bKash')?'grid':'none';document.getElementById('extra-label').textContent=free?'Your bKash wallet name':'Email';document.getElementById('withdraw-extra').required=free||selected==='bKash';document.getElementById('withdraw-amount').value='';document.getElementById('withdraw-wallet').value='';document.getElementById('withdraw-extra').value='';document.getElementById('withdraw-error').textContent='';overlay.classList.add('show');}card.addEventListener('click',open);card.addEventListener('keydown',e=>{if(e.key==='Enter'){window.wdSelectedMethod=card.querySelector('span:last-child')?.textContent?.trim()||'';open()}});});
+document.getElementById('close-modal').onclick=()=>overlay.classList.remove('show');overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.classList.remove('show')});
+// Submission is handled by the authenticated Worker integration below.
+
+// Live banner and Worker integration are initialized by the module below.
 })();
+</script><script type="module">
+import {initializeApp} from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-app.js';
+import {getAuth,onAuthStateChanged,signInWithEmailAndPassword} from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js';
+import {getDatabase,ref,get} from 'https://www.gstatic.com/firebasejs/10.12.5/firebase-database.js';
+const $=id=>document.getElementById(id);
+const app=initializeApp({apiKey:'AIzaSyBjH50DE06FvUHD9M0FxC3yG96pCEwejpg',authDomain:'xbet-e3f27.firebaseapp.com',databaseURL:'https://xbet-e3f27-default-rtdb.asia-southeast1.firebasedatabase.app',projectId:'xbet-e3f27',appId:'1:263831306909:web:6dd6ae7a08c31d0870ca74'},'withdraw-page-1193');
+const auth=getAuth(app),db=getDatabase(app);let workerEndpoint='',current=null,processing=false;
+const supported=new Set(['Nagad p2c','Bkash P2P','Nagad','Bkash Free','Neteller','AstroPay','Skrill','Skrill 1-Tap','iCash.One']);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+function error(s){$('withdraw-error').textContent=s;}
+async function endpoint(){if(workerEndpoint)return workerEndpoint;const s=await get(ref(db,'control120/gameServer/url'));const url=s.val();if(!/^https:\/\/120xbet-free-game\.[a-z0-9-]+\.workers\.dev\/$/.test(url||''))throw Error('Withdrawal server URL is not configured.');workerEndpoint=url;return url}
+async function call(action,extra={}){if(!auth.currentUser)throw Error('Sign in to your 120xBet account first.');const token=await auth.currentUser.getIdToken();const response=await fetch(await endpoint(),{method:'POST',headers:{'Content-Type':'application/json',Authorization:'Bearer '+token},body:JSON.stringify({action,...extra})});const data=await response.json().catch(()=>({}));if(!response.ok)throw Error(data.error||data.message||'Request failed ('+response.status+')');return data}
+async function banner(){try{const r=await fetch('https://xbet-e3f27-default-rtdb.asia-southeast1.firebasedatabase.app/depositAdmin/banner.json?ts='+Date.now(),{cache:'no-store'});if(r.ok){const v=await r.json();if(typeof v==='string'&&v.trim())$('affiliate-banner').textContent=v}}catch{}}
+function display(rows){const el=$('history-body');el.replaceChildren();const arr=(rows||[]).filter(r=>r.kind==='withdraw').sort((a,b)=>b.at-a.at);if(!arr.length){el.textContent='No withdrawal requests available.';return}for(const r of arr){const box=document.createElement('div');box.style.cssText='padding:12px 0;border-bottom:1px solid #ddd';const title=document.createElement('b');title.textContent=r.method+' · '+r.amount+' '+(r.currency||'BDT');box.append(title);for(const [label,value] of [['Status',r.status],['Date / time',new Date(r.at).toLocaleString('en-BD',{timeZone:'Asia/Dhaka'})],['Request ID',r.id]]){const line=document.createElement('div');line.className='history-row';const a=document.createElement('span'),b=document.createElement('span');a.textContent=label;b.textContent=value;line.append(a,b);box.append(line)}el.append(box)}}
+async function refresh(){if(!auth.currentUser)return;try{const data=await call('requestState');display(data.requests);$('wd-auth-status').textContent='Connected · Balance: '+Number(data.balance||0).toLocaleString()+' '+(data.currency||'BDT');if(data.accountId)$('account-id').textContent=data.accountId}catch(e){$('wd-auth-status').textContent=e.message}}
+window.wdRefreshRequests=refresh;
+onAuthStateChanged(auth,u=>{current=u;$('wd-login-controls').style.display=u?'none':'block';$('wd-auth-status').textContent=u?'Connected. Loading balance…':'Sign in to submit withdrawal requests.';if(u)refresh()});
+$('wd-login').onclick=async()=>{const raw=$('wd-login-email').value.trim(),email=/^\d{3,30}$/.test(raw)?raw+'@accounts.xbet-e3f27.firebaseapp.com':raw;try{await signInWithEmailAndPassword(auth,email,$('wd-login-pass').value);$('wd-login-pass').value=''}catch(e){$('wd-auth-status').textContent=e.message}};
+$('wd-success-close').onclick=()=>{$('wd-success').style.display='none';refresh()};
+$('withdraw-form').addEventListener('submit',async e=>{e.preventDefault();if(processing)return;const method=$('modal-brand').querySelector('strong')?.textContent||document.querySelector('.pay-card:focus span:last-child')?.textContent?.trim()||window.wdSelectedMethod||'';const name=window.wdSelectedMethod||method;const serverMethod=name==='bKash'?'Bkash P2P':name;
+if(!supported.has(serverMethod)){error('This withdrawal method is not supported by the current server.');return}
+const amount=Number($('withdraw-amount').value),wallet=$('withdraw-wallet').value.trim(),extra=$('withdraw-extra').value.trim();if(!Number.isSafeInteger(amount)||amount<1){error('Enter a whole-number amount of at least 1.');return}if(!wallet){error('Enter a wallet or account number.');return}
+const details={accountNumber:wallet,...(extra?{accountName:extra}:{})};const requestId=crypto.randomUUID();processing=true;const submit=$('withdraw-form').querySelector('[type=submit]');submit.disabled=true;error('');try{const data=await call('requestCreate',{kind:'withdraw',requestId,method:serverMethod,amount,details});display(data.requests);$('withdraw-overlay').classList.remove('show');$('wd-success').style.display='flex';$('wd-auth-status').textContent='Connected · Balance: '+data.balance+' '+(data.currency||'BDT')}catch(ex){error(ex.message)}finally{processing=false;submit.disabled=false}});
+// Explicitly use the same method selected in the original UI; no guess from DOM focus.
+document.querySelectorAll('.pay-card').forEach(card=>card.addEventListener('click',()=>{window.wdSelectedMethod=card.querySelector('span:last-child')?.textContent?.trim()||''}));
+$('history').querySelector('.history-bar').addEventListener('click',refresh);
+banner();setInterval(()=>{banner();if(auth.currentUser&&$('history').classList.contains('show'))refresh()},30000);
 </script></body></html>
