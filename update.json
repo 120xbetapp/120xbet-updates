@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793828477760,
+  "releaseCode": 1793861442261,
   "versionName": "1.1.97",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793828477760/index.html",
-  "sha256": "5ad90b038ae0d563a8f5711c5f352974fa6bcc978ba5d844278a456693d2d6ff",
-  "size": 26045717,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793861442261/index.html",
+  "sha256": "9885813598c48c39c6010f1febda846a1f2229f4923f6f785ee7f3ab2cef76a6",
+  "size": 26046940,
   "notes": "Admin dashboard: separate Deposit Requests, Withdrawal Requests, Affiliate/Banner Text, and Payment Method Settings pages; pending request badges."
 }
