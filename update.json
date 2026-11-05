@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793861442261,
-  "versionName": "1.1.97",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793861442261/index.html",
+  "releaseCode": 1793861492105,
+  "versionName": "1.1.98",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793861492105/index.html",
   "sha256": "9885813598c48c39c6010f1febda846a1f2229f4923f6f785ee7f3ab2cef76a6",
   "size": 26046940,
-  "notes": "Admin dashboard: separate Deposit Requests, Withdrawal Requests, Affiliate/Banner Text, and Payment Method Settings pages; pending request badges."
+  "notes": "Open the separate Withdraw page inside the app, like Deposit, without navigating to an external browser tab."
 }
