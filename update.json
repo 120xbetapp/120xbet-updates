@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793872710411,
-  "versionName": "1.1.99",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793872710411/index.html",
+  "releaseCode": 1793872783161,
+  "versionName": "1.2.00",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793872783161/index.html",
   "sha256": "4cd803f07f584aa024e007d5619b9b41321c9b77476e5f633dda23673a6f6888",
   "size": 26046680,
-  "notes": "Deposit and withdrawal open full-screen inside the app with their own page headers; no external browser or duplicate wrapper header."
+  "notes": "Fixed Deposit/Withdraw to open inside app frame, not external Chrome; Back and Refresh toolbar."
 }
