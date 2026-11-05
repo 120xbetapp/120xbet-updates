@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793861492105,
+  "releaseCode": 1793861537290,
   "versionName": "1.1.98",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793861492105/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793861537290/index.html",
   "sha256": "9885813598c48c39c6010f1febda846a1f2229f4923f6f785ee7f3ab2cef76a6",
   "size": 26046940,
   "notes": "Open the separate Withdraw page inside the app, like Deposit, without navigating to an external browser tab."
