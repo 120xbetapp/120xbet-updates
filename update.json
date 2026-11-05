@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793875750448,
+  "releaseCode": 1793882250511,
   "versionName": "1.2.01",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793875750448/index.html",
-  "sha256": "abc0e7b2c03c8f732c24f91ceda69b56e5d60c41531cc97fc208aa5c01a0dc1b",
-  "size": 26047121,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793882250511/index.html",
+  "sha256": "0142ed441fd31a6cdb75676db01e3715a48a94ed4b1396e50595320b7a2fb4d1",
+  "size": 26097948,
   "notes": "Deposit and Withdraw header matches reference: Back, centered title, Refresh; no extra Account icon."
 }
