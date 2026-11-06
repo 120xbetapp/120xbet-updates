@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793960980179,
-  "versionName": "1.2.02",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793960980179/index.html",
+  "releaseCode": 1793988268104,
+  "versionName": "1.2.04",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793988268104/index.html",
   "sha256": "fbaaa80eebbb3249307521298e3711e18ada88c77996029a17bc8cbe54e78e9f",
   "size": 26102929,
-  "notes": "Home message badges, welcome messages, deposit decision messages, account history"
+  "notes": "Email OTP registration and recovery update; fixes verified web update packaging metadata."
 }
