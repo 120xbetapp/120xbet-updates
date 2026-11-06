@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1793883246676,
+  "releaseCode": 1793960980179,
   "versionName": "1.2.02",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793883246676/index.html",
-  "sha256": "0142ed441fd31a6cdb75676db01e3715a48a94ed4b1396e50595320b7a2fb4d1",
-  "size": 26097948,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1793960980179/index.html",
+  "sha256": "fbaaa80eebbb3249307521298e3711e18ada88c77996029a17bc8cbe54e78e9f",
+  "size": 26102929,
   "notes": "Home message badges, welcome messages, deposit decision messages, account history"
 }
