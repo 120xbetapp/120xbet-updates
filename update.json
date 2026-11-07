@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794052118899,
+  "releaseCode": 1794052221411,
   "versionName": "1.2.06",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794052118899/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794052221411/index.html",
   "sha256": "0345bdcf1230de8af2d8b6e01cfb4507296b50b3213afbb2a360697021739f91",
   "size": 26105793,
   "notes": "Improved OTP autofill compatibility and six-digit paste handling for registration and password recovery; server verification unchanged."
