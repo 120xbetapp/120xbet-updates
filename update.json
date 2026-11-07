@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794082796335,
+  "releaseCode": 1794082898649,
   "versionName": "1.2.08",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794082796335/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794082898649/index.html",
   "sha256": "8ffabfbc42bfd2fe8822144479b5446eab679c48591758cfc11d2485e868e1de",
   "size": 26110052,
   "notes": "Nishchit phone registration OTP and phone/email recovery; existing email registration retained."
