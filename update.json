@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794042909367,
-  "versionName": "1.2.04",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794042909367/index.html",
+  "releaseCode": 1794042975446,
+  "versionName": "1.2.05",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794042975446/index.html",
   "sha256": "61bca5b3bf0eefa87b1193245cb500690400b654da01f5ece781a3c0613d294b",
   "size": 26104816,
-  "notes": "Email OTP registration and recovery update; fixes verified web update packaging metadata."
+  "notes": "Confirmation page redesign with OTP entry and verification UI."
 }
