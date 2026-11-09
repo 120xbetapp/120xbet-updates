@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794241021788,
+  "releaseCode": 1794241095121,
   "versionName": "1.2.10",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794241021788/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794241095121/index.html",
   "sha256": "9656ba02d111f57b00e1a226068e6165ed6d34170b2cea7cd8a36df9e2abff13",
   "size": 26128265,
   "notes": "Messages update: welcome message and notification history; existing app features preserved."
