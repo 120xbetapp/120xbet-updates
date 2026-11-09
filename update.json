@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794238938754,
-  "versionName": "1.2.09",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794238938754/index.html",
+  "releaseCode": 1794238984735,
+  "versionName": "1.2.10",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794238984735/index.html",
   "sha256": "a8049583a66a22531cdd7cb6f2f9649b72699969550bf369320abc4612819733",
   "size": 26131559,
-  "notes": "Deposit legacy alert handled inline; logout access listeners cleaned up and stale access screen suppressed. Existing OTP registration and recovery preserved."
+  "notes": "Messages update: welcome message and notification history; existing app features preserved."
 }
