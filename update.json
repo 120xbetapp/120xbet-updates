@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794330146988,
-  "versionName": "1.2.09",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794330146988/index.html",
+  "releaseCode": 1794330246550,
+  "versionName": "1.2.11",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794330246550/index.html",
   "sha256": "0c1e9e2010e0e885b3db169e84cc5cbfb96aa96942913ee9395421d113daeb2e",
   "size": 26132196,
-  "notes": "Deposit legacy alert handled inline; logout access listeners cleaned up and stale access screen suppressed. Existing OTP registration and recovery preserved."
+  "notes": "120xBet notification inbox authentication and Worker diagnostics repair; no game/payment logic changed."
 }
