@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794336532546,
-  "versionName": "1.2.11",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794336532546/index.html",
+  "releaseCode": 1794337670112,
+  "versionName": "1.2.12",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794337670112/index.html",
   "sha256": "8097cb8d6dfaa83b842c57d5cfe07a61d1525a1adda763c79e8104c3422a799c",
   "size": 26132737,
-  "notes": "Messages inbox connection: use existing Firebase Auth instance; timeout and HTTP error diagnostics; all other features retained."
+  "notes": "Notification inbox connection repair. Deploy notification-worker.js to 120xbet-notifications Worker before updating index.html."
 }
