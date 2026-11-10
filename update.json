@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794336350420,
+  "releaseCode": 1794336470472,
   "versionName": "1.2.11",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794336350420/index.html",
-  "sha256": "0c1e9e2010e0e885b3db169e84cc5cbfb96aa96942913ee9395421d113daeb2e",
-  "size": 26132196,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794336470472/index.html",
+  "sha256": "8097cb8d6dfaa83b842c57d5cfe07a61d1525a1adda763c79e8104c3422a799c",
+  "size": 26132737,
   "notes": "Messages inbox connection: use existing Firebase Auth instance; timeout and HTTP error diagnostics; all other features retained."
 }
