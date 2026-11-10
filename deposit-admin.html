@@ -10,7 +10,7 @@
 <button class="dash-card" data-open="users"><span class="symbol">📝</span><span class="heading">Registrations</span><span class="sub" id="registerCount">Checking database…</span></button>
 <button class="dash-card" data-open="users"><span class="symbol">🟢</span><span class="heading">Active Users</span><span class="sub" id="activeCount">Last 30 minutes, if tracked</span></button>
 <button class="dash-card" data-open="support"><span class="symbol">💬</span><span class="heading">Customer Support</span><span class="sub">Chat / replies · backend setup needed</span></button>
-<button class="dash-card" data-open="notice"><span class="symbol">🔔</span><span class="heading">Personal Notice</span><span class="sub">One user or broadcast · secure sender needed</span></button>
+<button class="dash-card" data-open="notice"><span class="symbol">🔔</span><span class="heading">Send Notification</span><span class="sub">Broadcast offers and announcements to all users</span></button>
 <button class="dash-card" data-open="block"><span class="symbol">🚫</span><span class="heading">Block / Unblock</span><span class="sub">Account controls · secure backend needed</span></button>
 <button class="dash-card" data-open="deposit"><span class="notify" id="depositBadge" hidden>0</span><span class="symbol">📥</span><span class="heading">Deposit Requests</span><span class="sub">Review, approve or reject deposits</span></button>
 <button class="dash-card" data-open="withdraw"><span class="notify" id="withdrawBadge" hidden>0</span><span class="symbol">📤</span><span class="heading">Withdrawal Requests</span><span class="sub">Review, approve or refund withdrawals</span></button>
@@ -23,7 +23,16 @@
 <div class="admin-panel" id="methodsPanel" hidden><section><h2>Payment method settings</h2><label>Select method</label><select id="method"></select><div class="grid"><div><label>Availability</label><select id="enabled"><option value="true">Visible / unlocked</option><option value="false">Locked / disabled</option></select></div><div><label>Display rate</label><input id="rate"></div><div id="walletNumberRow"><label id="walletNumberLabel">bKash / Nagad wallet number</label><div class="row"><input style="flex:1;min-width:130px" id="address"><button id="copyAddress" class="copy">Copy</button></div></div><div id="walletNameRow"><label id="walletNameLabel">bKash / Nagad wallet name</label><div class="row"><input style="flex:1;min-width:130px" id="receiver"><button id="copyReceiver" class="copy">Copy</button></div></div><div><label>Minimum amount</label><input id="min" type="number" min="0" step="any"></div><div><label>Maximum amount</label><input id="max" type="number" min="0" step="any"></div></div><p><button id="saveMethod">Save payment method</button></p></section></div>
 <div class="admin-panel" id="usersPanel" hidden><section><h2>Registered Users</h2><p class="muted">Read-only list from the existing <code>users</code> database path. Registration and activity counts depend on available fields and database permissions.</p><label>Search user ID</label><input id="userSearch" placeholder="Filter loaded users"><div id="userList" class="status">Waiting for data…</div></section></div>
 <div class="admin-panel" id="supportPanel" hidden><section><h2>Customer Support</h2><p class="warning">Chat replies require your existing support room database paths and a server-authorized sender. No chat messages will be sent until connected.</p><button disabled>Reply (backend not connected)</button></section></div>
-<div class="admin-panel" id="noticePanel" hidden><section><h2>Personal / Broadcast Notice</h2><label>Recipient user ID</label><input placeholder="User ID, or broadcast" disabled><label>Message</label><textarea placeholder="Connect secure notification sender first" disabled></textarea><button disabled>Send Notice (backend not connected)</button></section></div>
+<div class="admin-panel" id="noticePanel" hidden><section>
+<h2>🔔 Send Notification · All Users</h2>
+<p class="muted">New offers and announcements are published to every user's global inbox. Personal payment messages are generated automatically by the payment backend.</p>
+<label for="noticeWorkerUrl">Notification Worker URL</label><input id="noticeWorkerUrl" type="url" value="https://120xbet-notifications.mdripon018770.workers.dev" autocomplete="off">
+<label for="noticeTitle">Notification title</label><input id="noticeTitle" maxlength="100" placeholder="New Offer Available!">
+<label for="noticeMessage">Message</label><textarea id="noticeMessage" maxlength="2000" placeholder="Write the announcement for all users..."></textarea>
+<div class="row"><button id="sendGlobalNotice">📣 Send to All Users</button><button id="clearGlobalNotice" class="secondary" type="button">Clear</button></div>
+<p id="noticeResult" class="status" role="status" aria-live="polite">Sign in as the authorized Firebase Admin to send a notice.</p>
+<p class="warning">Only send a notice once. The server saves it to the global inbox; phone push requires FCM topic subscription. Do not put a secret or private key into this HTML.</p>
+</section></div>
 <div class="admin-panel" id="blockPanel" hidden><section><h2>Block / Unblock Users</h2><p class="warning">Blocking must be enforced by the authentication/game server, not by a browser flag. This control is disabled until the Worker supports an authorized account block action.</p><button disabled>Block / Unblock (backend not connected)</button></section></div>
 </div><p id="error" class="status"></p></main>
 <script type="module">
@@ -39,6 +48,30 @@ $('method').innerHTML=METHODS.map((m,i)=>`<option value="${i}">${m}</option>`).j
 $('start').onclick=()=>{try{config={apiKey:$('cfgKey').value.trim(),authDomain:$('cfgDomain').value.trim(),databaseURL:$('cfgDb').value.trim(),projectId:$('cfgProject').value.trim(),appId:$('cfgApp').value.trim(),adminUID:$('cfgUid').value.trim()};if(!config.databaseURL.startsWith('https://')||!config.adminUID)throw Error('Database URL and admin UID are required.');localStorage.setItem('depositAdminConfig',JSON.stringify(config));const a=initializeApp(config);auth=getAuth(a);db=getDatabase(a);$('setup').classList.add('hidden');$('loginBox').classList.remove('hidden');onAuthStateChanged(auth,u=>{let ok=!!u&&u.uid===config.adminUID;$('loginBox').classList.toggle('hidden',ok);$('app').classList.toggle('hidden',!ok);if(u&&!ok){err('This Firebase user is not the authorized admin.');signOut(auth)}if(ok){$('identity').textContent=u.email;listen()}else{unsubscribe.forEach(f=>f());unsubscribe=[];if(poll){clearInterval(poll);poll=null}}})}catch(e){$('setupMsg').textContent=e.message}};
 $('login').onclick=async()=>{try{await signInWithEmailAndPassword(auth,$('email').value,$('password').value);err('')}catch(e){err(e.message)}};
 $('logout').onclick=()=>signOut(auth);
+const noticeUrlKey='120xbetNoticeWorkerUrl';
+$('noticeWorkerUrl').value=localStorage.getItem(noticeUrlKey)||$('noticeWorkerUrl').value;
+$('clearGlobalNotice').onclick=()=>{$('noticeTitle').value='';$('noticeMessage').value='';$('noticeResult').textContent='Form cleared.'};
+$('sendGlobalNotice').onclick=async()=>{
+ const btn=$('sendGlobalNotice'),status=$('noticeResult');
+ try{
+  if(!auth?.currentUser||auth.currentUser.uid!==config.adminUID)throw Error('Sign in with the authorized Admin account first.');
+  const title=$('noticeTitle').value.trim(),message=$('noticeMessage').value.trim();
+  if(!title||title.length>100||!message||message.length>2000)throw Error('Enter a title and message (maximum 100 / 2000 characters).');
+  const base=$('noticeWorkerUrl').value.trim().replace(/\/+$/,'');
+  const url=new URL(base);if(url.protocol!=='https:'||url.username||url.password||url.pathname!=='/'||url.search||url.hash)throw Error('Enter the HTTPS Notification Worker base URL only.');
+  if(!confirm('Send this announcement to ALL users?\n\n'+title+'\n'+message.slice(0,180)))return;
+  btn.disabled=true;status.textContent='Sending announcement...';
+  localStorage.setItem(noticeUrlKey,base);
+  const token=await auth.currentUser.getIdToken();
+  const response=await fetch(base+'/admin/broadcast',{method:'POST',headers:{'Content-Type':'application/json','Authorization':'Bearer '+token},body:JSON.stringify({title,message})});
+  const result=await response.json().catch(()=>({}));
+  if(!response.ok||!result.ok)throw Error(result.error||result.message||'Notification server rejected the request (HTTP '+response.status+').');
+  status.textContent='Saved for all users. Notice ID: '+String(result.noticeId||'unknown')+'. Phone push: '+(result.push?.ok?'sent to subscribed devices':JSON.stringify(result.push||'not confirmed'));
+  $('noticeTitle').value='';$('noticeMessage').value='';
+ }catch(e){status.textContent='Could not confirm delivery: '+e.message+' — If the request timed out, check the inbox before sending again.'}
+ finally{btn.disabled=false}
+};
+
 function listen(){unsubscribe.forEach(f=>f());unsubscribe=[];
 unsubscribe.push(onValue(ref(db,'depositAdmin/methods'),s=>{all.methods=s.val()||{};populate();$('conn').textContent='Live connected'},e=>err(e.message)));
 unsubscribe.push(onValue(ref(db,'depositAdmin/banner'),s=>{$('banner').value=s.val()||''},e=>err(e.message)));
