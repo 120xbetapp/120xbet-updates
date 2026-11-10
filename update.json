@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794344645435,
-  "versionName": "1.2.12",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794344645435/index.html",
+  "releaseCode": 1794344727695,
+  "versionName": "1.2.11",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794344727695/index.html",
   "sha256": "25cd8413bda11e0f2dc713a4031a5f46b6661f966928b46c03522be22d6b01cd",
   "size": 26143473,
-  "notes": "Notification inbox connection repair. Deploy notification-worker.js to 120xbet-notifications Worker before updating index.html."
+  "notes": "Account ID display fix for Deposit and Withdraw pages; existing app features preserved."
 }
