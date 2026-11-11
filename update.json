@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794404696314,
-  "versionName": "1.2.15",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794404696314/index.html",
+  "releaseCode": 1794424244070,
+  "versionName": "1.2.17",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794424244070/index.html",
   "sha256": "e7d5d3aaf0ba232254549f98ecef3669378b8c41ec928ff713b84b7f1b04498f",
   "size": 26135173,
-  "notes": "Menu profile avatar smaller with muted teal circle and white symbol; message and settings icons smaller; personal profile alignment corrected"
+  "notes": "Resize only My casino bottom navigation icons (Promo, Favorites, My casino, Providers, Categories); other pages unchanged"
 }
