@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794344785104,
+  "releaseCode": 1794383759360,
   "versionName": "1.2.11",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794344785104/index.html",
-  "sha256": "25cd8413bda11e0f2dc713a4031a5f46b6661f966928b46c03522be22d6b01cd",
-  "size": 26143473,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794383759360/index.html",
+  "sha256": "45955c28ed7fa82e7b301854f00b15088b15adf6d356534fb72a9445245c5abc",
+  "size": 26133745,
   "notes": "Account ID display fix for Deposit and Withdraw pages; existing app features preserved."
 }
