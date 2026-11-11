@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794404535353,
+  "releaseCode": 1794404613897,
   "versionName": "1.2.15",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794404535353/index.html",
-  "sha256": "b9fbc0b62a144f2223007efa733171cf7bd0d0916a37acc2c877c619eee6b3d8",
-  "size": 26135093,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794404613897/index.html",
+  "sha256": "e7d5d3aaf0ba232254549f98ecef3669378b8c41ec928ff713b84b7f1b04498f",
+  "size": 26135173,
   "notes": "Menu profile avatar smaller with muted teal circle and white symbol; message and settings icons smaller; personal profile alignment corrected"
 }
