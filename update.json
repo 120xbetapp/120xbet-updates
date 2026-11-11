@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794384686740,
+  "releaseCode": 1794393343457,
   "versionName": "1.2.12",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794384686740/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794393343457/index.html",
   "sha256": "45955c28ed7fa82e7b301854f00b15088b15adf6d356534fb72a9445245c5abc",
   "size": 26133745,
   "notes": "Main page and menu live admin"
