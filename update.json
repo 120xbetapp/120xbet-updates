@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794446177265,
+  "releaseCode": 1794447483849,
   "versionName": "1.2.19",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794446177265/index.html",
-  "sha256": "5a061d71058f3b6adb46b72d6e25fe6ff36ce65466a62475eccec86fc8aba947",
-  "size": 24968273,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794447483849/index.html",
+  "sha256": "f1947baf32bfcb1e494096ce55d6e713a62c3792ae65361f4621f2f9184308c7",
+  "size": 24968580,
   "notes": "Fix My casino card navigation to open separated my-casino.html; preserve other app pages"
 }
