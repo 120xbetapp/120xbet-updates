@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794445517124,
+  "releaseCode": 1794446090529,
   "versionName": "1.2.18",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794445517124/index.html",
-  "sha256": "07099c588ce91a83002afeaea1c324a9440933d49a4c81b87e58a09f893338f2",
-  "size": 24967386,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794446090529/index.html",
+  "sha256": "5a061d71058f3b6adb46b72d6e25fe6ff36ce65466a62475eccec86fc8aba947",
+  "size": 24968273,
   "notes": "Separate My Casino content into my-casino.html; retain header, balance and deposit in index.html."
 }
