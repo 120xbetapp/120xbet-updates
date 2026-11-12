@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794496180213,
-  "versionName": "1.2.21",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794496180213/index.html",
+  "releaseCode": 1794496249696,
+  "versionName": "1.2.22",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794496249696/index.html",
   "sha256": "e1e1b77fbd7d1675afe20642c6720e4ce0a46b6e6f8618929833832a60db600b",
   "size": 24973833,
   "notes": "Fix current signed-in account ID on deposit and withdrawal; preserve payment and game routing."
