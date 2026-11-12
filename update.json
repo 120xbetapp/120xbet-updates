@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794497966188,
+  "releaseCode": 1794499053486,
   "versionName": "1.2.24",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794497966188/index.html",
-  "sha256": "5ececffbe6899b4b5e35c2f758ac8e812c629e6e28df9260abffff46eb1f2df8",
-  "size": 24976580,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794499053486/index.html",
+  "sha256": "6c14ad729fc001bef633b80be72125eb3cffe18d30e5b263cee05f2cde65ce06",
+  "size": 25050277,
   "notes": "Move all payment headers and account controls to index.html; payment pages start at RECOMMENDED."
 }
