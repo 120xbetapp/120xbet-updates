@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794447549313,
+  "releaseCode": 1794447643156,
   "versionName": "1.2.21",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794447549313/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794447643156/index.html",
   "sha256": "f1947baf32bfcb1e494096ce55d6e713a62c3792ae65361f4621f2f9184308c7",
   "size": 24968580,
   "notes": "My casino opens the published GitHub Pages HTML in the app with cache-busting; retains existing balance and navigation"
