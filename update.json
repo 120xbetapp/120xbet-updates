@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794494601917,
-  "versionName": "1.2.20",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794494601917/index.html",
+  "releaseCode": 1794494675706,
+  "versionName": "1.2.21",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794494675706/index.html",
   "sha256": "3c35abe0f404974d9fd943b677e0a4923df1a96f6d4b9c15b6e689d48b49cf2a",
   "size": 24971665,
-  "notes": "Payment request Worker routing split; previous seven game/sports routes preserved."
+  "notes": "Fix current signed-in account ID on deposit and withdrawal; preserve payment and game routing."
 }
