@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794493604324,
-  "versionName": "1.2.20",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794493604324/index.html",
+  "releaseCode": 1794493795898,
+  "versionName": "1.2.19",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794493795898/index.html",
   "sha256": "daaa18807c415a8af9d8ceba1297ab17327fef4e485750c0d95a2364b12053a7",
   "size": 24969540,
-  "notes": "Payment request Worker routing split; previous seven game/sports routes preserved."
+  "notes": "Preserve 7 game Worker routes; connect Sports directly to its new Worker."
 }
