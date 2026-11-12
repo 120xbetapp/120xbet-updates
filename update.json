@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794482813262,
+  "releaseCode": 1794491008064,
   "versionName": "1.2.18",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794482813262/index.html",
-  "sha256": "eb89a91efa7e0454deb115a2abf3347de0e07d0d92efc8bb14550400f92e8ed8",
-  "size": 24969802,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794491008064/index.html",
+  "sha256": "2cededfa1eb1da1f799191196710c390221bac31638b92bca5a3b976134b7583",
+  "size": 24969667,
   "notes": "Route game and sports API calls to separate Cloudflare Workers; preserve legacy shared request APIs and existing UI."
 }
