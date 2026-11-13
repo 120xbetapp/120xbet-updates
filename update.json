@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794602126937,
+  "releaseCode": 1794603722277,
   "versionName": "1.2.32-payment-header-fix",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794602126937/index.html",
-  "sha256": "0cb0d000943618f0edb0130354cfd00b3e6e486fe8f85e34671790384cc6cfe7",
-  "size": 25056468,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794603722277/index.html",
+  "sha256": "8388463fae9868726ba43f2da47fa3ba8081ac51de1c809bdde5ee71ded324ef",
+  "size": 25059802,
   "notes": "Correct deposit and withdrawal header positioning; preserve existing payment methods and support features."
 }
