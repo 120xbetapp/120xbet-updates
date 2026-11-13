@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794593580749,
+  "releaseCode": 1794593714553,
   "versionName": "1.2.28-recovery",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794593580749/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794593714553/index.html",
   "sha256": "6c14ad729fc001bef633b80be72125eb3cffe18d30e5b263cee05f2cde65ce06",
   "size": 25050277,
   "notes": "Restore previously supplied full-size HTML after broken notification inbox release. Notification inbox fix not included."
