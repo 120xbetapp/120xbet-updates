@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794592607008,
-  "versionName": "1.2.25",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794592607008/index.html",
+  "releaseCode": 1794593580749,
+  "versionName": "1.2.28-recovery",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794593580749/index.html",
   "sha256": "6c14ad729fc001bef633b80be72125eb3cffe18d30e5b263cee05f2cde65ce06",
   "size": 25050277,
-  "notes": "Move all payment headers and account controls to index.html; payment pages start at RECOMMENDED."
+  "notes": "Restore previously supplied full-size HTML after broken notification inbox release. Notification inbox fix not included."
 }
