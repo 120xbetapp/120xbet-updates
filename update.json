@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794499148402,
-  "versionName": "1.2.25",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794499148402/index.html",
-  "sha256": "6c14ad729fc001bef633b80be72125eb3cffe18d30e5b263cee05f2cde65ce06",
-  "size": 25050277,
-  "notes": "Move all payment headers and account controls to index.html; payment pages start at RECOMMENDED."
+  "releaseCode": 1794590119237,
+  "versionName": "1.2.27-notification-inbox-fix",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794590119237/index.html",
+  "sha256": "76277f8b36526a74d2519691752c8d3af62fa5fc88204ca417c96f09134eaac5",
+  "size": 9348049,
+  "notes": "Notification inbox sync in Messages page; keeps native FCM and existing app features."
 }
