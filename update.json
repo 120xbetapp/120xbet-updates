@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794594794829,
+  "releaseCode": 1794594876883,
   "versionName": "1.2.29-inbox-compatible",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794594794829/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794594876883/index.html",
   "sha256": "fc39ca602f88d4bf9eef8cd9888469f71fdf93282ad313e66562f33209c03676",
   "size": 25052913,
   "notes": "Full-size main HTML preserved; Worker inbox notices merged into existing Messages page."
