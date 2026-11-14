@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794651950147,
+  "releaseCode": 1794652022703,
   "versionName": "1.2.35-my-casino-game-bridge",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794651950147/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794652022703/index.html",
   "sha256": "c5b29210071b127abb86a2d4b160ba7fa020eea8ab942c4007e89581fbdbcc4d",
   "size": 25051717,
   "notes": "Connect Aviator, Chicken Road, Super Ace, Mega Block and Money Coming in My Casino to existing authenticated index.html game launcher; preserve other features."
