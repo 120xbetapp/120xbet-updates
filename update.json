@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794678930663,
+  "releaseCode": 1794679034545,
   "versionName": "1.2.33-payment-iframe-layout",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794678930663/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794679034545/index.html",
   "sha256": "bd9fb60c8c1b0c6e827e754ba3c61c6cd7cc7733be476b498e379fae4b00697e",
   "size": 25056615,
   "notes": "Deposit and withdrawal parent headers with separate external iframe payment grids."
