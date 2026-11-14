@@ -136,7 +136,7 @@ window.addEventListener('message',e=>{
  if(d.type==='init'){casinoProfile=d.profile||{};casinoAccount=d.account||'';openMyCasino();}
  if(d.type==='tab')mcShowTab(d.tab||'home');
  if(d.type==='search')mcFilterGames(String(d.query||''));
- if(d.type==='back'){if(document.getElementById('mc-vip-detail')?.classList.contains('mc-visible')){document.getElementById('vcd-back')?.click();return;}if(mc43View){mc43View=null;mcShowTab('home');}else if(document.querySelector('.mc-nav button.active')!==document.querySelectorAll('.mc-nav button')[2])mcShowTab('home');else parent.postMessage({channel:'casino120',type:'back'},'*');}
+ if(d.type==='back'){if(document.getElementById('mc-vip-detail')?.classList.contains('mc-visible')){document.getElementById('vcd-back')?.click();return;}if(mc43View){mc43View=null;mcShowTab('home');}else if(document.querySelector('.mc-nav button.active')!==document.querySelectorAll('.mc-nav button')[2])mcShowTab('home');else {parent.postMessage({channel:'casino120',type:'view',open:false},'*');parent.postMessage({channel:'casino120',type:'back'},'*');}}
  if(d.type==='image'){document.querySelectorAll('img[data-image-token]').forEach(img=>{if(img.dataset.imageToken===d.token){img.src=d.src;delete img.dataset.imageToken;}});}
 });
 parent.postMessage({channel:'casino120',type:'ready'},'*');
