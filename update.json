@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794657273221,
-  "versionName": "1.2.36-my-casino-back-load-fix",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794657273221/index.html",
+  "releaseCode": 1794657355588,
+  "versionName": "1.2.37-my-casino-navigation-fix",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794657355588/index.html",
   "sha256": "442c1e21f717dcac258e3b44686c0295d58c19642677d156295c2ae3279e3419",
   "size": 25060368,
-  "notes": "Fix My Casino initial blank loading with retry, parent header and Android back handling, iframe height, and preserve five game launch links."
+  "notes": "Fix My Casino header Back and Android Back, including parent/iframe back message loop; preserve game and image catalog."
 }
