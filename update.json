@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794657458040,
+  "releaseCode": 1794660509388,
   "versionName": "1.2.37-my-casino-navigation-fix",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794657458040/index.html",
-  "sha256": "442c1e21f717dcac258e3b44686c0295d58c19642677d156295c2ae3279e3419",
-  "size": 25060368,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794660509388/index.html",
+  "sha256": "dc84e6b6b62050f024a566cf5e3b201b1f150c736641fc0781828055a62d9061",
+  "size": 25061035,
   "notes": "Fix My Casino header Back and Android Back, including parent/iframe back message loop; preserve game and image catalog."
 }
