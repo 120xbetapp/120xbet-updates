@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794660612072,
+  "releaseCode": 1794678825821,
   "versionName": "1.2.38-my-casino-load-navbar-images",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794660612072/index.html",
-  "sha256": "dc84e6b6b62050f024a566cf5e3b201b1f150c736641fc0781828055a62d9061",
-  "size": 25061035,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794678825821/index.html",
+  "sha256": "bd9fb60c8c1b0c6e827e754ba3c61c6cd7cc7733be476b498e379fae4b00697e",
+  "size": 25056615,
   "notes": "Restore embedded casino game images and five game cards; fix iframe viewport navbar, initial scroll and delayed load retry. Keep existing game bridge."
 }
