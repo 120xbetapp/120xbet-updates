@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794603793546,
+  "releaseCode": 1794643577701,
   "versionName": "1.2.33-resume-restore",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794603793546/index.html",
-  "sha256": "8388463fae9868726ba43f2da47fa3ba8081ac51de1c809bdde5ee71ded324ef",
-  "size": 25059802,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794643577701/index.html",
+  "sha256": "1037b5a2dda20845b2db26e66c7b09ad8944e09363445717c55173b5576b5250",
+  "size": 25051365,
   "notes": "Preserve last safe in-app page on Android recreation; requires native MainActivity patch and APK rebuild for full support."
 }
