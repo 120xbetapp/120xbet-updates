@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794643820787,
+  "releaseCode": 1794651758920,
   "versionName": "1.2.34-my-casino-navbar-vip",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794643820787/index.html",
-  "sha256": "1037b5a2dda20845b2db26e66c7b09ad8944e09363445717c55173b5576b5250",
-  "size": 25051365,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794651758920/index.html",
+  "sha256": "c5b29210071b127abb86a2d4b160ba7fa020eea8ab942c4007e89581fbdbcc4d",
+  "size": 25051717,
   "notes": "Fit My Casino iframe to actual viewport; lower casino navbar; preserve VIP Cashback and existing features."
 }
