@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794686170381,
+  "releaseCode": 1794777097150,
   "versionName": "1.2.33-payment-header-top",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794686170381/index.html",
-  "sha256": "c43b5443eff766735bcae8cb837024101cf22c3406a114a32804cf51b3e9fb01",
-  "size": 25056979,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794777097150/index.html",
+  "sha256": "ea8d94a14cfedaf62f13c2652a170a63e7a76adc88c31049099334c2b4f141fa",
+  "size": 25059020,
   "notes": "Fix deposit/withdraw header position and account copy icon; preserve other features."
 }
