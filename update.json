@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794777097150,
-  "versionName": "1.2.33-payment-header-top",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794777097150/index.html",
+  "releaseCode": 1794777177782,
+  "versionName": "2.0.3-pocket-merged-latest",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794777177782/index.html",
   "sha256": "ea8d94a14cfedaf62f13c2652a170a63e7a76adc88c31049099334c2b4f141fa",
   "size": 25059020,
-  "notes": "Fix deposit/withdraw header position and account copy icon; preserve other features."
+  "notes": "Merged Pocket transfer bridge into user supplied latest 120xBet index.html; other features retained. TEST ONLY; requires deployed matching Pocket checkout and verified backend."
 }
