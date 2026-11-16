@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794825603607,
+  "releaseCode": 1794826617426,
   "versionName": "2.0.5-inline-deposit-withdraw",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794825603607/index.html",
-  "sha256": "98eff86208d4d42c688bc8f84047b25d0230b0d261e60178003904a24da8ad59",
-  "size": 25072806,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794826617426/index.html",
+  "sha256": "6c6e57970f9cce87582bd60925aff9028cf58edda8aa6e30bb3e10620a1045e9",
+  "size": 25079820,
   "notes": "Deposit and withdrawal HTML/CSS/JS bundled directly into index.html; no deposit.html/wd.html iframe. Pocket transfer creation remains test-only; secure inline verification not complete."
 }
