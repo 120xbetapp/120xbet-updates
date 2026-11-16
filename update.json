@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794786388856,
+  "releaseCode": 1794806600722,
   "versionName": "2.0.3-pocket-merged-latest",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794786388856/index.html",
-  "sha256": "ea8d94a14cfedaf62f13c2652a170a63e7a76adc88c31049099334c2b4f141fa",
-  "size": 25059020,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794806600722/index.html",
+  "sha256": "ba016678b50e7eb5035d1dda780375faaa86eb76a381e3811e693f0af3162612",
+  "size": 25059029,
   "notes": "Merged Pocket transfer bridge into user supplied latest 120xBet index.html; other features retained. TEST ONLY; requires deployed matching Pocket checkout and verified backend."
 }
