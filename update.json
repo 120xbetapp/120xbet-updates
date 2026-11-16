@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794829712234,
-  "versionName": "2.0.7-payment-dom-fix",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794829712234/index.html",
+  "releaseCode": 1794829794016,
+  "versionName": "2.0.8-pocket-visual-fix",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794829794016/index.html",
   "sha256": "94ac858458ef1d9bb71cf7dafd355cab33a8554fc5206974711705194f702cd6",
   "size": 25085322,
-  "notes": "Fix inline Deposit/Withdraw shadow DOM document.querySelectorAll and document.body errors. Pocket OTP/PIN server integration remains pending."
+  "notes": "Repair Pocket Wallet inline amount popup and checkout styling in Shadow DOM. SMS OTP and PIN server verification remain pending."
 }
