@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794823090869,
-  "versionName": "2.0.4-pocket-checkout-fix",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794823090869/index.html",
+  "releaseCode": 1794823222436,
+  "versionName": "2.0.5-pocket-deposit-inline",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794823222436/index.html",
   "sha256": "ce2f661300d63e61dbfe0c46f2589c676e925a2bb271bc6f50a188684e6681f0",
   "size": 25023066,
-  "notes": "Pocket test checkout URL validation aligned with deployed transfer Worker checkout path. TEST ONLY; live transfer not verified."
+  "notes": "Deposit HTML embedded in index.html using srcdoc; standalone deposit.html not required. Pocket checkout remains external pending secure integration; TEST ONLY."
 }
