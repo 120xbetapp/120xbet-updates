@@ -198,6 +198,7 @@ async function tumbleTo(board,removed){
  await wait(turbo?40:120);
 }
 let confirmedStake=0;
+const settledSpinIds=new Set();
 const levelFromStake=v=>Math.max(0,Math.floor(Math.max(0,v)/5000));
 function refreshLevel(s){
   const serverStake=Number(s?.totalBetAmount ?? s?.totalWagered ?? s?.lifetimeWagered);
@@ -210,9 +211,9 @@ function controls(){const off=busy||!state||!!uncertain;$('spin').disabled=off;$
 function paint(s){state=s;refreshLevel(s);if(s.freeLeft>0)bet=s.freeBet;$('balance').textContent=Number(s.coins).toFixed(2);$('free').textContent=s.freeLeft?`${s.freeLeft} FREE SPINS · Bet ${s.freeBet}`:'8 matching cards anywhere win';controls()}
 function stop(){autoLeft=0;clearTimeout(timer);controls()}
 async function finish(r,s){
-if(!r.free&&!r.buy&&r.id&&!sessionStorage.getItem('ace-level-settled:'+r.id)){
+if(!r.free&&!r.buy&&r.id&&!settledSpinIds.has(String(r.id))){
+  settledSpinIds.add(String(r.id));
   confirmedStake+=Number(r.cost)||0;
-  sessionStorage.setItem('ace-level-settled:'+r.id,'1');
 }
 let total=0;const oldBanner=$('board').querySelector?.('.combo');oldBanner?.remove();if(r.frames.length){await land(r.frames[0].board);for(let n=0;n<r.frames.length;n++){const f=r.frames[n];if(n)await tumbleTo(f.board,r.frames[n-1].removed);[...$('mults').children].forEach((c,i)=>{c.textContent='×'+(r.free?[2,4,6,10]:[1,2,3,5])[i];c.classList.toggle('on',f.win>0&&i===Math.min(n,3))});total=Math.round((total+f.win)*100)/100;$('win').textContent=total.toFixed(2);for(const i of f.removed)atCard(i)?.classList.add('won');if(f.win){const banner=document.createElement('div');banner.className='combo';banner.innerHTML='<small>COMBO '+(n+1)+'</small>'+f.win.toFixed(2);$('board').append(banner);await wait(turbo?300:900);banner.remove();if(n<r.frames.length-1){await wait(turbo?45:100)}}else await wait(turbo?100:250)}}$('win').textContent=r.payout.toFixed(2);paint(s);$('notice').textContent=r.awarded?`${r.awarded} free spins awarded!`:r.payout?`Won ${r.payout.toFixed(2)} Coins` :''}
 async function spin(buy=false){if(busy||!state||uncertain)return;busy=true;const cmd={requestId:state.ticket,amount:bet,buy};uncertain=cmd;controls();$('win').textContent='0.00';[...$('mults').children].forEach(c=>c.classList.remove('on'));$('notice').textContent=buy?'Opening bonus…':'Spinning…';const started=Date.now();if(!buy){ensureReels(); /* Keep current cards visible; never show card-back placeholders. */}try{const s=await rpc('aceSpin',cmd);if(!buy)await wait(Math.max(0,(turbo?100:260)-(Date.now()-started)));const r=s.history.find(h=>h.id===cmd.requestId);if(!r)throw Error('Waiting for spin confirmation…');await finish(r,s);uncertain=null;if(autoLeft>0)autoLeft--}catch(e){stopRolling();stop();$('notice').textContent=e.message;if(/Not enough|supported bet|locked bet|limit reached/.test(e.message))uncertain=null}finally{busy=false;controls();if(autoLeft&&!document.hidden&&!uncertain)timer=setTimeout(()=>spin(),turbo?200:900)}}
