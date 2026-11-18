@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1794847163747,
+  "releaseCode": 1795024189446,
   "versionName": "2.0.9-pocket-4pin-checkout",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1794847163747/index.html",
-  "sha256": "acdfd04c300b85c42f698f8e1a18f58c797620f5a73fce16b47215ca1e793e08",
-  "size": 25087448,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795024189446/index.html",
+  "sha256": "ea1a1428b5dcbb15920289ba5b8bf47b2d09d4df64b9db966a09b9348a2d1c9c",
+  "size": 25088004,
   "notes": "Inline Pocket phone, OTP and four-digit account PIN checkout; requires deployed secure worker and D1 migration."
 }
