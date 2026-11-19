@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795041998789,
-  "versionName": "2.0.9-pocket-4pin-checkout",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795041998789/index.html",
+  "releaseCode": 1795082278932,
+  "versionName": "1.1.54",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795082278932/index.html",
   "sha256": "1e5268b9a97e7cdd0b9dcb48468b7bb0d3701fd880811dcee0bf3c04090eb053",
   "size": 25088225,
-  "notes": "Inline Pocket phone, OTP and four-digit account PIN checkout; requires deployed secure worker and D1 migration."
+  "notes": "Sky of Olympus server-authoritative shared balance integration; Super Ace preserved; Sky game entry point."
 }
