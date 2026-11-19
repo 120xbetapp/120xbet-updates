@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795110467723,
+  "releaseCode": 1795110582730,
   "versionName": "1.1.73",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795110467723/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795110582730/index.html",
   "sha256": "c77dec1a15dec0d98a4ec827a76d969455d12930635e9582161e3a2dfd461b6c",
   "size": 23533875,
   "notes": "Fix Sky of Olympus game route filename and bundle self-contained game HTML with embedded imagery; preserve other app features."
