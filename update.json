@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795110356176,
-  "versionName": "1.1.70",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795110356176/index.html",
+  "releaseCode": 1795110467723,
+  "versionName": "1.1.73",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795110467723/index.html",
   "sha256": "c77dec1a15dec0d98a4ec827a76d969455d12930635e9582161e3a2dfd461b6c",
   "size": 23533875,
-  "notes": "Fix casino UTF-8 favorite icons, casino back navigation, bottom navigation position, and local Sky of Olympus HTML path. Preserve other embedded images and existing balance/game logic."
+  "notes": "Fix Sky of Olympus game route filename and bundle self-contained game HTML with embedded imagery; preserve other app features."
 }
