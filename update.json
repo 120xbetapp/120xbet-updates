@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795082278932,
+  "releaseCode": 1795085822250,
   "versionName": "1.1.54",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795082278932/index.html",
-  "sha256": "1e5268b9a97e7cdd0b9dcb48468b7bb0d3701fd880811dcee0bf3c04090eb053",
-  "size": 25088225,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795085822250/index.html",
+  "sha256": "2355d9646c3a739ebb502161e613a9246cc7b0c1ef50b72d705c129a8d73ba36",
+  "size": 25089349,
   "notes": "Sky of Olympus server-authoritative shared balance integration; Super Ace preserved; Sky game entry point."
 }
