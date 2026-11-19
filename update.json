@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795119647495,
-  "versionName": "1.1.76",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795119647495/index.html",
+  "releaseCode": 1795119772798,
+  "versionName": "1.1.77",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795119772798/index.html",
   "sha256": "cd6e8a54673f6fcae1c03b050254a2c7c0dd6693d265648af50e202fef9a71fc",
   "size": 23537091,
   "notes": "Fix Sky of Olympus 95% loading and missing host handler; isolated practice coins; no changes to other games."
