@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795114795897,
-  "versionName": "1.1.74",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795114795897/index.html",
+  "releaseCode": 1795114887522,
+  "versionName": "1.1.75",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795114887522/index.html",
   "sha256": "51960fab105a41804a25bee8f0d04778fe1a0e5e2dd449bbfa2a47d1849bc04e",
   "size": 23534067,
-  "notes": "Sky of Olympus hosted GitHub Pages route; isolated browser practice fallback for missing game server; preserve all other existing features."
+  "notes": "Fix Sky of Olympus 95% loading and missing host handler; isolated practice coins; no changes to other games."
 }
