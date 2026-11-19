@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795090295736,
-  "versionName": "1.1.64",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795090295736/index.html",
+  "releaseCode": 1795090384868,
+  "versionName": "1.1.65",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795090384868/index.html",
   "sha256": "a8227157fb6ca6dad1cde62506ef494fdb1f82b8d657ef3f519dc24099059b0d",
   "size": 25088568,
-  "notes": "Boxing King server-authoritative simulated shared balance integration."
+  "notes": "Connect Sky of Olympus My Casino cards to existing game launcher; preserve other games."
 }
