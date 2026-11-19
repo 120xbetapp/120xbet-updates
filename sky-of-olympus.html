@@ -15,7 +15,46 @@ function display(){document.querySelectorAll('.currency').forEach(e=>e.textConte
 function note(msg){$('message').textContent=msg}
 function render(board,animate=false){$('board').replaceChildren();tiles=[];for(let row=0;row<5;row++)for(let col=0;col<6;col++){const s=board[col*5+row];const cell=document.createElement('div');cell.className='tile'+(animate?' drop':'');const img=document.createElement('img');img.src=SKY_EMBEDDED_IMAGES[({S:'scatter',M:'multiplier',H:'harp',R:'red',P:'purple',B:'blue',T:'temple',W:'white',G:'green',C:'cup',K:'helmet'}[s]||s||'white')]||SKY_EMBEDDED_IMAGES.white;img.alt=s||'symbol';cell.append(img);$('board').append(cell);tiles[col*5+row]=cell} }
 function delay(ms){return new Promise(r=>setTimeout(r,ms))}
-function rpc(action,extra={}){return new Promise((resolve,reject)=>{const request=++seq;const timeout=setTimeout(()=>{pending.delete(request);reject(Error('Connection interrupted. Refresh game state before another spin.'))},22000);pending.set(request,{resolve,reject,timeout});parent.postMessage({channel:'free-game120',request,action,...extra},'*')})}
+
+// Local practice mode is isolated from the 120xBet account balance.
+const skyDemoKey120='sky-olympus-browser-practice-v1174';
+let skyPractice120=null;
+function skyPracticeLabel120(){
+ let el=document.getElementById('sky-practice-label');
+ if(!el){el=document.createElement('div');el.id='sky-practice-label';el.style.cssText='position:absolute;top:18%;left:8%;right:8%;z-index:5;text-align:center;background:#071b44d9;border:1px solid #f2cc70;border-radius:8px;padding:5px;color:#fff4ae;font:12px Arial;pointer-events:none';document.getElementById('game').append(el)}
+ el.textContent='PRACTICE MODE • Local coins only • Not linked to 120xBet balance';
+}
+function skyPracticeState120(){
+ if(!skyPractice120){let saved={};try{saved=JSON.parse(localStorage.getItem(skyDemoKey120)||'{}')||{}}catch(e){}
+ skyPractice120={coins:Number.isFinite(saved.coins)&&saved.coins>=0?saved.coins:100,bet:Number.isFinite(saved.bet)?saved.bet:2,ticket:'practice-'+Date.now()+'-'+Math.random().toString(36).slice(2),history:[]};skyPracticeLabel120()}
+ return skyPractice120;
+}
+function skyPracticeRPC120(action,extra={}){
+ const p=skyPracticeState120();
+ const bets=[.5,1,2,2.5,5,10,20,50,100];
+ if(action==='skyState')return Promise.resolve({coins:p.coins,ticket:p.ticket,bets,freeLeft:0,history:p.history});
+ if(action!=='skySpin')return Promise.reject(Error('Unknown practice action'));
+ const bet=Number(extra.amount),id=extra.requestId;
+ if(id!==p.ticket)return Promise.reject(Error('Outdated spin request'));
+ if(!bets.includes(bet)||p.coins<bet)return Promise.reject(Error('Insufficient practice balance or invalid bet'));
+ p.coins=Math.round((p.coins-bet)*100)/100;
+ const names=['harp','red','helmet','purple','blue','temple','white','green','cup','scatter'];
+ const board=Array.from({length:30},()=>names[Math.floor(Math.random()*names.length)]);
+ const count={};for(const name of board)count[name]=(count[name]||0)+1;
+ let payout=0;const wins=[];
+ for(const [name,n] of Object.entries(count))if(n>=5&&name!=='scatter'){
+ const positions=[];board.forEach((x,i)=>{if(x===name)positions.push(i)});
+ const win=Math.round(bet*(n-4)*.3*100)/100;payout+=win;wins.push({positions,win});
+ }
+ payout=Math.round(payout*100)/100;p.coins=Math.round((p.coins+payout)*100)/100;
+ const result={id,payout,frames:[{board,win:payout,wins,removed:[]}],awarded:0};
+ p.history.unshift(result);p.history=p.history.slice(0,10);
+ p.ticket='practice-'+Date.now()+'-'+Math.random().toString(36).slice(2);
+ try{localStorage.setItem(skyDemoKey120,JSON.stringify({coins:p.coins,bet}))}catch(e){}
+ return Promise.resolve({coins:p.coins,ticket:p.ticket,bets,freeLeft:0,history:p.history,last:result});
+}
+
+function rpc(action,extra={}){if(window===window.parent||skyPractice120)return skyPracticeRPC120(action,extra);return new Promise((resolve,reject)=>{const request=++seq;const timeout=setTimeout(()=>{pending.delete(request);reject(Error('Connection interrupted. Refresh game state before another spin.'))},22000);pending.set(request,{resolve,reject,timeout});parent.postMessage({channel:'free-game120',request,action,...extra},'*')})}
 addEventListener('message',e=>{if(e.source!==parent||e.data?.channel!=='free-game120-reply')return;const p=pending.get(e.data.request);if(!p)return;clearTimeout(p.timeout);pending.delete(e.data.request);e.data.error?p.reject(Error(e.data.error)):p.resolve(e.data.result)});
 addEventListener('message',e=>{if(e.source!==parent||e.data?.channel!=='game-meta53')return;if(typeof e.data.currency==='string'&&/^[A-Z]{3}$/.test(e.data.currency)){state.currency=e.data.currency;display()}});
 function sync(s){if(!s||!Number.isFinite(s.coins)||!s.ticket)throw Error('Invalid game server response');server=s;state.balance=s.coins;if(Array.isArray(s.bets)&&!s.bets.includes(state.bet))state.bet=s.bets[0];if(s.freeLeft>0&&s.freeBet)state.bet=s.freeBet;display()}
@@ -27,5 +66,5 @@ $('betPlus').onclick=()=>{if(!busy&&!uncertain&&server){const bets=server.bets||
 $('betMinus').onclick=()=>{if(!busy&&!uncertain&&server){const bets=server.bets||[];state.bet=[...bets].reverse().find(x=>x<state.bet)||bets[0]||state.bet;display()}};
 function modal(t){$('modalText').textContent=t;$('modal').style.display='flex'}$('closeModal').onclick=()=>$('modal').style.display='none';$('fs').onclick=()=>modal('Free spins are awarded by the connected game server.');$('info').onclick=()=>modal('The game uses the 120xBet shared simulated balance. Spins and payouts are validated on the server.');$('sound').onclick=()=>{sound=!sound;note(sound?'SOUND ON':'SOUND OFF')};
 render(Array(30).fill('white'));display();let pct=0;const load=setInterval(()=>{pct=Math.min(95,pct+5);$('fill').style.width=pct+'%';$('pct').textContent=pct+'%';if(pct>=95)clearInterval(load)},55);
-refresh().then(()=>{$('fill').style.width='100%';$('pct').textContent='100%';setTimeout(()=>$('loading').remove(),250)}).catch(e=>{$('pct').textContent='Connection required';note(e.message);$('loading').onclick=()=>location.reload()});
+refresh().catch(e=>{if(window!==window.parent){note('Game server unavailable. Using separate practice coins.');return skyPracticeRPC120('skyState').then(sync)}throw e}).then(()=>{$('fill').style.width='100%';$('pct').textContent='100%';setTimeout(()=>$('loading').remove(),250)}).catch(e=>{$('pct').textContent='Connection required';note(e.message);$('loading').onclick=()=>location.reload()});
 </script></body></html>
