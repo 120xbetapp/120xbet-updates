@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795106084314,
+  "releaseCode": 1795107750297,
   "versionName": "1.1.69",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795106084314/index.html",
-  "sha256": "36126301d5a2d20c8b935d0ae0e4c12a6244847ee4c166367a4b85fb40315a61",
-  "size": 23533523,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795107750297/index.html",
+  "sha256": "9276314f58f3dfbaedafcbd592903e1a5d34f28b92837fdbffbde0c54d485e53",
+  "size": 23533873,
   "notes": "Restore all non-payment embedded images (home, sports, menus, navbar, banners, and existing casino art). Only payment images remain external. No game or backend logic intentionally changed."
 }
