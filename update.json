@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795103383875,
+  "releaseCode": 1795105817069,
   "versionName": "1.1.65",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795103383875/index.html",
-  "sha256": "a7b35c7c7549bbef0f7a5c7c7d0c73ab35a01a231ad19068b47d2c1fcb62e43a",
-  "size": 20868680,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795105817069/index.html",
+  "sha256": "36126301d5a2d20c8b935d0ae0e4c12a6244847ee4c166367a4b85fb40315a61",
+  "size": 23533523,
   "notes": "Connect Sky of Olympus My Casino cards to existing game launcher; preserve other games."
 }
