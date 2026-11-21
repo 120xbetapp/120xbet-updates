@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795277266070,
-  "versionName": "1.1.66",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795277266070/index.html",
+  "releaseCode": 1795277361679,
+  "versionName": "1.1.59",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795277361679/index.html",
   "sha256": "1c3c3fb6635ac2f22c58a4672ed9acc203dd3b6440bd35a96afc549e458a17a1",
   "size": 23548277,
-  "notes": "Add 37 externally hosted casino image cards to bundled My Casino catalog; preserve existing UI and game routes."
+  "notes": "Routing UI and Worker update - staged integration"
 }
