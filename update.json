@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795299630615,
+  "releaseCode": 1795299871845,
   "versionName": "1.1.76",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795299630615/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795299871845/index.html",
   "sha256": "a9b9e2d337e4ffc635ecab89d8b1926809d1d3515f8a2782a96884918048eefd",
   "size": 23556527,
   "notes": "Reddy request assignment: supported Worker actions, deposit/withdraw auto assignment and manual pending assignment; preserve wallet routing and existing game features."
