@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795287188983,
+  "releaseCode": 1795287340130,
   "versionName": "1.1.67",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795287188983/index.html",
-  "sha256": "0acd525d678da5e79384cb76a3e71bad04c944bd962f39e0ed1d68c2055edd42",
-  "size": 23550204,
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795287340130/index.html",
+  "sha256": "925c9441c63c2beb26471f27f157acaf76469bd3ab70bfc9823610fb1f863224",
+  "size": 23547628,
   "notes": "Agent routing Worker APIs, wallet routes and deposit request integration; preserves prior app code."
 }
