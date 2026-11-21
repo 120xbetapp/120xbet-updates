@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795294415228,
-  "versionName": "1.1.70",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795294415228/index.html",
+  "releaseCode": 1795294544511,
+  "versionName": "1.1.72",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795294544511/index.html",
   "sha256": "04842f84670429deb6ca42aee2b3687d711a2cad9dc73c0243ec7868e3732a46",
   "size": 23555983,
-  "notes": "Deposit request submission via Worker, assigned Reddy/Main Admin visibility, confirmed success popup; receipt upload requires separate storage configuration."
+  "notes": "Restore wallet display cache and accept configured HTTPS workers.dev endpoint; preserve Reddy v8 assignment and all prior features."
 }
