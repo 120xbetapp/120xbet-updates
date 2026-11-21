@@ -1,10 +1,10 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795289166581,
-  "versionName": "1.1.68",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795289166581/index.html",
+  "releaseCode": 1795290203306,
+  "versionName": "1.1.69",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795290203306/index.html",
   "sha256": "925c9441c63c2beb26471f27f157acaf76469bd3ab70bfc9823610fb1f863224",
   "size": 23547628,
-  "notes": "Reddy agent creation UI, selectable Reddy agent permission and wallet routing; Worker v4 authentication retained."
+  "notes": "Correct method-specific wallet display from requestState; refresh on open; no premature Not configured alert."
 }
