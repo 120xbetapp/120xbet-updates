@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "appId": "com.zibongorun.bet120x",
-  "releaseCode": 1795277361679,
+  "releaseCode": 1795277490473,
   "versionName": "1.1.59",
-  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795277361679/index.html",
+  "htmlUrl": "https://raw.githubusercontent.com/120xbetapp/120xbet-updates/main/releases/1795277490473/index.html",
   "sha256": "1c3c3fb6635ac2f22c58a4672ed9acc203dd3b6440bd35a96afc549e458a17a1",
   "size": 23548277,
   "notes": "Routing UI and Worker update - staged integration"
