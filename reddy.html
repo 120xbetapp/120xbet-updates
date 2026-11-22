@@ -996,11 +996,11 @@ body { position:fixed; top:var(--reddy-screen-top); left:0; width:100%; height:v
 <!-- PAGE 3 : CONFIRMATION CODE -->
 <div id="page3" class="login-view" style="position: relative; width: 100%; height: 100vh; background: #ffffff; padding: 0; overflow: hidden;">
     <div class="page3-main" style="position: absolute; top: 0; left: 0; width: 100%;">
-        <h2 class="page3-title" style="margin: 84px 0 0 0; text-align: center; font-size: 24px; color: #171717;">Enter code</h2>
-        <p class="page3-description" style="margin: 45px 0 0 0; text-align: center; font-size: 13px; color: #a7a7a7;">We have sent a confirmation code to your authorized devices</p>
+        <h2 class="page3-title" style="margin: 84px 0 0 0; text-align: center; font-size: 24px; color: #171717;">Enter password</h2>
+        <p class="page3-description" style="margin: 45px 0 0 0; text-align: center; font-size: 13px; color: #a7a7a7;">Enter your 120xBet Agent password</p>
         <div class="page3-input-area" style="width: calc(100% - 40px); margin: 30px auto 0 auto;">
             <fieldset class="page3-fieldset" style="position: relative; width: 100%; height: 56px; border: 2px solid #c50b30; border-radius: 5px; padding: 8px 14px 5px 14px; background: #fff;">
-                <legend style="padding: 0 5px; color: #c50b30; font-size: 13px;">Confirmation code</legend>
+                <legend style="padding: 0 5px; color: #c50b30; font-size: 13px;">Password</legend>
                 <input type="password" id="userPass" maxlength="128" class="page3-input" autocomplete="off" style="width: calc(100% - 30px); border: none; outline: none; font-size: 16px; background: transparent; color: #222;">
                 <span id="passwordToggle" class="page3-eye" onclick="togglePasswordVisibility()" style="position: absolute; right: 15px; top: 50%; transform: translateY(-50%); color: #999; font-size: 18px; cursor: pointer;">
                     <i class="fa-solid fa-eye-slash"></i>
@@ -4271,13 +4271,28 @@ function reddyWelcomeRise() {
         {transform:base || 'none', opacity:1}
     ], {duration:760,easing:'cubic-bezier(0.22, 1, 0.36, 1)',fill:'backwards'});
 }
+// Always release the splash even if the original Firebase startup stalls.
+(function(){
+    const splash=document.getElementById('reddySplash');
+    if(!splash)return;
+    const release=()=>{splash.style.display='none';};
+    setTimeout(release,4500);
+    window.addEventListener('pageshow',()=>setTimeout(release,4500),{once:true});
+})();
 const reddyOriginalLoad = window.onload;
 window.onload = async function(event) {
     const wait = new Promise(resolve => setTimeout(resolve, /ReddyAndroid\//.test(navigator.userAgent)?0:2500));
     // Optional public database configuration: appConfig/reddy/update
     const check = db.ref("appConfig/reddy/update").once("value")
         .then(s => s.val()).catch(() => null);
-    if (reddyOriginalLoad) await reddyOriginalLoad.call(window, event);
+    if (reddyOriginalLoad) {
+        try {
+            await Promise.race([
+                Promise.resolve().then(()=>reddyOriginalLoad.call(window,event)),
+                new Promise(resolve=>setTimeout(resolve,3500))
+            ]);
+        } catch (error) { console.warn('Reddy startup:',error); }
+    }
     await wait;
     document.getElementById("reddySplash").style.display = "none";
     reddyWelcomeRise();
@@ -5011,5 +5026,49 @@ document.addEventListener('keydown',function(event){
 });
 </script>
 
+<script id="xbet-agent-primary-login">
+(function(){
+  'use strict';
+  const config={apiKey:'AIzaSyBjH50DE06FvUHD9M0FxC3yG96pCEwejpg',authDomain:'xbet-e3f27.firebaseapp.com',databaseURL:'https://xbet-e3f27-default-rtdb.asia-southeast1.firebasedatabase.app',projectId:'xbet-e3f27'};
+  let agentAuth=null;
+  function auth(){
+    if(!window.firebase || !firebase.auth) throw Error('Firebase SDK did not load. Check your connection.');
+    if(!agentAuth){const app=firebase.apps.find(a=>a.name==='XBetReddyAgent')||firebase.initializeApp(config,'XBetReddyAgent');agentAuth=app.auth();agentAuth.setPersistence(firebase.auth.Auth.Persistence.SESSION).catch(()=>{});}
+    return agentAuth;
+  }
+  function error(id,message){const el=document.getElementById(id);if(el)el.textContent=message;}
+  function loginId(){return (document.getElementById('userId')?.value||'').trim().toLowerCase();}
+  function showAgent(){
+    const w=document.getElementById('reddyAgentWorkspace');if(!w)return;
+    document.querySelectorAll('.login-view').forEach(x=>{x.classList.remove('active');x.style.display='none'});
+    w.classList.add('is-open');
+    // Agent panel owns its own Firebase auth instance and loads the existing server/Worker code.
+    const frame=document.getElementById('reddyAgentFrame');
+    if(frame && !frame.dataset.started){frame.dataset.started='1';frame.srcdoc=frame.getAttribute('srcdoc');}
+  }
+  window.validateStepOne=function(){
+    const id=loginId();if(!id){error('error-p2','Please enter your Agent Login ID');return;}
+    if(!/^[a-z0-9._-]+$/.test(id)){error('error-p2','Invalid Agent Login ID');return;}
+    error('error-p2','');navigateTo('page3');
+  };
+  window.validateStepTwo=async function(){
+    const id=loginId(),password=document.getElementById('userPass')?.value||'';
+    if(!id||!password){error('error-p3','Enter your Login ID and Password');return;}
+    const button=document.querySelector('.page3-signin');if(button)button.disabled=true;
+    error('error-p3','Signing in…');
+    try{
+      await auth().signInWithEmailAndPassword('reddy-'+id+'@agents.xbet-e3f27.example.com',password);
+      document.getElementById('userPass').value='';error('error-p3','');showAgent();
+    }catch(e){error('error-p3',e?.code==='auth/invalid-credential'?'Incorrect Agent ID or password':(e?.message||'Login failed'));}
+    finally{if(button)button.disabled=false;}
+  };
+  // Agent and original Reddy chat use separate Firebase projects. Never forge chat auth.
+  const originalOpen=window.reddyOpenAgentPanel;
+  window.reddyOpenAgentPanel=function(){showAgent();};
+  window.addEventListener('load',()=>{
+    try{auth().onAuthStateChanged(user=>{if(user)showAgent();});}catch(e){console.warn('Agent auth initialization:',e);}
+  });
+})();
+</script>
 </body>
 </html>
