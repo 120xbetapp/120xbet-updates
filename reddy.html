@@ -5026,49 +5026,5 @@ document.addEventListener('keydown',function(event){
 });
 </script>
 
-<script id="xbet-agent-primary-login">
-(function(){
-  'use strict';
-  const config={apiKey:'AIzaSyBjH50DE06FvUHD9M0FxC3yG96pCEwejpg',authDomain:'xbet-e3f27.firebaseapp.com',databaseURL:'https://xbet-e3f27-default-rtdb.asia-southeast1.firebasedatabase.app',projectId:'xbet-e3f27'};
-  let agentAuth=null;
-  function auth(){
-    if(!window.firebase || !firebase.auth) throw Error('Firebase SDK did not load. Check your connection.');
-    if(!agentAuth){const app=firebase.apps.find(a=>a.name==='XBetReddyAgent')||firebase.initializeApp(config,'XBetReddyAgent');agentAuth=app.auth();agentAuth.setPersistence(firebase.auth.Auth.Persistence.SESSION).catch(()=>{});}
-    return agentAuth;
-  }
-  function error(id,message){const el=document.getElementById(id);if(el)el.textContent=message;}
-  function loginId(){return (document.getElementById('userId')?.value||'').trim().toLowerCase();}
-  function showAgent(){
-    const w=document.getElementById('reddyAgentWorkspace');if(!w)return;
-    document.querySelectorAll('.login-view').forEach(x=>{x.classList.remove('active');x.style.display='none'});
-    w.classList.add('is-open');
-    // Agent panel owns its own Firebase auth instance and loads the existing server/Worker code.
-    const frame=document.getElementById('reddyAgentFrame');
-    if(frame && !frame.dataset.started){frame.dataset.started='1';frame.srcdoc=frame.getAttribute('srcdoc');}
-  }
-  window.validateStepOne=function(){
-    const id=loginId();if(!id){error('error-p2','Please enter your Agent Login ID');return;}
-    if(!/^[a-z0-9._-]+$/.test(id)){error('error-p2','Invalid Agent Login ID');return;}
-    error('error-p2','');navigateTo('page3');
-  };
-  window.validateStepTwo=async function(){
-    const id=loginId(),password=document.getElementById('userPass')?.value||'';
-    if(!id||!password){error('error-p3','Enter your Login ID and Password');return;}
-    const button=document.querySelector('.page3-signin');if(button)button.disabled=true;
-    error('error-p3','Signing in…');
-    try{
-      await auth().signInWithEmailAndPassword('reddy-'+id+'@agents.xbet-e3f27.example.com',password);
-      document.getElementById('userPass').value='';error('error-p3','');showAgent();
-    }catch(e){error('error-p3',e?.code==='auth/invalid-credential'?'Incorrect Agent ID or password':(e?.message||'Login failed'));}
-    finally{if(button)button.disabled=false;}
-  };
-  // Agent and original Reddy chat use separate Firebase projects. Never forge chat auth.
-  const originalOpen=window.reddyOpenAgentPanel;
-  window.reddyOpenAgentPanel=function(){showAgent();};
-  window.addEventListener('load',()=>{
-    try{auth().onAuthStateChanged(user=>{if(user)showAgent();});}catch(e){console.warn('Agent auth initialization:',e);}
-  });
-})();
-</script>
 </body>
 </html>
