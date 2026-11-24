@@ -2074,7 +2074,7 @@ function validateStepTwo() {
     }
     if (error) error.innerText = "";
 
-    secureReddyLogin(userId,password).then(userData=>{if(error)error.innerText='';reddyStorage.setItem('cached_profile_'+userId,JSON.stringify(userData));enterHomePage(userId);void reddyRecordSuccessfulLogin(userId)}).catch(e=>{if(!navigator.onLine||e instanceof TypeError){showCustomToast('No internet connection. Please check your connection and try again');return;}if([400,401,403,404].includes(e.status)){reddyAuthError();return;}if(error)error.innerText='Unable to sign in. Please try again.'});
+    secureReddyLogin(userId,password).then(userData=>{if(error)error.innerText='';reddyStorage.setItem('cached_profile_'+userId,JSON.stringify(userData));try { enterHomePage(userId); } catch(e) { console.error('Reddy home initialization:',e); if(error)error.innerText='Signed in, but home could not load: '+(e.message||'Unknown error'); if(getComputedStyle(document.getElementById('chatContainerMain')).display==='none'){ reddyNavigate('page3'); } else { showCustomToast('Some chat features could not load. Please reopen the app.'); } } void reddyRecordSuccessfulLogin(userId)}).catch(e=>{if(!navigator.onLine||e instanceof TypeError){showCustomToast('No internet connection. Please check your connection and try again');return;}if([400,401,403,404].includes(e.status)){reddyAuthError();return;}if(error)error.innerText='Unable to sign in. Please try again.'});
 
 }
 
@@ -3398,7 +3398,18 @@ function enterHomePage(userId) {
     currentUserId = String(userId);
     reddyStorage.setItem("chatAppUserId", String(userId));
 
+    // Render the authenticated home before starting optional network work.
+    navigateTo("chatContainerMain");
+    const chatList = document.getElementById("chatListScreen");
+    if (chatList) chatList.style.display = "flex";
+    for (let i = 1; i <= 8; i++) {
+        const room = document.getElementById("chatRoom" + i);
+        if (room) room.style.display = "none";
+    }
+    currentRoom = null;
+    document.getElementById('reddySplash').style.display='none';
     // ===== ONLINE / OFFLINE PRESENCE =====
+    try {
     const privateStatusRef=db.ref("users/"+userId),publicStatusRef=rawRef('directory/'+userId);const userStatusRef={update:async v=>{await privateStatusRef.update(v);await publicStatusRef.update(v)},onDisconnect:()=>({update:async v=>{await privateStatusRef.onDisconnect().update(v);await publicStatusRef.onDisconnect().update(v)}})};
 
     db.ref(".info/connected").on("value", (snapshot) => {
@@ -3416,7 +3427,9 @@ function enterHomePage(userId) {
             });
         }
     });
+    } catch(e) { console.error("Reddy presence setup:", e); }
     // ===== ONLINE / OFFLINE PRESENCE END =====
+    try {
 
     for (let i = 1; i <= 8; i++) {
         const listNameElements = document.querySelectorAll("#roomTitle" + i);
@@ -3444,23 +3457,15 @@ function enterHomePage(userId) {
     });
 
 
-    navigateTo("chatContainerMain");
-    const chatList = document.getElementById("chatListScreen");
-    if (chatList) chatList.style.display = "flex";
-
-    for (let i = 1; i <= 8; i++) {
-        const room = document.getElementById("chatRoom" + i);
-        if (room) room.style.display = "none";
-    }
-    currentRoom = null;
-    preFetchAllRoomsData();
+    } catch(e) { console.error('Reddy chat names:',e); }
+    try { preFetchAllRoomsData(); } catch(e) { console.error('Reddy room loading:',e); showCustomToast('Unable to load chats. Please reopen the app.'); }
 }
 
 window.onload = async function() {
     await initialAuth;
     const savedUser = reddyStorage.getItem("chatAppUserId");
     if (savedUser && secureReddyAuth.currentUser?.uid === 'reddy_'+savedUser) {
-        try{await rawRef('users/'+savedUser).once('value');enterHomePage(savedUser)}catch{await secureReddyAuth.signOut();navigateTo('page1')}
+        try{enterHomePage(savedUser)}catch(e){console.error('Reddy session home:',e);reddyStorage.removeItem('chatAppUserId');await secureReddyAuth.signOut();navigateTo('page1');showCustomToast('Unable to restore chat session. Please sign in again.');}
     } else {
         navigateTo("page1");
     }
